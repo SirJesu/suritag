@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#2196f3">
+
+        <link rel="stylesheet"  href="css/app.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
+        <link rel="stylesheet" href="libs/slider/css/slider-pro.min.css" >
+        <link rel="stylesheet" href="libs/rateYo/jquery.rateyo.min.css" >
+        <link rel="stylesheet" href="libs/slider/css/slider-pro.min.css" >
+        <script src="libs/firebase.js"></script>
+        <script src="libs/jquery-3.3.1.min.js" ></script>
+        <script src="libs/rateYo/jquery.rateyo.min.js" ></script>
+        <script src="libs/slider/js/jquery.sliderPro.min.js" ></script>
+        <title>Principal</title>
+
+<style>
+  .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: start !important;
+      font-size: 18px;
+
+      background: transparent !important;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-slide:nth-child(2n) {
+      width: 60%;
+    }
+    .swiper-slide:nth-child(3n) {
+      width: 40%;
+    }
+  
+
+/* CONTENEDOR PRINCIPAL */
+
+ .navbar{
+
+height: 7vh !important;
+background: #CB4308 !important;
+padding-top: 5px;
+
+}
+
+.navbar-inner{
+justify-content:left !important;
+
+
+}
+
+
+
+  #content-list-favoritos{
+      margin-top: 10%;
+      
+    }
+
+
+    #content-presentacionFavoritos{
+margin-top: 25%;
+
+    }
+.button-buscar-favoritos{
+
+background: #CB4308;
+padding: 3px;
+color:white;
+border: none;
+border-color: transparent;
+font-size: 17px;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+#map {
+        height: 320px;
+      }
+.btn-Centered{
+z-index: 10;
+position: absolute;
+background: #CB4308;
+color: white;
+width: 60%;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 4vw;
+border-width: 2px;
+border-color: orange;
+border-radius: 7px;
+
+margin-left: 20%;
+margin-bottom: 50px;
+
+}
+
+.img-item-round-prueba{
+  border-radius: 50%;
+  background: white;
+  border-color: white;
+  padding: 3vw;
+  width: 8vw;
+  height: 8vw;
+}
+
+
+
+</style>
+
+</head>
+<body  hidden>
+
+ <!--<div class="loader-page"></div>  -->
+<div id="app">
+
+
+        <div class="panel panel-left panel-reveal">
+            <div class=" header-infor-menu">
+
+              <div class="content-header-info" >
+              
+                  <img src="img/iconos/user_defaultProfile.png" class="rounded img-content-header" >
+                  <div class="info-header-text" >
+                   <label class="nombre-content-header"  >yarlet figeroa</label>
+                    <p class="correo-info" >yarlet@gmail.com</p>
+                    <button class="button-headeer-content" >Cartagena</button>
+                  </div>
+
+              </div>
+
+              </div>
+              <hr class="line-menu" >
+
+                <div class="block">
+            
+              
+              <div class="list  ">
+
+                <ul>
+                  <li>
+
+                                <div  id="principalAccion" class="item-content panel-close" style="border: none" >
+                                  <a style="color: #6d6d72 !important" class="tab-link" href="#view-principal" >    
+                                  <div class="item-media"><img src="img/menu-icons/Principal.svg" class="menu-icon" ></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title menu-item-text">Principal</div>
+                                                  
+                                                </div>
+                                              </a>
+                                         </div> 
+
+                                         <div id="ReservasAccion"  class="item-content" style="border: none" >
+                                            <div class="item-media"><img src="img/menu-icons/reserva.svg" class="menu-icon" ></div>
+                                            <div class="item-inner">
+                                              <div class="item-title menu-item-text">Reservas</div>
+                                              
+                                            </div>
+                                     </div>
+
+
+                            <!---
+                        <div class="item-content" id="actividadAccion"  style="border: none" >
+                                <div class="item-media"><i class="f7-icons">graph_round_fill</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Actividad</div>
+                                  
+                                </div>
+                         </div>  -->
+                         
+                        
+
+                          
+                         <div id="configuracionAccion" class="item-content" style="border: none" >
+                                <div class="item-media"><img src="img/menu-icons/configuracion.svg" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title menu-item-text">Configuracion</div>
+                                  
+                                </div>
+                         </div>
+                         <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
+                                <div class="item-media"><img src="img/menu-icons/SoporteTecnico.svg" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title menu-item-text">Soporte tecnico</div>
+                                  
+                                </div>
+                         </div>
+
+               <!--          <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
+                            <div class="item-media"><img src="img/menu-icons/CheckIn.png" class="menu-icon" ></div>
+                            <div class="item-inner">
+                              <div class="item-title">Check-in</div>
+                              
+                            </div>
+                     </div>  -->
+
+                     <div class="item-content" >
+
+                        <div class="item-media"><img src="img/menu-icons/planPremium.svg" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title menu-item-text" >Plan Premium</div>
+                                  
+                                </div>
+
+                 </div>
+                 <div class="item-content" id='AddSitio' >
+
+                        <div class="item-media"><img src="img/menu-icons/addsitio.svg" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title menu-item-text">Añadir Sitio</div>
+                                  
+                                </div>
+
+                 </div>
+                 <div class="item-content" id='salirApp' >
+
+                  <div class="item-media"><img src="img/menu-icons/addsitio.svg" class="menu-icon" ></div>
+                          <div class="item-inner">
+                            <div class="item-title menu-item-text">Salir</div>
+                            
+                          </div>
+
+           </div>
+            
+                        
+                      
+                         
+                      
+
+
+                  </li>
+                 
+                  
+
+
+                </ul>
+
+
+
+        </div>
+
+       
+          
+
+
+
+
+                </div>
+              </div>
+
+
+             
+<div class="views tabs tabs-animated-wrap" >
+
+    <div class="view view-principal  tab tab-active" id="view-principal" >
+
+        <div class="navbar" >
+
+            <div class="navbar-inner" >
+
+                    <div  class="left panel-open ios-only">
+                            <a href="/left-panel/" >
+                     <center>
+                      <img style="margin-top: 30%"  height="20" width="20"   src="img/iconos/menu_header.svg" >    
+                     </center>
+                            </a>
+      
+                          </div>
+      
+            <div  class="inputHeaderContent" >
+
+                  <div class="row ">
+<div class="col-15" >
+  <div class="icon-search-header" >
+    <img src="img/iconos/header.svg" height="10" width="10" >
+  </div>
+</div>
+<div class="col-65" >
+
+  
+
+    <input  id="inputHeader1" class="inputHeader" type="search"  placeholder="¿Qué quieres hacer hoy?" >
+   
+</div>
+
+<div class="col-20">
+   <img src="img/iconos/search_header.svg" height="10" width="10"  >
+</div>
+
+
+                  </div>
+            </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="toolbar toolbar-principal tabbar-labels">
+          <div class="toolbar-inner">
+            <a href="#view-favorito"  class="tab-link tab-link-active toolbar_favoritos">
+              <!-- Different icons for iOS and MD themes -->
+                <img  src="img/iconos/icon_top/favoritos.svg"  height="18" width="18" >
+              <!-- Label text -->
+              <span class="tabbar-label label-tab-principal">Favoritos</span>
+            </a>
+            <a   class="tab-link toolbar_social">
+                <img src="img/iconos/icon_top/social.svg" height="18" width="18"  >
+              <span class="tabbar-label label-tab-principal">Social</span>
+            </a>
+            <a href="#view-actividad"  class="tab-link toolbar_actividad">
+               <img src="img/iconos/icon_top/actividad.svg"  height="18" width="18"  >
+              <span class="tabbar-label label-tab-principal">Actividad</span>
+            </a>
+          </div>
+        </div>
+        <button  id="ReservarButton"  class="btn-float-reserva font-sm-3" >Reservar</button>
+
+
+
+
+
+<div class="page" >
+
+<div class="page-content content-pack" >
+
+
+<div id="vistaPrincipal"    >
+
+
+
+<div class="row padding-left padding-right"   >
+
+
+<div    class="col-20 " >
+  
+
+      <center> 
+        <img id="baresItem"  class="img-item-round-prueba"  src="img/iconos/icon_top/bar.svg" >
+      
+        <p class="text-item-round"  >Bares</p>
+        </center>     
+     
+</div>
+
+<div    class="col-20 " >
+  
+    
+          <center> 
+            <img id="restaurantesItem" class="img-item-round-prueba" src="img/iconos/icon_top/restaurante.svg"  >
+          
+         </center> 
+        
+          
+          <p class="text-item-round" >Restaurantes</p> 
+</div>
+
+<div    class="col-20 " >
+
+  <center> 
+    <img id="discotecasItem"  class="img-item-round-prueba" src="img/iconos/icon_top/discoteca.svg" >
+  
+ </center> 
+
+  <p class="text-item-round" >Discotecas</p> 
+
+ </div>
+
+ <div    class="col-20 " >
+  
+  <center> 
+        <img id="eventosItem"  class="img-item-round-prueba "  src="img/iconos/icon_top/evento.svg" >
+      
+        <p class="text-item-round" >Eventos</p>    
+        </center>   
+
+   
+
+</div>
+
+
+<div  class="col-100" >  
+ 
+
+
+</div>
+
+
+ 
+
+
+</div>
+<button id="btnBuscarPorAhora"  class="btn-Centered">Buscar en esta área</button>
+<div id="map" ></div>
+<center><img  id="swipeup-img" src="img/iconos/swipe_up.png" width="20" height="10" ></center>
+
+
+
+
+<div class="block" style="margin-top: -25px !important" id="RawList" >
+
+<div class="list media-list">
+<ul id="listasItem" >
+ <!-- <li class="card">
+    <div  class=" item-content ">
+      <div class="item-media"><img src="" class="img-list" /></div>
+      <div class="item-inner">
+        <div class="item-title-row">
+          <div class="item-title">Yellow Submarine</div>
+          <div class="item-after" ><img src="img/iconos/speech-bubble.png" style="margin-right: 4px" width="16" height="16" > <span class="badge color-black" >8.0</span> </div>
+        </div>
+        <div class="item-subtitle">
+       <div class="row">
+        <div class="col-100" style="overflow: scroll;overflow-x: hidden;overflow-y: hidden" ><label class="font_sm1"><img src="img/iconos/map-placeholder.png" >ubicacion</label></div>
+      
+       </div>
+
+        </div>
+        <div class="item-text">$ Precio</div>
+      </div>
+    </div>
+  </li>  -->
+ 
+</ul>
+
+</div>
+
+
+
+
+</div>
+
+</div> <!--Vista principal-->
+
+
+<div id="vistadetalle"  >
+
+
+
+
+    <div style="z-index: 3000" class="floated-detailItem" >
+    
+        <img id="btn-detalle-back" style="float: left;margin-left: 15px;" width="22" height="22"  src="img/iconos/back_row.png" >
+        <img id="imgHeart" style="float: right;margin-right: 25px"  src="img/iconos/heart.png" width="24" height="24" >
+    
+    
+    
+     
+    </div>
+    
+    <!--Init slider-->
+    
+    <div class="slider-pro slider-ubicacion" id="my-slider">
+        <div class="sp-slides">
+          <!-- Slide 1 -->
+          <div class="sp-slide">
+            <img class="sp-image" src="img/comidasItem.jpg"/>
+          </div>
+          <div class="sp-slide">
+              <img class="sp-image" src="img/bebidasItem.jpg"/>
+            </div>
+            <div class="sp-slide">
+                <img class="sp-image" src="img/comidasItem.jpg"/>
+              </div>
+              <div class="sp-slide">
+                  <img class="sp-image" src="img/comidasItem.jpg"/>
+                </div>
+                <div class="sp-slide">
+                    <img class="sp-image" src="img/comidasItem.jpg"/>
+                  </div>
+          
+      
+        </div>
+    
+        <div class="sp-thumbnails">
+            <img class="sp-thumbnail " src="img/comidasItem.jpg"/>
+            <img class="sp-thumbnail" src="img/bebidasItem.jpg"/>
+            <img class="sp-thumbnail" src="img/comidasItem.jpg"/>
+            <img class="sp-thumbnail" src="img/comidasItem.jpg"/>
+            <img class="sp-thumbnail" src="img/comidasItem.jpg"/>
+        
+          
+        
+           
+          </div>
+    
+    
+      </div>
+    
+    
+    <!--Fail Slider-->
+    <div  class="block" style="margin-top: 10px !important">
+    
+        <div class="row">
+            <div class="col-80" >
+            <label  id="nombreSitio"  class="text-detalle_x2 color-font" >Nombre del sitio</label>
+            </div>
+            <div class="col-20" >
+            <span  id="ratingSitio"  class="badge color-red text-detalle_x2" style="color: white" > 8.0</span>
+              </div>
+<div class="col-100" >
+<button  id="checkInChat"  class="col button button-small button-fill color-orange right font-sm-3">Check-in-chat</button>
+             
+
+</div>
+
+    <div class="col-100" style="margin-top: 15px" >
+    <label id="SitioAbierto" class="font-sm-2 color-font" >  </label>
+    <hr  class="line-menu" style="margin-top: 0px !important" >
+    </div>
+    <div class="col-70 " style="margin-top: 15px" >
+        <label class="font-sm-2 color-font" ><img src="img/iconos/comida.png" style="margin-right: 5px"  height="16" width="16" >Especialidad   </label>
+        <hr  class="line-menu" style="margin-top: 0px !important" >
+    </div>
+    <div id="menuItem" class="col-20" style="margin-top: 15px" >
+    <label  class="font-sm-3 " style="color:red;font-family: Arial, Helvetica, sans-serif" >Menu</label>
+    
+    </div>
+    
+    <div class="col-100 margin-top">
+    <label id="direccionSitio" class="font-sm-2 color-font" ></label>
+    <hr  class="line-menu" style="margin-top: 0px !important" >
+      </div>
+      <di id="divTomarControlSitio" hidden class="col-100 margin-top">
+       <button style="color: black;background: white"  id="tomarControlSitio" class="button " > Toma el control de este sitio</button>
+        <hr  class="line-menu" style="margin-top: 0px !important" >
+          </div>
+
+    
+      <div class="col-100">
+       
+          <img id="mapGoogle" src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyD0Bg2YOsO6fxAn5a7rNq9lMb723gEgLK0&center=62.107733,-145.541936&zoom=12&size=500x200&scale=2&markers=color:red%7Clabel:S%7C62.107733,-145.541936" class="margin-top" height="140px" width="100%" >
+    
+  
+      </div>
+      <div class="col-100">
+    <textarea class="font-sm-3 color-font" readonly id="textComentario" rows="3" placeholder="Escribe tu reseña" ></textarea>
+      </div>
+      <div class="col-100">
+        <div class="list media-list" style="position: relative;margin-top: -3%" >
+                <ul id="listComents" >
+               <!--   <li>
+                    <a href="#" class="item-link item-content">
+                      <div class="item-media"><img  width="46" height="46"/></div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title">Nombre Sitio</div>
+                          <div class="item-after">12-03-2018</div>
+                        </div>
+                        <div class="item-subtitle">rate yo</div>
+                        <div class="item-text">Texto Comentario</div>
+                      </div></a></li> -->
+                
+                </ul>
+              </div>
+</div>
+
+    
+    
+     </div>
+    
+    </div>
+    
+    
+  
+
+</div> <!--Fin vista detalle-->
+
+</div> <!--Page content-->
+
+
+
+
+
+</div>
+
+<!--PopUp Toma el control de este sitio-->
+<div class="popup pop-tomar-control-sitio">
+
+<div class="page" style="background: white">
+
+<div class="navbar">
+
+<div class="navbar-inner">
+<div class="left popup-close">
+<label class="font-sm-3" style="margin-right: 35px" >Atras</label>
+</div>
+<div class="title">
+Suritag-Clientes
+</div>
+
+<div class="right">
+
+  </div>
+
+
+
+
+
+</div>
+
+</div>
+
+<div class="page-content" style="background: white">
+
+    <div style="margin-top: 15%">
+
+        <div class="swiper-container swiper-container-tomar-control">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+           <div style="display: block;background: white;text-align: center;align-content: center;width: 70%;margin-left: auto;margin-right: auto" >
+              
+            <div class="row">
+ <div class="col-100">
+    <img src="img/iconos/UbicacionPermiso.png" style="margin-bottom: 30%" width="100%" height="150px" >
+    
+
+ </div>
+ <div class="col-100">
+    <label id="nombreSitioLabel" style="width: 100%" class="font-sm-4 margin-bottom">Nombre del sitio  </label>
+   
+ </div>
+ <div class="col-100">
+    <label style="width: 100%;align-self: initial !important;text-align: initial" class="font-sm-3" >descripcion del slider</label>
+  
+  </div>
+
+
+            </div>
+
+
+           </div>
+              </div>
+              <div class="swiper-slide">
+                  <div style="display: block;background: white;text-align: center;align-content: center;width: 70%;margin-left: auto;margin-right: auto" >
+                     
+                   <div class="row">
+        <div class="col-100">
+           <img src="img/iconos/lugares.png" style="margin-bottom: 30%" width="100%" height="150px" >
+           
+       
+        </div>
+        <div class="col-100">
+           <label style="width: 100%" class="font-sm-4 margin-bottom">Actualiza la informacion de tu negocio  </label>
+          
+        </div>
+        <div class="col-100">
+           <label style="width: 100%;align-self: initial !important;text-align: initial" class="font-sm-3" >descripcion del slider</label>
+         
+         </div>
+       
+       
+                   </div>
+       
+       
+                  </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div style="display: block;background: white;text-align: center;align-content: center;width: 70%;margin-left: auto;margin-right: auto" >
+                           
+                         <div class="row">
+              <div class="col-100">
+                 <img src="img/iconos/personas.png" style="margin-bottom: 30%" width="100%" height="150px" >
+                 
+             
+              </div>
+              <div class="col-100">
+                 <label style="width: 100%" class="font-sm-4 margin-bottom">Conoce a tus clientes</label>
+                
+              </div>
+              <div class="col-100">
+                 <label style="width: 100%;align-self: initial !important;text-align: initial" class="font-sm-3" >descripcion del slider</label>
+               
+               </div>
+             
+             
+                         </div>
+             
+             
+                        </div>
+                           </div>
+             
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination pagination-control-s"></div>
+          </div>
+
+      <div class="block" style="margin-bottom: 5px !important" >
+          <button id="btnRegistrarUsuarioCliente" class="button button-fill " >Toma el control de tu negocio</button>
+      </div>
+<hr style="width: 100%">
+<button id="cuentaBeforeCreated" class="button btn-transparent">¿ ya tienes una cuenta de empresa?</button>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+<!--Fin Poptup-->
+
+<!--Pop Up Comentarios-->
+<div class="popup pop-coment">
+  <div class="view">
+    <div class="page">
+      <div class="navbar">
+        <div class="navbar-inner inner-principal-popup "  >
+          <div class="left">
+   <img   class="popup-close   close-coment-pop" style="margin-right: 15%"  src="img/iconos/ic_logoApp.png" width="26" height="26" >
+          </div>
+          <div class="title-pop" >Añadir Comentarios</div>
+          <div class="right">
+            <!-- Link to close popup -->
+               </div>
+        </div>
+      </div>
+      <div class="page-content">
+     <div class="block" >
+ <div class="block-title font-sm-3" >Calificacion</div>
+ <div id="calificacionResena"></div>
+  
+
+       </div>
+<div class="block" >
+<div class="block-title font-sm-3"  >Comentario</div>
+
+<textarea   id="comentResena" style="width: 100%;background: white;"  rows="8" class="font-sm-2"  placeholder="escriba aqui su experiencia en este lugar" ></textarea>
+
+
+</div>
+
+<div class="block" >
+    <button  id="btnEnviarReseña" class="button button-fill color-orange" >Enviar Comentario</button>
+
+
+</div>
+
+
+      
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<!--Fin comentarios-->
+
+<!--Pop up Menu-->
+<div  class="popup popup-menu" > 
+
+  <div class="page" >
+
+    <div class="navbar">
+
+      <div class="navbar-inner inner-principal-popup">
+
+          <div class="left  popup-close">
+            <img  style="margin-right: 15%" width="25" height="25" src="img/iconos/back_row.png"  >
+
+          </div>
+          <div  class="title-pop"   id="title-menu"  >Menu</div>
+          <div class="right">
+
+
+          </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="page-content"  >
+
+        <div class="list media-list">
+            <ul id="lista-in-menu" >
+              <li>
+                <a href="#" class="item-link item-content">
+                  <div class="item-media"><img src="" width="50" /></div>
+                  <div class="item-inner">
+                    <div class="item-title-row">
+                      <div class="item-title title-menu-title">Nombre de la comida</div>
+                      <div class="item-after afther-price-menu-item">$10000</div>
+                    </div>
+                    <div class="item-subtitle">categoria</div>
+                    <div class="item-text">descripcion de la comida</div>
+                  </div></a></li>
+            
+             
+            </ul>
+          </div>
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+</div>
+
+
+<!--Fin PopUp Menu-->
+
+</div>
+
+<div  class="view view-favoritos tab"  id="view-favorito" >
+
+
+  <div class="navbar" >
+
+    <div class="navbar-inner" >
+
+            <div  class="left panel-open ios-only">
+                    <a href="/left-panel/" >
+             <center>
+              <img style="margin-top: 30%"  height="20" width="20"   src="img/iconos/menu_header.svg" >    
+             </center>
+                    </a>
+
+                  </div>
+
+    <div  class="inputHeaderContent" >
+
+          <div class="row ">
+<div class="col-15" >
+<div class="icon-search-header" >
+<img src="img/iconos/header.svg" height="10" width="10" >
+</div>
+</div>
+<div class="col-65" >
+
+
+
+<input  id="inputHeader2" class="inputHeader" type="search"  placeholder="¿Qué quieres hacer hoy?" >
+
+</div>
+
+<div class="col-20">
+<img src="img/iconos/search_header.svg" height="10" width="10"  >
+</div>
+
+
+          </div>
+    </div>
+
+
+    </div>
+
+</div>
+
+    <div class="toolbar toolbar-principal tabbar-labels">
+        <div class="toolbar-inner">
+          <a href="#view-favorito"  class="tab-link tab-link-active toolbar_favoritos">
+            <!-- Different icons for iOS and MD themes -->
+              <img  src="img/iconos/icon_top/favoritos.svg" height="18" width="18" >
+            <!-- Label text -->
+            <span class="tabbar-label label-tab-principal">Favoritos</span>
+          </a>
+          <a   class="tab-link toolbar_social">
+              <img src="img/iconos/icon_top/social.svg" height="18" width="18"  >
+            <span class="tabbar-label label-tab-principal">Social</span>
+          </a>
+          <a href="#view-actividad"  class="tab-link toolbar_actividad">
+             <img src="img/iconos/icon_top/actividad.svg"  height="18" width="18"  >
+            <span class="tabbar-label label-tab-principal">Actividad</span>
+          </a>
+        </a>
+        <a href="#view-principal" style="display: none"  hidden  class="tab-link toolbar_principal">
+           <img src="img/iconos/icon_top/actividad.svg"  height="18" width="18"  >
+          <span class="tabbar-label label-tab-principal">Actividad</span>
+        </a>
+        </div>
+      </div>
+
+    <div class="page">
+
+<div  class="page-content">
+
+
+  <div  id="content-list-favoritos" >
+
+    
+<div class="list media-list">
+    <ul id="listas-item-favoritos" >
+      <li class="card">
+        <div  class=" item-content ">
+          <div class="item-media"><img src="" class="img-list" /></div>
+          <div class="item-inner">
+            <div class="item-title-row">
+              <div class="item-title">Yellow Submarine</div>
+              <div class="item-after" ><img src="img/iconos/speech-bubble.png" style="margin-right: 4px" width="16" height="16" > <span class="badge color-black" >8.0</span> </div>
+            </div>
+            <div class="item-subtitle">
+           <div class="row">
+            <div class="col-100" style="overflow: scroll;overflow-x: hidden;overflow-y: hidden" ><label class="font_sm1"><img src="img/iconos/map-placeholder.png" >ubicacion</label></div>
+          
+           </div>
+    
+            </div>
+            <div class="item-text">$ Precio</div>
+          </div>
+        </div>
+      </li>
+     
+    </ul>
+    
+    </div>
+
+
+  </div>
+  <div id="content-presentacionFavoritos" class="content-presentacion-favoritos">
+<div class="block block-favorito">
+<center>
+
+   <img src="img/iconos/lugares.png" width="250" height="180" >
+
+   <p class="font_x3 margin" style="align-content: center;color: black;font-weight: 900" >Guarda aquí tus sitios y
+      eventos favoritos</p>
+
+      <p class="font_x1">Así estarás actualizado y sabrás lo que
+          sucede con ellos</p>
+
+     <button class="button-buscar-favoritos">Buscar favoritos</button>     
+</center>
+
+</div>
+  </div> 
+
+
+
+
+</div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<div  class="view  view-actividad  tab"  id="view-actividad" >
+
+  <div class="navbar" >
+
+    <div class="navbar-inner" >
+
+            <div  class="left panel-open ios-only">
+                    <a href="/left-panel/" >
+             <center>
+              <img style="margin-top: 30%"  height="20" width="20"   src="img/iconos/menu_header.svg" >    
+             </center>
+                    </a>
+
+                  </div>
+
+    <div  class="inputHeaderContent" >
+
+          <div class="row ">
+<div class="col-15" >
+<div class="icon-search-header" >
+<img src="img/iconos/header.svg" height="10" width="10" >
+</div>
+</div>
+<div class="col-65" >
+
+
+
+<input id="inputHeader3" class="inputHeader" type="search"  placeholder="¿Qué quieres hacer hoy?" >
+
+</div>
+
+<div class="col-20">
+<img src="img/iconos/search_header.svg" height="10" width="10"  >
+</div>
+
+
+          </div>
+    </div>
+
+
+    </div>
+
+</div>
+    <div class="toolbar toolbar-principal tabbar-labels">
+        <div class="toolbar-inner">
+          <a href="#view-favorito"  class="tab-link tab-link-active toolbar_favoritos">
+            <!-- Different icons for iOS and MD themes -->
+              <img  src="img/iconos/icon_top/favoritos.svg" height="18" width="18" >
+            <!-- Label text -->
+            <span class="tabbar-label label-tab-principal">Favoritos</span>
+          </a>
+          <a  class="tab-link toolbar_social">
+              <img src="img/iconos/icon_top/social.svg" height="18" width="18"  >
+            <span class="tabbar-label label-tab-principal">Social</span>
+          </a>
+          <a href="#view-actividad"  class="tab-link toolbar_actividad">
+             <img src="img/iconos/icon_top/actividad.svg"  height="18" width="18"  >
+            <span class="tabbar-label label-tab-principal">Actividad</span>
+          </a>
+        </div>
+      </div>
+
+
+    <div class="page">
+
+        <div class="page-content" >
+
+            <div class="row"  >
+            
+            
+            
+            <div class="col-100">
+            
+                <div class="list media-list">
+                    <ul id="listOfertas" >
+                  <!--    <li>
+                        <a href="#" class="item-link item-content">
+                          <div class="item-media"><img src="http://lorempixel.com/160/160/people/1" width="80"/></div>
+                          <div class="item-inner">
+                            <div class="item-title-row">
+                              <div class="item-title">Yellow Submarine</div>
+                              <div class="item-after">$15</div>
+                            </div>
+                            <div class="item-subtitle">Beatles</div>
+                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+                          </div>
+                        </a>
+                      </li>  -->
+                    
+                    </ul>
+                  </div>
+            
+            
+            
+            
+            </div>
+            
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            </div>
+
+      
+    </div>
+
+
+
+</div>
+
+
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    
+<script src="libs/slider/js/jquery.sliderPro.min.js" ></script>
+<script  src="libs/framework7/js/framework7.min.js" ></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="js/view_principal.js" ></script> 
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0Bg2YOsO6fxAn5a7rNq9lMb723gEgLK0&libraries=places&callback=initialize">
+</script>
+
+</body>
+</html>

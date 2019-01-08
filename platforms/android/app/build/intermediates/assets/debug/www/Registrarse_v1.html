@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#2196f3">
+
+        <link rel="stylesheet"  href="css/app.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+       
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+        <title>Principal</title>
+
+</head>
+<body  >
+    
+<div id="app" >
+
+
+    <div class="view">
+
+<div  class="navbar theme-color">
+
+    <div class="navbar-inner">
+
+            <div class="left back">
+              <i class="f7-icons icon_nav" >arrow_left</i>  
+                
+            </div>
+            <div class="title" >Registro</div>
+
+            <div class="right">
+
+            </div>
+           
+
+    </div>
+
+</div>
+
+<div class="page">
+
+
+<div class="page-content">
+
+<div class="block" >
+
+   <button class="btnLogin " style="background: blue !important; border: none !important;color: white !important;margin-top: 6%;margin-bottom: 6%" > <i class="f7-icons" style="color: white" >  social_facebook</i> Ingresar con facebook</button>
+     
+   <div class="list no-hairlines">
+        <ul>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <input type="text" id="nombreUser"  placeholder="Nombre" required validate >
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <input type="text"  id="apellido"  placeholder="Apellido" required validate >
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <input type="email" id="correoUser"  placeholder="Email"  required validate >
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <input type="number" id="telefotoUser"  placeholder="Telefono"  required validate >
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+<p>
+     <label class="radio"><input type="radio" name="demo-radio-inline"><i style="color: #C13008 !important"  class="icon-radio"></i></label>
+    <a href="#" >Acepto recibir notificaciones, promociones,
+            descuentos y otros beneficios</a>
+    </p>
+
+    <button id="subirImagenesBtn"  class="button-fill btn primary-color font_x3" >Registrarme</button>
+
+<p class="margin-top">
+
+    Soy mayor de edad y acepto todas los Terminos y
+    Condiciones. Permito que mis datos personales
+    puedan ser usados y recolectados con sujecion a los
+    terminos establecidos en la politica de privacidas de
+    Surita
+
+</p>
+
+     
+</div>
+
+
+</div>
+
+</div>
+
+
+    </div>
+
+
+     
+</div>
+
+
+
+
+
+
+<script  src="libs/framework7/js/framework7.min.js" ></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="js/registroManual.js" ></script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#2196f3">
+
+        <link rel="stylesheet"  href="../css/app.css" >
+        <link rel="stylesheet" href="../libs/framework7/css/framework7-icons.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+       <script  type="text/javascript" src="../libs/jquery-3.3.1.min.js" ></script>
+        <script src="../libs/firebase.js"></script>
+       <script src="../js/dataBase.js" ></script>
+        <title>Principal</title>
+
+</head>
+<body  >
+    
+<div id="app" >
+
+
+    <div  class="view view-portada" >
+<div class="page page-portada" >
+
+<div  class="page-content page-content-portada no-navbar no-toolbar no-swipeback ">
+
+
+    <center>
+
+        <img class="imgPortada"   src="../img/iconos/logo-portada-f-transparente.png"   >
+        
+                </center>
+
+</div>
+
+</div>
+
+
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+    <script  src="../libs/framework7/js/framework7.min.js" ></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+
+
+    <script>
+
+  app.views.create(".view-portada",{
+
+on:{
+    pageInit:function(){
+
+
+   setTimeout(function () {
+       
+ var  textC =  localStorage.getItem("config");
+
+  if(textC == null)
+{
+    window.location = "Portada2.html";
+}else{
+    var config = JSON.parse( textC );
+
+  if(config.logged == true){
+    window.location = "../View_Principal.html";
+  }else{
+    window.location = "../login_v1.html";
+
+  };
+
+   
+}
+
+  
+
+
+        
+     
+        
+         },2500);
+
+
+    }
+}
+
+  });
+
+    
+     
+        
+        </script>
+  
+</body>
+</html>

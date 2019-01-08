@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#2196f3">
+
+        <link rel="stylesheet"  href="css/app.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+       
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+        <title>Principal</title>
+
+</head>
+<body>
+
+
+<div id="app">
+
+
+        <div class="panel panel-left panel-reveal">
+            <div class=" header-infor-menu">
+
+              <div class="content-header-info" >
+              
+                  <img class="rounded img-content-header" >
+                  <div class="info-header-text" >
+                   <label class="nombre-content-header"  >yarlet figeroa</label>
+                    <p class="correo-info" >yarlet@gmail.com</p>
+                    <button class="button-headeer-content" >Cartagena</button>
+                  </div>
+
+              </div>
+
+              </div>
+              <hr class="line-menu" >
+
+                <div class="block">
+            
+              
+              <div class="list ">
+
+                <ul>
+                  <li>
+
+                                <div  id="principalAccion" class="item-content" style="border: none" >
+                                                <div class="item-media"><img src="img/menu-icons/Principal.png" class="menu-icon" ></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title">Principal</div>
+                                                  
+                                                </div>
+                                         </div>
+
+                                         <div id="ReservasAccion"  class="item-content" style="border: none" >
+                                            <div class="item-media"><img src="img/menu-icons/reserva.png" class="menu-icon" ></div>
+                                            <div class="item-inner">
+                                              <div class="item-title">Reservas</div>
+                                              
+                                            </div>
+                                     </div>
+
+
+                            <!---
+                        <div class="item-content" id="actividadAccion"  style="border: none" >
+                                <div class="item-media"><i class="f7-icons">graph_round_fill</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Actividad</div>
+                                  
+                                </div>
+                         </div>  -->
+                         
+                        
+
+                          
+                         <div id="configuracionAccion" class="item-content" style="border: none" >
+                                <div class="item-media"><img src="img/menu-icons/configuracion.png" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Configuracion</div>
+                                  
+                                </div>
+                         </div>
+                         <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
+                                <div class="item-media"><img src="img/menu-icons/SoporteTecnico.png" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Soporte tecnico</div>
+                                  
+                                </div>
+                         </div>
+
+                         <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
+                            <div class="item-media"><img src="img/menu-icons/CheckIn.png" class="menu-icon" ></div>
+                            <div class="item-inner">
+                              <div class="item-title">Check-in</div>
+                              
+                            </div>
+                     </div>
+
+                     <div class="item-content" >
+
+                        <div class="item-media"><img src="img/menu-icons/planPremium.png" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Plan Premium</div>
+                                  
+                                </div>
+
+                 </div>
+                 <div class="item-content" id='AddSitio' >
+
+                        <div class="item-media"><img src="img/menu-icons/addsitio.png" class="menu-icon" ></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Añadir Sitio</div>
+                                  
+                                </div>
+
+                 </div>
+            
+                        
+                      
+                         
+                      
+
+
+                  </li>
+                 
+                  
+
+
+                </ul>
+
+
+
+        </div>
+
+       
+          
+
+
+
+
+                </div>
+              </div>
+
+
+    <div class="view view-principal" >
+
+            <div class="navbar" >
+
+                <div class="navbar-inner" >
+
+                        <div  class="left panel-open ios-only">
+                                <a href="/left-panel/" >
+                              <img  src="img/iconos/menu_header.png" >    
+                                </a>
+          
+                              </div>
+          
+                <div  class="inputHeaderContent" >
+                      <div class="row rowA">
+<div class="col-15" >
+      <div class="icon-search-header" >
+        <img src="img/iconos/header.png" >
+      </div>
+</div>
+<div class="col-65" >
+
+        <input  id="inputHeader" type="text"  placeholder="¿Qué quieres hacer hoy?" >
+       
+</div>
+
+<div class="col-20">
+       <img src="img/iconos/search_header.png" >
+</div>
+
+
+                      </div>
+                </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="toolbar toolbar-principal tabbar-labels">
+              <div class="toolbar-inner">
+                <a href="#tab-1" id="toolbar_favoritos" class="tab-link tab-link-active">
+                  <!-- Different icons for iOS and MD themes -->
+                    <img  src="img/iconos/icon_top/favoritos.png" >
+                  <!-- Label text -->
+                  <span class="tabbar-label label-tab-principal">Favoritos</span>
+                </a>
+                <a href="#tab-2" id="toolbar_social" class="tab-link">
+                    <img src="img/iconos/icon_top/social.png" >
+                  <span class="tabbar-label label-tab-principal">Social</span>
+                </a>
+                <a href="#tab-3" id="toolbar_actividad" class="tab-link">
+                   <img src="img/iconos/icon_top/acrividad.png" >
+                  <span class="tabbar-label label-tab-principal">Actividad</span>
+                </a>
+              </div>
+            </div>
+
+
+
+<div class="page" >
+
+<div class="page-content content-pack" >
+
+<div class="row" >
+
+<div  id="baresItem" class="col-20 rounded-item card" >
+
+ <center>
+  <img src="img/iconos/icon_top/bar.png"  >
+  <p class="text-item-round" >Bares</p> 
+ </center>
+ 
+</div>
+
+<div id="restaurantesItem"  class="col-20 rounded-item card" >
+ <center> <img src="img/iconos/icon_top/restaurante.png"  >
+          <p class="text-item-round" >Restaurantes</p>  
+</center>
+    </div>
+  
+<div  id="discotecasItem"  class="col-20 rounded-item card" >
+  <center> <img src="img/iconos/icon_top/discoteca.png" >
+    <p class="text-item-round" >Discotecas</p> 
+  </center>
+     </div>
+     
+ 
+<div id="eventosItem" class="col-20 rounded-item card" >
+  <center> <img src="img/iconos/icon_top/evento.png" >
+    <p class="text-item-round" >Eventos</p> 
+  </center>
+     </div>
+     
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    
+
+<script  src="libs/framework7/js/framework7.min.js" ></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<!--<script src="js/registroManual.js" ></script>-->
+
+</body>
+</html>

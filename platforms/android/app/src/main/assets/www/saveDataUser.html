@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+
+
+    <title>Page Title</title>
+
+   
+    <link rel="stylesheet"  href="css/app.css" >
+    <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
+   
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script  rel="stylesheet" src="libs/jquery-3.3.1.min.js" ></script>
+
+    <style>
+    .navbar{
+   background:  #CB4309 !important;
+   color: white;
+
+    }
+    .navbar-inner{
+   background:  #CB4309 !important;
+   color: white;
+
+    }
+
+    </style>
+      
+
+</head>
+<body>
+    
+<div id="app" >
+
+    <div class="statusbar"></div>
+
+<div class="view view-facebookDatos" >
+
+<div class="page" >
+
+
+
+    <div class="navbar" >
+
+<div class="navbar-inner" >
+
+    <div class="left " >
+<img  width="24" height="24"  src="img/iconos/ic_logoApp.png"  >
+
+
+    </div>
+        <div class="title">Bievenido a Suritag</div>
+    <div class="rigth">
+
+
+    </div>
+
+
+</div>
+
+    </div>
+
+
+<div  class="page-content">
+
+        <div class="block-title">Datos basicos del usuario</div>
+        <div class="list no-hairlines-md">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Nombre</div>
+                <div class="item-input-wrap">
+                  <input type="text" id="nombre" placeholder="Tu nombre" required validate>
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Correo</div>
+                <div class="item-input-wrap">
+                  <input type="email" id="Correo"  placeholder="Tu  correo" required validate>
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Telefono</div>
+                <div class="item-input-wrap">
+                  <input type="number" id="Telefono" placeholder="Tu telefono" required validate>
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          
+          </ul>
+        </div>
+
+        <button  id="saveData"  class="col button button-fill color-orange">Finalizar y Continuar</button>
+
+
+
+</div><!--Page Content end-->
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+<script  src="libs/framework7/js/framework7.min.js" ></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script src="js/SaveDataUser.js" ></script>
+</body>
+</html>
