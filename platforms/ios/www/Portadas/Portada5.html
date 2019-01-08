@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#2196f3">
+
+        <link rel="stylesheet"  href="../css/app.css" >
+        <link rel="stylesheet" href="../libs/framework7/css/framework7-icons.css">
+        <script src="../libs/firebase.js"></script>
+        <script  type="text/javascript" src="../libs/jquery-3.3.1.min.js" ></script>
+        <script src="../js/dataBase.js" ></script>
+        <title>Principal</title>
+
+</head>
+<body  >
+    
+<div id="app" >
+
+
+    <div  class="view viewPortada5" >
+        <div class="page page-portada_intro" >
+
+            <div  class="page-content page-content-intro    no-navbar no-toolbar no-swipeback">
+            
+
+    <img  class="imgHeader" src="../img/iconos/header-intro-logo.png" >
+
+
+<div class="intro-content" >
+
+<center>
+
+    <img class="imgIntro" src="../img/iconos/descuentp.png"  >
+
+  <b>  <h4 id="texttitle" >Con las mejores promociones</h4></b>
+ <p id="textSubtitle"   >Mantente al tanto de todas promociones y descuentos, para que disfrutes tu salida al mejor precio</p>
+
+</center>
+
+</div>
+
+<div class="row footherIntro" >
+
+    <div class="col-50" >
+<div class="display-inline">
+<div class="rounded-content-item" ></div>
+<div class="rounded-content-item" ></div>
+<div class="rounded-content-item-selected" ></div>
+<div class="rounded-content-item" ></div>
+<div class="rounded-content-item" ></div>
+
+
+
+
+</div>
+</div>
+
+    <div class="col-50" >
+<button class="button-small button-intro  color-white" >continuar  </button>
+    </div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+    <script  src="../libs/framework7/js/framework7.min.js" ></script>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+
+    
+
+    <script>
+
+        app.views.create(".viewPortada5",{
+        
+        on:{
+        
+        pageInit:function () { 
+        
+           $$(".button-intro").click(function (evt) { 
+        window.location = "Portada6.html";
+        
+        
+            }); 
+        
+         }
+        
+        }
+        
+        });
+        
+        
+        
+        </script>
+
+  
+</body>
+</html>
