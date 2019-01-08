@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#2196f3">
+
+        <link rel="stylesheet"  href="css/app.css" >
+        <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+       
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+
+        <title>Principal</title>
+
+</head>
+<body>
+    
+<div id="app" >
+
+        <div class="statusbar"></div>
+
+        <div class="panel panel-left panel-reveal">
+                <div class="block">
+              <div class="card" style="height: 100px">
+
+              </div>
+              
+              <div class="list">
+
+                <ul>
+                  <li>
+
+                                <div  id="principalAccion" class="item-content" style="border: none" >
+                                                <div class="item-media"><i class="f7-icons">home_fill</i></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title">Principal</div>
+                                                  
+                                                </div>
+                                         </div>
+
+
+                        <div class="item-content" id="actividadAccion"  style="border: none" >
+                                <div class="item-media"><i class="f7-icons">graph_round_fill</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Actividad</div>
+                                  
+                                </div>
+                         </div>
+                         
+                         <div id="ReservasAccion"  class="item-content" style="border: none" >
+                                <div class="item-media"><i class="f7-icons">today_fill</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Reservas</div>
+                                  
+                                </div>
+                         </div>
+
+                          
+                         <div id="configuracionAccion" class="item-content" style="border: none" >
+                                <div class="item-media"><i class="f7-icons">gear_fill</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Configuracion</div>
+                                  
+                                </div>
+                         </div>
+                         <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
+                                <div class="item-media"><i class="f7-icons">info_fill</i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">Soporte tecnico</div>
+                                  
+                                </div>
+                         </div>
+            
+                         
+                      
+
+
+                  </li>
+                  <li class="item-divider"></li>
+                  <li>
+                        <div class="item-content" >
+
+                                <div class="item-media"><i class="f7-icons">bolt_round_fill</i></div>
+                                        <div class="item-inner">
+                                          <div class="item-title">Plan Premium</div>
+                                          
+                                        </div>
+        
+                         </div>
+                         <div class="item-content" id='AddSitio' >
+        
+                                <div class="item-media"><i class="f7-icons">add_round_fill</i></div>
+                                        <div class="item-inner">
+                                          <div class="item-title">Añadir Sitio</div>
+                                          
+                                        </div>
+        
+                         </div>
+
+
+                  </li>
+
+
+                </ul>
+
+
+
+        </div>
+
+       
+          
+
+
+
+
+                </div>
+              </div>
+
+
+
+
+<div  class="view view-buscar" >
+
+     
+
+
+
+<div class="page"  data-name="buscar"  >
+
+        <div class="navbar">
+                <div class="navbar-inner">
+                   
+                    <div  class="left panel-open ios-only">
+                      <a href="/left-panel/" >
+                            <i class="f7-icons">bars</i>
+                      </a>
+
+                    </div>
+
+                    <div  class="left panel-open md-only md-android-nav">
+                      <a href="/left-panel/" >
+                            <i class="f7-icons">bars</i>
+                      </a>
+
+                    </div>
+
+
+
+
+                  <div class="title">Awesome App</div>
+                 
+                
+
+
+                </div>
+              </div>
+
+            
+
+
+              <div class="toolbar tabbar-labels no-shadow ">
+                  <div class="toolbar-inner">
+                    <a href="#" id="toolbarItemCercadeMi" class="tab-link ">
+                      <!-- Different icons for iOS and MD themes -->
+                      <i class="icon f7-icons ios-only">social_rss_fill</i>
+                      <i class="icon f7-icons md-only">social_rss</i>
+                      <!-- Label text -->
+                      <span class="tabbar-label ios-only">Cerca de mi</span>
+                      <span class="tabbar-label md-only tabbar-label-android">Cerca de mi</span>
+                    </a>
+                    <a href="#" id="toolbarItemBuscar"  class="tab-link">
+                      <i class="icon f7-icons ios-only">search_strong</i>
+                      <i class="icon f7-icons md-only">search</i>
+                      <span class="tabbar-label ios-only">Buscar</span>
+                      <span class="tabbar-label md-only tabbar-label-android">Buscar</span>
+                   
+                    </a>
+                    <a href="#" id="toolbarItemSocial" class="tab-link">
+                      <i class="icon f7-icons ios-only">person_fill</i>
+                      <i class="icon f7-icons md-only">person</i>
+                      <span class="tabbar-label ios-only">Social</span>
+                      <span class="tabbar-label  md-only tabbar-label-android">Social</span>
+                    </a>
+                    <a href="#" id="toolbarItemActividad" class="tab-link">
+                          <i class="icon f7-icons ios-only">graph_round_fill</i>
+                          <i class="icon f7-icons md-only">graph_round</i>
+                          <span class="tabbar-label ios-only">Actividad</span>
+                          <span class="tabbar-label md-only tabbar-label-android">Actividad</span>
+                        </a>
+                        <a href="#" id="toolbarItemColecciones" class="tab-link selected ">
+                              <i class="icon f7-icons ios-only">bookmark_fill</i>
+                              <i class="icon f7-icons md-only">bookmark</i>
+                              <span class="tabbar-label ios-only">Favoritos</span>
+                              <span class="tabbar-label md-only tabbar-label-android">Favoritos</span>
+                         </a>
+                     </div>
+                    </div>
+
+                    <form   class="searchbar">
+                      <div class="searchbar-inner">
+                        <div class="searchbar-input-wrap">
+                          <input type="search" placeholder="Search">
+                          <i class="searchbar-icon"></i>
+                          <span class="input-clear-button"></span>
+                        </div>
+                        <span class="searchbar-disable-button">Cancel</span>
+                      </div>
+                    </form>
+
+
+
+<div class="page-content" >
+
+    <div class="searchbar-backdrop"></div>
+    <div class="block searchbar-hide-on-search">
+      <p>Suritag App filtra en tu Historial de Busqueda</p>
+    </div>
+
+    <div class="list searchbar-found">
+      <ul id="listaItemsSearch" >
+        
+        <li>
+          <div class="item-content item-positicionP">
+            <div class="item-media"> <i style="color:blue" class="fas fa-map-marker-alt"></i> </div>
+            <div class="item-inner">
+              <div class="item-title">Mi posicion actual </div>
+              <!--<div class="item-after">CEO</div> -->
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="item-content item-restaurantes">
+            <div class="item-media"> <i class="fas fa-utensils"></i> </div>
+            <div class="item-inner">
+              <div class="item-title">Restaurantes</div>
+              <!--<div class="item-after">CEO</div> -->
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content item-bares">
+            <div class="item-media"> <i class="fas fa-beer"></i> </div>
+            <div class="item-inner">
+              <div class="item-title">Bares</div>
+              <!--<div class="item-after">CEO</div> -->
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content  item-discotecas">
+            <div class="item-media"> <i class="fas fa-music"></i>  </div>
+            <div class="item-inner">
+              <div class="item-title">Discotecas</div>
+              <!--<div class="item-after">CEO</div> -->
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="item-content  item-hoteles ">
+            <div class="item-media"> <i class="fas fa-hotel"></i></div>
+            <div class="item-inner">
+              <div class="item-title">Hoteles</div>
+              <!--<div class="item-after">CEO</div> -->
+            </div>
+          </div>
+        </li>
+       
+
+
+ 
+      </ul>
+    </div>
+
+    <div class="block searchbar-not-found">
+      <div class="block-inner">Nothing found</div>
+    </div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+    
+</div>
+
+
+
+
+
+
+    <script  src="libs/framework7/js/framework7.min.js" ></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/Buscar.js"  ></script>
+    
+</body>
+</html>
