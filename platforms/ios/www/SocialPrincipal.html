@@ -7,9 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <!-- Color theme for statusbar -->
-        <meta name="theme-color" content="#2196f3">
+        <meta name="theme-color" content="#e30b50">
 
         <link rel="stylesheet"  href="css/SocialMedia.css" >
+        <link rel="stylesheet"  href="css/css/estilo.css">
+
         <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
          <link rel="stylesheet" href="libs/slider/css/slider-pro.min.css" >
@@ -25,32 +27,26 @@
 
     .social-label{
         color: black;font-size: 12px;overflow: scroll;overflow: hidden;
-
     }
 
     .header-social{
         width: 100%;
-        height: 100px;
-      
-        padding-bottom: 5px;
-      
+        height: 80px;
     }
 
   .swiper-container {
       width: 100%;
       height: 100%;
+      padding: 10px;
     }
 
   .subnavbar{
    height: 100px !important ; 
    background: white !important;
    position: static !important;
-
-
   }  
   .subnavbar-inner{
    background:  white !important;
-
   }
 
 
@@ -107,14 +103,14 @@ width: 400px;
 
 }
 .navbar{
-    background: white !important;
+    background: #e30b50 !important;
     color: white;
-    height: 8% !important;
+    height: 9% !important;
+
+    
 }
 .navbar-inner{
-    background:  white !important;
-    color: #CB4309 ;
-   
+    background:   #e30b50 !important;   
 }
 
 .historial-title{
@@ -169,7 +165,7 @@ border-radius: 50%;
 
 .demo-facebook-card .card-header {
   display: block;
-  padding: 10px;
+  
 }
 .demo-facebook-card .demo-facebook-avatar {
   float: left;
@@ -177,12 +173,15 @@ border-radius: 50%;
 .demo-facebook-card .demo-facebook-name {
   margin-left: 44px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  filter: opacity(70%);
 }
 .demo-facebook-card .demo-facebook-date {
   margin-left: 44px;
-  font-size: 13px;
+  font-size: 10px;
   color: #8e8e93;
+  font-weight: 400;
+  filter: opacity(70%);
 }
 .demo-facebook-card .card-footer {
   background: #fafafa;
@@ -193,28 +192,29 @@ border-radius: 50%;
 }
 .demo-facebook-card .card-content img {
   display: block;
+
 }
 .demo-facebook-card .card-content-padding {
   padding: 15px 10px;
 }
-.demo-facebook-card .card-content-padding .likes {
+.demo-facebook-card 
+.likes {
   color: #8e8e93;
+  font-size: 12px;
+
+
 }
 
 .historia-img{
   border-radius: 50%;
-  border-color: #C13008;
-  border-style: solid;
-  border-width: 2px;
-  padding: 3px;
-  
+ 
 }
 
 </style>
 
 <body>
     
-<div id="app" >
+<div id="app">
 
         <div class="statusbar"></div>
 
@@ -226,13 +226,13 @@ border-radius: 50%;
       <!-- vista principal -->
       <div class="view view-main tab tab-active" id="view-1">
 
-          <div class="page content-view"  data-name="principal"  >
+          <div class="page content-view"  data-name="principal">
 
-              <div class="navbar">
+              <div class="navbar" style="background: #e30b50;">
                       <div class="navbar-inner">
                          <div id="closeSocial"  class="left">
                           
-                             <img src="img/icons-social/atras.png" height="26" width="26" >
+                             <img src="img/icons-social/flecha_2.svg" height="20" width="20" >
                          
                          </div>
                        
@@ -292,20 +292,23 @@ border-radius: 50%;
           <!--Contenido V-->
        
             <div id="social-Content" >
-<!--
-                <div class="card demo-facebook-card">
+
+                <div class="card demo-facebook-card" style="margin: 0px">
                     <div class="card-header">
                       <div class="demo-facebook-avatar"><img src="img/iconos/user_defaultProfile.png" width="34" height="34"/></div>
                       <div class="demo-facebook-name">John Doe</div>
                       <div class="demo-facebook-date">2018/06/05 10:15 </div>
                     </div>
-                    <div class="card-content card-content-padding">
-                      <p>What a nice photo i took yesterday!</p>
+                    <div class="card-content">
+                      
                       <img src="img/bebidasItem.jpg" width="100%"/>
-                      <p class="likes">Me gusta: 112 &nbsp;&nbsp; Comentarios: 43 &nbsp;&nbsp; compartido: 0 </p>
+                      <div>
+                        <p>What a nice photo i took yesterday!</p>
+                        <p class="likes">Me gusta: 112 &nbsp;&nbsp; Comentarios: 43 &nbsp;&nbsp; compartido: 0 </p>
+                      </div>
                     </div>
                     <div class="card-footer"><a href="#" class="link">Me gusta</a><a href="#" class="link">Comentar</a><a href="#" class="link">compartir</a></div>
-                  </div>  -->
+                  </div> 
 
 
             </div>  <!--Contenido Scial-->
