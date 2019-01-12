@@ -1,7 +1,4 @@
-::root{
-  --color_principal: #e30b50;
-  --color_negroazul:#656c7a;
-}
+
 
 /* Versiones de Css*/
 
@@ -991,6 +988,7 @@ background:#C13008  !important;
 
 }
 
+/*
 .font-sm-1{
   font-size: 2.6vw !important;
 }
@@ -1015,7 +1013,7 @@ background:#C13008  !important;
 .font-sm-5{
   font-size: 5vw !important;
 }
-
+*/
 .transform-list{
   text-transform: capitalize !important;
 }
