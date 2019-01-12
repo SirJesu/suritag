@@ -115,14 +115,18 @@ navigator.geolocation.getCurrentPosition(function (data) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
            alert("Usted ha denegado el permiso de ubicacion, debera activarlo manualmente despues");
+            window.location = "../login_v1.html";
             break;
         case error.POSITION_UNAVAILABLE:
+             window.location = "../login_v1.html";
             // La ubicación no está disponible.
             break;
         case error.TIMEOUT:
+            window.location = "../login_v1.html";
             // Se ha excedido el tiempo para obtener la ubicación.
             break;
         case error.UNKNOWN_ERROR:
+            window.location = "../login_v1.html";
             // Un error desconocido.
             break;
     } 
