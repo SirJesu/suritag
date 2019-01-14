@@ -132,10 +132,12 @@ box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
   transition: 0.3s;
   filter: opacity(80%);
 }
+/*
 .item-title:hover, .menu-icon:hover{
   transition: 0.3s;
   filter: opacity(100%);
 }
+*/
 .item-content{
   border: none;
   margin-left: 0px;
@@ -217,26 +219,32 @@ box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
                 <ul>
                   <li>
 
-                                <div  id="principalAccion" class="item-content panel-close">
-                                  <a style="color: #6d6d72 !important" class="tab-link" href="#view-principal" >    
-                                  <div class="item-media"><img src="img/menu-icons/Principal.svg" class="menu-icon" ></div>
-                                                <div class="item-inner">
-                                                  <div class="item-title menu-item-text">Principal</div>
-                                                  
-                                                </div>
-                                              </a>
-                                         </div> 
+                    <div  id="principalAccion" class="item-content panel-close">
+                         <a style="color: #6d6d72 !important" class="tab-link" href="#view-principal" >    
+                                  
+                             <div class="item-media">
+                                <img src="img/menu-icons/Principal.svg" class="menu-icon" >
+                             </div>
 
-                                         <div id="ReservasAccion"  class="item-content" style="" >
-                                            <div class="item-media"><img src="img/menu-icons/reserva.svg" class="menu-icon" ></div>
-                                            <div class="item-inner">
-                                              <div class="item-title menu-item-text">Reservas</div>
-                                              
-                                            </div>
-                                     </div>
+                              <div class="item-inner">
+                                <div class="item-title menu-item-text">Principal</div>                     
+                              </div>
+                          </a>
+                    </div> 
 
 
-                            <!---
+                    <div id="ReservasAccion"  class="item-content">
+                        <div class="item-media">
+                          <img src="img/menu-icons/reserva.svg" class="menu-icon">
+                        </div>
+
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Reservas</div>
+                        </div>
+                    </div>
+
+
+                    <!---
                         <div class="item-content" id="actividadAccion"  style="border: none" >
                                 <div class="item-media"><i class="f7-icons">graph_round_fill</i></div>
                                 <div class="item-inner">
@@ -251,54 +259,65 @@ box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
                               <div class="item-title">Check-in</div>
                               
                             </div>
-                     </div>  -->
+                     </div>  
+                   -->
 
-                     <div class="item-content" >
+                    <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/menu-icons/planPremium.svg" class="menu-icon">
+                        </div>
 
-                    <div class="item-media"><img src="img/menu-icons/planPremium.svg" class="menu-icon"></div>
-                                <div class="item-inner">
-                                  <div class="item-title menu-item-text">Plan Premium</div>
-                                  
-                                </div>
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Plan Premium</div>
+                        </div>
 
-                 </div>
-                 <div class="item-content" id="AddSitio">
-
-                        <div class="item-media"><img src="img/menu-icons/addsitio.svg" class="menu-icon" ></div>
-                                <div class="item-inner">
-                                  <div class="item-title menu-item-text">Añadir Sitio</div>
-                                  
-                                </div>
+                    </div>
 
 
+                    <div class="item-content" id="AddSitio">
 
-                 </div>
+                        <div class="item-media">
+                          <img src="img/menu-icons/addsitio.svg" class="menu-icon">
+                        </div>
 
-                 <div  id="soporteTecnicoAccion" class="item-content">
-                  <div class="item-media"><img src="img/menu-icons/SoporteTecnico.svg" class="menu-icon" ></div>
-                  <div class="item-inner">
-                    <div class="item-title menu-item-text">Soporte tecnico</div>
-                    
-                  </div>
-           </div>
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Añadir Sitio</div>
+                        </div>
+                    </div>
+
+
+                   <div  id="soporteTecnicoAccion" class="item-content">
+                        <div class="item-media">
+                          <img src="img/menu-icons/SoporteTecnico.svg" class="menu-icon">
+                        </div>
+
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Soporte tecnico</div>
+                        </div>
+                   </div>
+
 
                  <div id="configuracionAccion" class="item-content">
-                  <div class="item-media"><img src="img/menu-icons/configuracion.svg" class="menu-icon" ></div>
-                  <div class="item-inner">
-                    <div class="item-title menu-item-text">Configuracion</div>
-                    
-                  </div>
-           </div>
+                    <div class="item-media">
+                      <img src="img/menu-icons/configuracion.svg" class="menu-icon">
+                    </div>
 
-                 <div class="item-content" id='salirApp' >
+                    <div class="item-inner">
+                      <div class="item-title menu-item-text">Configuracion</div>
+                    </div>
+                </div>
 
-                  <div class="item-media"><img src="img/menu-icons/addsitio.svg" class="menu-icon" ></div>
-                          <div class="item-inner">
-                            <div class="item-title menu-item-text">Salir</div>
-                            
-                          </div>
 
-           </div>
+                 <div class="item-content" id="salirApp">
+                     <div class="item-media">
+                       <img src="img/menu-icons/addsitio.svg" class="menu-icon">
+                     </div>
+
+                     <div class="item-inner">
+                        <div class="item-title menu-item-text">Salir</div>
+                     </div>
+                 </div>
+
 
                   </li>
 
@@ -483,12 +502,15 @@ Buscar en esta área
 </button>
 
 <div id="map" ></div>
-<center><img  id="swipeup-img" src="img/iconos/swipe_up.png" width="20" height="10" ></center>
+
+<center>
+  <img  id="swipeup-img" src="img/iconos/swipe_up.svg" width="20" height="10" >
+</center>
 
 
 
 
-<div class="block" style="margin-top: -25px !important" id="RawList" >
+<div class="block " style="margin-top: -25px !important; " id="RawList" >
 
 <div class="list media-list">
 <ul id="listasItem" style="color: #616161;">
@@ -587,7 +609,7 @@ Buscar en esta área
     
         <div class="row">
             <div class="col-80" >
-              <div class="ols">
+              <div class="ols" style="margin-top: 10px; margin-left: 0px;">
                             <label  id="nombreSitio" class="text-detalle_x2 color-font nombre_sitio" >Nombre del sitio</label>
                            <span  id="ratingSitio"  class="badge text-detalle_x2" style="color: white" > 8.0</span>
 
@@ -598,40 +620,45 @@ Buscar en esta área
 
 
 <div class="col-100" >
-<button  id="checkInChat"  class="col button button-small button-fill color-orange right boton_check" style="height: 40px; width: 100%;">Check-in-chat</button>
+<button  id="checkInChat"  class="col button button-small button-fill color-orange right boton_check" style="height: 30px;width: 100%;margin-top: 10px;margin-bottom: 10px;">Check-in-chat</button>
 
-<style type="text/css">
-  .ols{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
 
-</style>
              
 
 </div>
       
-      <label id="SitioAbierto"></label>
+    <div style=" font-size: 13px; color: #898989;">
+      <label id="SitioAbierto"></label> <br>
+      <hr>
+      <label class="font-sm-2 " ><img src="img/iconos/comida.png" style="margin-right: 5px"  height="16" width="16" >Especialidad</label> <br>
+      <hr>
+      <label id="direccionSitio" class="font-sm-2 " ></label>
+      <hr>
+    </div>
+
+      
 
  
     <div class="col-100" style="margin-top: 15px" >
-    
-    <hr  class="line-menu" style="margin-top: 0px !important" >
     </div>
     
     <div class="col-70 " style="margin-top: 15px" >
-        <label class="font-sm-2 color-font" ><img src="img/iconos/comida.png" style="margin-right: 5px"  height="16" width="16" >Especialidad   </label>
-        <hr  class="line-menu" style="margin-top: 0px !important" >
+      
+        <!--
+        <hr  class="line-menu" style="margin-top: 0px !important" >-->
     </div>
+
     <div id="menuItem" class="col-20" style="margin-top: 15px" >
-    <label  class="font-sm-3 " style="color:red;font-family: Arial, Helvetica, sans-serif" >Menu</label>
+
+      <label  class="font-sm-3 " style="color:red;font-family: Arial, Helvetica, sans-serif" >Menu</label>
     
     </div>
     
     <div class="col-100 margin-top">
-    <label id="direccionSitio" class="font-sm-2 color-font" ></label>
-    <hr  class="line-menu" style="margin-top: 0px !important" >
-      </div>
+      <!--
+      <hr  class="line-menu" style="margin-top: 0px !important" >-->
+    </div>
+
       <di id="divTomarControlSitio" hidden >
        <button style="background-color: #e30b50; color: #fff; font-size: 12px; padding: 10px; border: 0px solid; border-radius: 5px; font-weight: 600; width: 100%;"  id="tomarControlSitio" class=""> Toma el control de este sitio</button>
         

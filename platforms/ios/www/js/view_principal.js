@@ -1,7 +1,8 @@
-console.log(app);
+//console.log(app);
 
   var map;
 var service;
+var DistanceMatrix;
 var bares ;
 var restaurantes;
 var discotecas;
@@ -9,6 +10,8 @@ var type = "";
 var filtering = "";
 var arrayMarker = [];
 var autocomplete;
+var miPosicion ;
+var timerNotifications ;
 var datosUsuario = JSON.parse( localStorage.getItem("config")  );
 
 
@@ -31,6 +34,8 @@ $('.view:not(:first)').hide();
 
 
  */
+
+
 
 
 
@@ -97,7 +102,7 @@ function initialize() {
 autocomplete =new google.maps.places.AutocompleteService();
 
   service = new google.maps.places.PlacesService(map);
- 
+ DistanceMatrix = new google.maps.DistanceMatrixService();
 
 ActionSearch();
 
@@ -108,12 +113,24 @@ if(navigator.geolocation){
 
  navigator.geolocation.getCurrentPosition(function (position) {  
 
+  //Comprobar las notificaciones
+  cordova.plugins.notification.local.requestPermission(function (granted) { },function (error) { 
+
+alert("tenga en cuenta que para activar las notificaciones debes hacerlo desde los ajustes del sisitema");
+
+   });
+  
+
 map.setCenter({
   lat:position.coords.latitude,
   lng:position.coords.longitude
 });
 
-
+miPosicion = {
+  lat:position.coords.latitude,
+  lng:position.coords.longitude
+};
+console.log(miPosicion);
  },function (error) { 
 alert("error al obtener la posicion del usuario");
 
@@ -536,7 +553,7 @@ function LimpiarMarcadores() {
                 </div>
                 <div class="item-subtitle">
                <div class="row">
-                <div class="col-100"><label class="font-sm-2"><img src="img/iconos/map-placeholder.png" >`+element.formatted_address+`</label></div>
+                <div class="col-100"><label class="font-sm-2">`+element.formatted_address+`</label></div>
                
     
                </div>
@@ -576,8 +593,94 @@ function LimpiarMarcadores() {
        
      }
 
+function DysplaySiteNotification(SitioLocatio) { 
+  
+  //calculo de distancias
+  console.log(miPosicion);
+  console.log(SitioLocatio);
+
+  DistanceMatrix.getDistanceMatrix(
+    {
+      origins: [miPosicion],
+      destinations: [SitioLocatio],
+      travelMode: 'DRIVING',
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, CallNotification);
+
+
+    function CallNotification(response, status) { 
+
+      if (status !== 'OK') {
+       // alert('Error was: ' + status);
+      } else {
+        console.log(response);
+var distance= response.rows[0].elements[0].distance.value;
+  
+setTimeout(() => {
+       if( distance <=100){
+console.log("esta en el sitio");
+
+  //Notificacion
+  cordova.plugins.notification.local.hasPermission(function (granted) {
+    cordova.plugins.notification.local.getDefaults();
+
+    cordova.plugins.notification.local.schedule({
+      title: 'Estas en el sitio',
+      text: '¿ Deseas ir al CheckInChat?',
+      actions: [{ id: 'si', title: 'SI' },{ id: 'no', title: 'NO' }]
+
+  });
+
+
+  cordova.plugins.notification.local.on('si', function (notification, eopts){
+
+ $$("#checkInChat").click();
+
+  });
+
+
+
+  });
+
+
+
+       }else{
+
+        console.log("NO esta en el sitio");
+
+       }  
+
+
+        }, 5000);
+
+
+
+
+      }
+
+
+
+     }
+
+
+
+
+  //
+
+
+
+
+
+
+};
+
 
 function AppendDetalle(place) { 
+
+DysplaySiteNotification( place.geometry.location );
+
 console.log(place);
 SaveHistory(place);
   $$("#imgHeart").off("click");
@@ -1021,7 +1124,7 @@ $$("#listComents").empty();
 db.ref("Sitios/PlaceIdRef/"+place+"/coments").on("child_added",function (snapshot) { 
 
 var coment = snapshot.val();
-console.log(coment);
+//console.log(coment);
 
 ComentCard(coment,"plat");
 
@@ -1429,16 +1532,33 @@ var res = [];
       render(res);
 
      }
+
+     $$("#buscarDefault").off("click");
+      $$("#buscarDefault").click(function () { 
+        
+        GetDetails( predictions[0].place_id );
+
+
+
+       });
+
+
       
        };
  console.log(query);
       autocomplete.getQueryPredictions({ input: query+"" }, displaySuggestions);
-     
+ 
+
+
+
 
     
     },
   on:{
- change:function (value) { 
+ change:function (value) 
+ 
+ 
+ { 
 
  $$("#inputHeader1").val(value[0].description);
  $$(".toolbar_principal").click();
