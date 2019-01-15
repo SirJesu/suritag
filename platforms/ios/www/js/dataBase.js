@@ -1,7 +1,7 @@
 
  var localDatabase =   CreateDb();
  //console.log(localDatabase);
- ObtenerPublicaciones(localDatabase);
+ //ObtenerPublicaciones(localDatabase);
  //CreateTables(localDatabase);
  //InsertardatoPrueba(localDatabase);
 function CreateDb() { 
@@ -44,8 +44,10 @@ function CreateTablePublicacion(database) {
        key TEXT PRIMARY KEY,
      created TEXT, 
      date TEXT,
+     text TEXT,
      name TEXT,
      img TEXT,
+     imagenUsuario TEXT,
      peopleId TEXT,
      placeId TEXT,
      placeName TEXT
@@ -135,6 +137,7 @@ var obj = {
  nombrePersona:"",
  fechaPublicacion:"",
  imgPublicacion:"",
+ imagenUsuario:"",
  peopleId:"",
  text:"",
  type:"",
@@ -159,12 +162,12 @@ return obj;
 
 
  function SavePublicacionDBQuery(database,object) { 
-console.log(database);
+//console.log(database);
 
 try{
     database.transaction(function (sqlTransactionSync) { 
-        sqlTransactionSync.executeSql("INSERT INTO publicaciones (key, created, date,name,img,peopleId,placeName) VALUES(?,?,?,?,?,?,?)"
-      ,[object.key,"",object.fechaPublicacion,object.nombrePersona,object.imgPublicacion,object.peopleId,object.placeName]  );
+        sqlTransactionSync.executeSql("INSERT INTO publicaciones (key, created, date,name,img,peopleId,placeName,text,imagenUsuario) VALUES(?,?,?,?,?,?,?,?,?)"
+      ,[object.key,"",object.fechaPublicacion,object.nombrePersona,object.imgPublicacion,object.peopleId,object.placeName,object.text,object.imagenUsuario]  );
     
      });
      console.log("No error");
@@ -210,23 +213,87 @@ sqlTransactionSync.executeSql(`
 
   }
 function ObtenerPublicaciones(database){
-
+ 
     database.transaction(function(sqlTransactionSync) 
 {
     var sqlResultSet = sqlTransactionSync.executeSql(`
    SELECT * FROM publicaciones ORDER BY rowid DESC LIMIT 10
     `,[], function(sqlTransaction, sqlResultSet) {
-   
- console.log(sqlResultSet);
+     console.log(sqlResultSet);
+
+     for(var i = 0; i< sqlResultSet.rows.length;i++){
+var element =  sqlResultSet.rows.item(i);
+
+$$("#social-Content").prepend(` <div id="publicacion`+element.key+`" class="card demo-facebook-card">
+<div class="card-header">
+  <div class="demo-facebook-avatar"><img src="`+element.imagenUsuario+`" width="34" height="34"/></div>
+  <div   onclick="NoNetwork()" class="demo-facebook-name">`+element.name+`</div>
+  <div class="demo-facebook-date">`+element.placeName+`</div>
+</div>
+<div class="card-content card-content-padding">
+  <p>`+element.text+`</p>
+  <img id='imgPublicacion`+element.key+`' src="`+element.img+`" width="100%"/>
+  <p class="likes" id='likes`+element.key+`' onclick="NoNetwork()"   >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0 &nbsp;&nbsp; compartido: 0  </p>
+</div>
+<div class="card-footer"><a href="#" onclick="NoNetwork()"  id='btnMegusta`+element.key+`'   class="link">Me gusta</a><a onclick="NoNetwork()"   id="btnComentar`+element.key+`"  href="#"    class="link">Comentar</a><a href="#"   onclick="NoNetwork()"   id="btncompartir`+element.key+`"  class="link">compartir</a></div>
+</div>`);
+
+
+
+     }
+ 
+     
+     
+
+
+
+
 
     });
 
 
-
+//return res;
 });
 
 
 }
+function NoNetwork() {  
+alert("No conectado");
+
+}
+
+
+function ObtenerLikes(database,publicacionId) { 
+
+    database.transaction(function (sqlTransaction) {
+
+var resultSet = sqlTransaction.executeSql("SELECT COUNT(*) as totalItems from likes where idpublicacion = ?",[publicacionId],function (sqlTransaction, sqlResultSet) {  
+console.log(sqlResultSet);
+
+});
+console.log(resultSet);
+
+
+      });
+
+ }
+function ObtenerComentarios(database,publicacionId) { 
+
+    database.transaction(function (sqlTransaction) {
+
+        var resultSet = sqlTransaction.executeSql("SELECT COUNT(*) as totalItems from Coments where idpublicacion = ?",[publicacionId],function (sqlTransaction, sqlResultSet) {  
+        console.log(sqlResultSet);
+        
+        });
+        console.log(resultSet);
+        
+        
+              });
+
+ }
+function ObtenerCompartidos(database) {  }
+
+
 
 
 
@@ -246,3 +313,5 @@ SaveLikesPublicacion(db,{key:"keyPropio1",idPublicacion:"keyA"});
 SaveComentsPublicacion(db,{key:"keyPropio1",idPublicacion:"keyA"});
 
   }
+
+  ObtenerLikes(localDatabase,"-LTcGXa9W_t0Ilr5H84s");

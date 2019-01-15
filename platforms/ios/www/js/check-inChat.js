@@ -448,15 +448,45 @@ console.log("preloader");
  });
 console.log("enviado");
 
+var dialog = app.dialog.create({
+ title:"Solicitandi",
+text:"esperando respuesta",
+content:` <div class="preloader color-green"></div>`,
+buttons:[
+{
+    text:"Cancelar",
+    onClick:function () { 
+ indicacion.update({
+    estado:"CANCELADO",
+
+ },function () { 
+dialog.close();
+
+  });
+
+     },
+    
+}
+    
+]
+
+
+
+}).open();
+
+
 indicacion.on("child_changed",function (snapshot) { 
 
     var state = snapshot.val();
 
  if(state == "ACEPTADO"){
-
+    HidePage("location","ChatPrivado.html?PersonaId="+target+"&chatKey="+key  );
+target
  }
 
  if(state == "RECHAZADO"){
+     dialog.close();
+     alert("Su solicitud fue rechazada");
 
  }
   
@@ -473,9 +503,10 @@ indicacion.on("child_changed",function (snapshot) {
 
   function LintenChatPrivado() {  
 
-db.ref("Social/ChatPrivado/"+usuario.idUsuario+"/solicitudes").orderByChild("estado").equalTo("ENVIADO").on("child_added",function (snapshot) {
+db.ref("Social/ChatPrivado/"+usuario.idUsuario+"/solicitudes").orderByChild("estado").equalTo("ENVIADO").limitToLast(1).on("child_added",function (snapshot) {
 
     var solicitud = snapshot.val();
+     var SolicicudKey = snapshot.key;
 console.log("Solicitud recibida");
 console.log("key: "+snapshot.key);
 console.log(solicitud);
@@ -498,7 +529,47 @@ var notificationFull = app.notification.create({
     closeButton: true,
     on:{
         notificationClick:function () { 
-          console.log("click");  
+       
+            app.dialog.create({
+  title:"Chat Privado",
+  buttons:[
+      {
+          text:"Aceptar",
+          onClick:function () {
+
+            db.ref("Social/ChatPrivado/"+usuario.idUsuario+"/solicitudes/"+SolicicudKey).update({
+             estado:"ACEPTADO"
+
+            },function (error) { 
+                HidePage("location","ChatPrivado.html?PersonaId="+solicitud.id+"&chatKey="+SolicicudKey  );
+
+
+             });           
+
+            }
+      },
+      {
+          text:"Rechazar",
+          onClick:function () {
+
+            db.ref("Social/ChatPrivado/"+usuario.idUsuario+"/solicitudes/"+SolicicudKey).update({
+                estado:"RECHAZADO"
+      
+            },function () { 
+                notificationFull.close();
+             });
+
+
+            }
+
+      }
+  ]
+
+
+            }).open();
+            
+
+
          }
     }
   });

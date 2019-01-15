@@ -554,7 +554,7 @@ function LimpiarMarcadores() {
                 </div>
                 <div class="item-subtitle">
                <div class="row">
-                <div class="col-100"><label class="font-sm-2"><img src="img/iconos/map-placeholder.png" >`+element.formatted_address+`</label></div>
+                <div class="col-100"><label class="font-sm-2">`+element.formatted_address+`</label></div>
                
     
                </div>

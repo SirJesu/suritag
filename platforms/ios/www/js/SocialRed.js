@@ -28,8 +28,8 @@ function getBase64(file) {
    };
 }
 var datosUsuario = JSON.parse( localStorage.getItem("config")  );
+//OpenProfileUser(datosUsuario.Usuario.idUsuario);
 
-//app.popup.open(".popup-historias",true);
 
 $$('.panelComent').hide();
 
@@ -190,7 +190,7 @@ function Publicar() {
     publicacion.name = datosUsuario.Usuario.NombreUsuario;
     //console.log(publicacion);
 
-    var publicacionesRef =db.ref("Social/publicaciones/General");
+    var publicacionesRef =db.ref("Social/publicaciones/General/"+publicacion.peopleId);
     var archivosRef =db.ref("Social/archivos/"+publicacion.peopleId);
     
  //  app.popup.open(".popupPublicar",true);
@@ -464,7 +464,7 @@ console.log(friend);
 LoadHistorias(friend.idUsuario,usuario.NombreUsuario);
 
 
-db.ref("Social/publicaciones/General").orderByChild("peopleId").equalTo(friend.idUsuario).limitToLast(1).on("child_added",function (snapshot) { 
+db.ref("Social/publicaciones/General/"+friend.idUsuario).limitToLast(1).on("child_added",function (snapshot) { 
 
   var public = snapshot.val();
   console.log(public);
@@ -482,7 +482,7 @@ db.ref("Social/publicaciones/General").orderByChild("peopleId").equalTo(friend.i
 
 
 
-  db.ref("Social/publicaciones/General").orderByChild("peopleId").equalTo(usuario.idUsuario).limitToLast(1).on("child_added",function (snapshot) { 
+  db.ref("Social/publicaciones/General/"+usuario.idUsuario).on("child_added",function (snapshot) { 
 
     var public = snapshot.val();
     console.log(public);
@@ -657,14 +657,87 @@ if(user.ImagenUsuario == undefined || user.ImagenUsuario == null ){
  }
 
 
+ function OpenProfileUser(idUsuario) {
+   console.log(idUsuario); 
+   $$("#Img-other-prifile").attr("src","img/icons-social/perfil.png");
+   $$("#btn-seguir-other").text("");
+   $$("#btn-seguir-other").val("");
+   $$("#publicacion-other-profile").text("");
+   $$("#seguidores-other-profile").text("");
+   $$("#restaurantes-other-profile").text("");
+  $$(".title-profile-other").text("");
+
+
+
+  if(idUsuario != datosUsuario.Usuario.idUsuario){
+    console.log("igual");
+    $$("#profileUser-Social-own").click();
+
+  }else{
+
+db.ref("Social/Amigos/"+idUsuario).once("value",function (snapshot) { 
+  $$("#seguidores-other-profile").text(snapshot.numChildren());
+
+ });
+
+
+ db.ref("Social/Usuarios/"+idUsuario).once("value",function (snapshot) { 
+var usuario = snapshot.val();
+$$(".title-profile-other").text(usuario.NombreUsuario);
+app.popup.open(".popup-perfil-other",true);
+if(usuario.ImagenUsuario != undefined){
+$$("#Img-other-prifile").attr("src", usuario.ImagenUsuario );
+;
+}
+
+//$$("#seguidores-other-profile").text(snapshot.numChildren());
+  });
+  console.log(idUsuario);
+
+  db.ref("Social/publicaciones/General/"+idUsuario).once("value",function (snapshot) { 
+
+  console.log(snapshot.val());
+ $$("#publicacion-other-profile").text(snapshot.numChildren());
+
+console.log("publicaciones numero::"+snapshot.numChildren());
+
+  });
+  db.ref("Usuarios/"+idUsuario+"/history").once("value",function (snapshot) { 
+    $$("#restaurantes-other-profile").text(snapshot.numChildren());
+
+   });
+db.ref("Social/Amigos/"+datosUsuario.Usuario.idUsuario+"/"+idUsuario).once("value",function (snapshot) { 
+
+if(snapshot.val() == null ){
+  $$("#btn-seguir-other").text("Seguir");
+  $$("#btn-seguir-other").val(idUsuario);
+  $$("#btn-seguir-other").off("click");
+  $$("#btn-seguir-other").attr("onclick","Addfriend(this)");
+
+}else{
+  $$("#btn-seguir-other").text("Siguiendo");
+}
+
+ });
+
+
+  }
+
+
+
+  }
+
+
  function SocialCard(publicacion,key) {
 
   
    var socialObj = PublicacionModel();
   var coments = 0;
   var likes = 0;
+  var shared = 0;
  var vectorLikes = [];
  var vectorComents = [];
+ var vectorShred = [];
 
  //Guardar Publicacion
 
@@ -690,27 +763,33 @@ var img =  "img/iconos/user_defaultProfile.png";
  socialObj.nombrePersona = publicacion.name +"";
 socialObj.fechaPublicacion =publicacion.date +"";
 socialObj.imgPublicacion  =publicacion.img +"";
+socialObj.imagenUsuario = img;
 socialObj.peopleId =publicacion.peopleId +"";
-socialObj.text = publicacion.type + "";
+socialObj.text = publicacion.text + "";
 socialObj.placeName = publicacion.placeName;
 socialObj.key =  key;
 
 SavePublicacionDBQuery(localDatabase,socialObj);
 
+console.log($("#publicacion"+socialObj.key));
+$("#publicacion"+socialObj.key).empty();
+$("#publicacion"+socialObj.key).remove(); 
 
-
- $$("#social-Content").prepend(` <div class="card demo-facebook-card">
+ $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card" style"margin: 0px;">
  <div class="card-header">
    <div class="demo-facebook-avatar"><img src="`+img+`" width="34" height="34"/></div>
-   <div class="demo-facebook-name">`+user.NombreUsuario+`</div>
+   <div  onclick="OpenProfileUser('`+user.idUsuario+`')" class="demo-facebook-name">`+user.NombreUsuario+`</div>
    <div class="demo-facebook-date">`+publicacion.placeName+`</div>
  </div>
+
  <div class="card-content card-content-padding">
-   <p>`+publicacion.text+`</p>
    <img id='imgPublicacion`+key+`' src="`+publicacion.img+`" width="100%"/>
-   <p class="likes" id='likes`+key+`'  >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0</p>
+      <div>
+        <p>`+publicacion.text+`</p>
+        <p class="likes" id='likes`+key+`'  >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0 &nbsp;&nbsp; compartido: 0  </p>
+      </div>
  </div>
- <div class="card-footer"><a href="#" id='btnMegusta`+key+`'  class="link">Me gusta</a><a  id="btnComentar`+key+`"  href="#" class="link">Comentar</a><a href="#" class="link">compartir</a></div>
+ <div class="card-footer"><a href="#" id='btnMegusta`+key+`'  class="link">Me gusta</a><a  id="btnComentar`+key+`"  href="#" class="link">Comentar</a><a href="#" id="btncompartir`+key+`"  class="link">compartir</a></div>
  </div>`);
 
 /*  
@@ -927,6 +1006,60 @@ $$('.panelComent').hide();
   });  */
 
  });
+$$("#btncompartir"+key).click(function (evt) { 
+evt.preventDefault();
+
+var SharedPublic = publicacion;
+SharedPublic.peopleId = datosUsuario.Usuario.idUsuario;
+SharedPublic.name = datosUsuario.Usuario.NombreUsuario;
+SharedPublic.date = dateFormatExtended();
+
+var publicacionesRef =db.ref("Social/publicaciones/General/"+SharedPublic.peopleId);
+
+publicacionesRef.push().set(SharedPublic,function (snapshot) { 
+  db.ref("Social/Eventos/"+publicacion.peopleId).push().set({
+    type:"shared",
+    publicacionId:key,
+    user:{
+     nombre:datosUsuario.Usuario.NombreUsuario,
+     idUser:datosUsuario.Usuario.idUsuario,
+     foto:datosUsuario.Usuario.ImagenUsuario
+    }
+  
+  },function () { 
+
+    refActios.child("shared/"+datosUsuario.Usuario.idUsuario).set({
+      type:"shared",
+      user:{
+        keyAction:key,
+        nombre:datosUsuario.Usuario.NombreUsuario,
+        idUser:datosUsuario.Usuario.idUsuario,
+        foto:datosUsuario.Usuario.ImagenUsuario
+  
+      }
+    });
+
+
+
+
+
+   });
+
+
+ });
+
+
+//Evento
+/*
+
+*/
+//
+
+
+
+ });
+
+
 
 
 
@@ -959,7 +1092,7 @@ if(like.user.idUser == datosUsuario.Usuario.idUsuario){
 
 
 
-UpdateMarkes(like.user.keyAction,coments,likes);
+UpdateMarkes(like.user.keyAction,coments,likes,shared);
 
 
 
@@ -975,7 +1108,7 @@ SaveComentsPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
 
 
 
-UpdateMarkes(coment.user.keyAction,coments,likes);
+UpdateMarkes(coment.user.keyAction,coments,likes,shared);
 //console.log(coment);
 
 /*
@@ -1000,11 +1133,27 @@ $$("#raw-coments").append(` <li>
 
   
   });
+  refActios.child("shared").on("child_added",function (snapshot) { 
+    //console.log(snapshot.val());
+    var SharedItem = snapshot.val();
+    shared += 1;
+    vectorShred.push(SharedItem);
+    console.log("shared");
+   // SaveComentsPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
+    
+    
+    
+    UpdateMarkes(SharedItem.user.keyAction,coments,likes,shared);
+  
+    
+      
+      });
 
-  function UpdateMarkes(key,coment,like) {
+
+  function UpdateMarkes(key,Coment,like,shared) {
 //console.log( $$("#likes"+key) );
 $$("#likes"+key).empty();
-    $$("#likes"+key).append("Me gusta: "+like+" &nbsp;&nbsp; Comentarios: "+coment);
+    $$("#likes"+key).append("Me gusta: "+like+" &nbsp;&nbsp; Comentarios: "+Coment+" &nbsp;&nbsp; Compartido: "+shared);
 
     }
 
@@ -1160,6 +1309,8 @@ function onFail(message) {
       function  Historias(){
 //console.log( "Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario );
 
+
+
  var myhistory = null;
 $$("#miHistoria-Content").hide();
 
@@ -1300,15 +1451,16 @@ $$(".wr-historia-wrap").append(`  <div id="historyItem`+snapshot.key+`"  onclick
 <div id='miHistoria'  >
 <img src="`+img+`" width="35" height="35"  class="historia-img" >
 </div>
-<label style="color: #C13008;font-size: 3vw"    >`+history.NombreUsuario+`</label>
+<label style="color: #C13008;font-size: 3vw"    >`+history.NombreUsuario.substring(0,history.NombreUsuario.indexOf(" "))+`</label>
 </div>
 </div>`);
+
 
 var swiper = new Swiper('.swiper-container', {
   slidesPerView: 4,
   spaceBetween: 15,
 
-});
+});  
 
 
 
@@ -1460,3 +1612,19 @@ console.log(archivo);
 
 
   }
+
+
+
+
+  function OnOutLine() { 
+
+  var datos =  ObtenerPublicaciones(localDatabase);
+
+console.log("db datos");
+console.log(datos);
+
+
+
+   }
+
+   OnOutLine();
