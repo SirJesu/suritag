@@ -773,18 +773,21 @@ SavePublicacionDBQuery(localDatabase,socialObj);
 
 console.log($("#publicacion"+socialObj.key));
 $("#publicacion"+socialObj.key).empty();
-$("#publicacion"+socialObj.key).remove();
+$("#publicacion"+socialObj.key).remove(); 
 
- $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card">
+ $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card" style"margin: 0px;">
  <div class="card-header">
    <div class="demo-facebook-avatar"><img src="`+img+`" width="34" height="34"/></div>
    <div  onclick="OpenProfileUser('`+user.idUsuario+`')" class="demo-facebook-name">`+user.NombreUsuario+`</div>
    <div class="demo-facebook-date">`+publicacion.placeName+`</div>
  </div>
+
  <div class="card-content card-content-padding">
-   <p>`+publicacion.text+`</p>
    <img id='imgPublicacion`+key+`' src="`+publicacion.img+`" width="100%"/>
-   <p class="likes" id='likes`+key+`'  >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0 &nbsp;&nbsp; compartido: 0  </p>
+      <div>
+        <p>`+publicacion.text+`</p>
+        <p class="likes" id='likes`+key+`'  >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0 &nbsp;&nbsp; compartido: 0  </p>
+      </div>
  </div>
  <div class="card-footer"><a href="#" id='btnMegusta`+key+`'  class="link">Me gusta</a><a  id="btnComentar`+key+`"  href="#" class="link">Comentar</a><a href="#" id="btncompartir`+key+`"  class="link">compartir</a></div>
  </div>`);
