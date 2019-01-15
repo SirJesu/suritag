@@ -224,31 +224,43 @@ HidePage("location","./Actividad.html");
          //  window.location = "./AddSitio.html";
           });
 
-     /*     $$("#SalirAccion").click(function (evt) { 
+    $$("#salirApp").click(function (evt) { 
 
           evt.preventDefault();
 
         
           var user = firebase.auth().currentUser;
 
+        if(user == null){
+          localStorage.removeItem("estado");
+          localStorage.removeItem("config");
+          window.location = "./login_v1.html";
+
+
+        }else{
           user.delete().then(function() {
-           
-            localStorage.removeItem("DataUser");
-            window.location = "./index.html";
+            localStorage.removeItem("estado");
+            localStorage.removeItem("config");
+            window.location = "./login_v1.html";
 
 
           }).catch(function(error) {
-          
-            localStorage.removeItem("DataUser");
-            window.location = "./index.html";
+            localStorage.removeItem("estado");
+            localStorage.removeItem("config");
+            window.location = "./login_v1.html";
 
 
           });
 
+
+
+
+        }
+
       
 
 
-           });  */
+           });  
   
   
   

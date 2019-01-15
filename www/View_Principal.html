@@ -608,7 +608,7 @@ Buscar en esta área
     <div  class="block" style="margin-top: 10px !important; background-color: #fff">
     
         <div class="row">
-            <div class="col-80" >
+            <div class="" >
               <div class="ols" style="margin-top: 10px; margin-left: 0px;">
                             <label  id="nombreSitio" class="text-detalle_x2 color-font nombre_sitio" >Nombre del sitio</label>
                            <span  id="ratingSitio"  class="badge text-detalle_x2" style="color: white" > 8.0</span>
@@ -619,15 +619,20 @@ Buscar en esta área
               </div>
 
 
-<div class="col-100" >
-<button  id="checkInChat"  class="col button button-small button-fill color-orange right boton_check" style="height: 30px;width: 100%;margin-top: 10px;margin-bottom: 10px;">Check-in-chat</button>
+<div class="col-100">
+<!--col button button-small button-fill color-orange right boton_check-->
 
+<button  id="checkInChat"  class="boton-check boton-j">Check-in-chat</button>
+
+<div id="divTomarControlSitio" hidden>
+    <button id="tomarControlSitio" class="boton-tomar boton-j">Toma el control de este sitio</button>
+</div>
 
              
 
 </div>
       
-    <div style=" font-size: 13px; color: #898989;">
+    <div style=" font-size: 14px; color: #898989;">
       <label id="SitioAbierto"></label> <br>
       <hr>
       <label class="font-sm-2 " ><img src="img/iconos/comida.png" style="margin-right: 5px"  height="16" width="16" >Especialidad</label> <br>
@@ -638,31 +643,30 @@ Buscar en esta área
 
       
 
- 
+ <!--
     <div class="col-100" style="margin-top: 15px" >
     </div>
     
     <div class="col-70 " style="margin-top: 15px" >
       
-        <!--
-        <hr  class="line-menu" style="margin-top: 0px !important" >-->
+        
+        <hr  class="line-menu" style="margin-top: 0px !important" >
     </div>
+  -->
 
-    <div id="menuItem" class="col-20" style="margin-top: 15px" >
+    <div id="menuItem" class="boton-j modelo-menu">
 
-      <label  class="font-sm-3 " style="color:red;font-family: Arial, Helvetica, sans-serif" >Menu</label>
+      <label  class="font-sm-3" style="">ver Menu</label>
     
     </div>
     
+    <!--
     <div class="col-100 margin-top">
       <!--
-      <hr  class="line-menu" style="margin-top: 0px !important" >-->
-    </div>
+      <hr  class="line-menu" style="margin-top: 0px !important" > 
+    </div>-->
 
-      <di id="divTomarControlSitio" hidden >
-       <button style="background-color: #e30b50; color: #fff; font-size: 12px; padding: 10px; border: 0px solid; border-radius: 5px; font-weight: 600; width: 100%;"  id="tomarControlSitio" class=""> Toma el control de este sitio</button>
-        
-          </div>
+      
 
     
       <div class="col-100">
@@ -923,7 +927,7 @@ Suritag-Clientes
             <img  style="margin-right: 15%" width="25" height="25" src="img/iconos/back_row.png"  >
 
           </div>
-          <div  class="title-pop"   id="title-menu"  >Menu</div>
+          <div  class="title-pop" id="title-menu">Menu</div>
           <div class="right">
 
 

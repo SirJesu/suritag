@@ -23,6 +23,7 @@ app.request.post(
   param,
 function (data, status, xhr) {
   app.preloader.hide();
+  localStorage.setItem("estado","LOGEADO");
 confg.logged =true;
 confg.Usuario = data.obj;
   
