@@ -189,8 +189,8 @@ if( estado  == null ){
 
 
   } else if(estado == "LOGEADO") {
-    window.location = "View_Principal.html";
-
+  //  window.location = "View_Principal.html";
+    HidePage("location","IntroOpciones.html");
 
   }
 });
@@ -222,8 +222,8 @@ if( estado  == null ){
   window.location = "saveDataUser.html?name="+user.displayName+"&email="+user.email+"&telefono="+user.phoneNumber;
 
 } else if(estado == "LOGEADO") {
-    window.location = "View_Principal.html";
-
+  //  window.location = "View_Principal.html";
+  HidePage("location","IntroOpciones.html");
 
   }
 
@@ -277,8 +277,8 @@ config.Usuario = data.obj;
 
  db.ref("Social/Usuarios/"+data.obj.idUsuario).set(data.obj,function (errr) { 
 
-  window.location = "View_Principal.html";
-
+ // window.location = "View_Principal.html";
+  HidePage("location","IntroOpciones.html");
 
   });
 

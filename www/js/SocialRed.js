@@ -1308,6 +1308,8 @@ function onFail(message) {
 
 
 
+
+
  var myhistory = null;
 $$("#miHistoria-Content").hide();
 
