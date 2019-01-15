@@ -6,6 +6,8 @@
     <title>Page Title</title>
     <meta name="theme-color" content="#e30b50">
 
+    <meta charset="utf-8">
+
     <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
         <link rel="stylesheet"  href="css/app.css" >
         <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
@@ -28,6 +30,10 @@
         .message-content{
           margin-bottom: 10px; 
 
+        }
+        .btn-open-chatprivado{
+          background-color: #5D6D7E !important;
+          color: #fff;
         }
       </style>
     
@@ -70,13 +76,13 @@
                 <div class="toolbar messagebar">
                   
     
-<div class="row" style="margin-bottom: 10px;padding-bottom: 10px" >
+<div class="row" style="margin-bottom: 10px;padding: 10px" >
 
 <div class="col-20">
 <a id="openImg" class="link color-black" ><i class="f7-icons" >images_fill</i></a>
 </div>
 <div class="col-60">
-    <textarea class="resizable msgInclude" placeholder="Escribe aqui"></textarea>
+    <textarea class="resizable msgInclude" placeholder="Escribe aquí..."></textarea>
 </div>
 <div class="col-20">
     <a class="link send-link" href="#"> <i class="f7-icons" >paper_plane_fill</i> </a>
@@ -90,6 +96,7 @@
                     
 
                 </div>
+
                 <div class="page-content messages-content">
                   <div class="messages">
                     <!-- Messages title -->
@@ -127,10 +134,10 @@
 
 </div>
 
-<div class="block " style="margin-top: 20%">
+<div class="block " style="margin-top: 20%; padding: 0px;">
 
 
-    <div class="list media-list">
+    <div class="list media-list" style="color: #34495E !important;">
         <ul id="lista-usuarios-chat" >
        <!--   <li  >
             <div class="item-content">
