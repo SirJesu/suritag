@@ -82,7 +82,7 @@ input[type="file"] {
                 <div style="margin-top: 6%"  class="block">
                                 <label class="font_-sm-2x1" style="text-align: justify;line-height: normal; font-weight: 400; font-size: 14px;">
                                   <p>
-                                    En este espacio podras contarnos cualquier duda, inquietud o sugerencia que tengas con nosotros, Suritag respondera tu soliciud en el menor tiempo posible.
+                                    En este espacio podrás contarnos cualquier duda, inquietud o sugerencia que tengas con nosotros, Suritag responderá tu solicitud en el menor tiempo posible. 
                                   </p>
                                 </label>
                                
@@ -103,16 +103,14 @@ input[type="file"] {
                            <li class="item-input-wrap">
                     
                         <div item-inner>
-                            <textarea rows="10" class="font-sm-2" placeholder="Escriba aqui el inconveniente"></textarea>
+                            <textarea rows="10" class="font-sm-2" placeholder="Escriba aquí el inconveniente..." ></textarea>
                         </div>
-                        <style type="text/css">
-                          textarea{
-                            border: 0px solid !important; 
-                            border-radius: 0px;
 
+                        <style type="text/css">
+                          textarea::placeholder{
+                            font-style: italic;
                           }
                         </style>
-                    
                     
                               </li>
                     
@@ -128,15 +126,29 @@ input[type="file"] {
 
    
    <div class="col-100" >
-
-                <label for="file-upload" class="custom-file-upload">
-                                <i style="width: 22px;height: 22px;margin-right: 10px" class="f7-icons">cloud_upload_fill</i> Subir archivo
+              <!--width: 22px;height: 22px;margin-right: 10px-->
+                <label for="file-upload" class="custom-file-upload subirarchivo">
+                              
+                                <i style="" class="f7-icons">cloud_upload_fill</i>
+                                <span>Subir archivo</span> 
+                                
                             </label>
+                                
+                            <style type="text/css">
+                              .subirarchivo{
+                                border: 0px solid;
+                                border-radius: 5px;
+                                padding: 10px;
+                                font-size: 15px;
+                                background-color: #038dff;
+                                justify-content: center;
+                              }
+                            </style>
                             <input id="file-upload" type="file"/>
          
     </div>
     <div class="col-100 padding-top" >
-            <button  class="font-sm-3 button  button-raised button-fill color-gray"> <i style="width: 22px;height: 22px" class="f7-icons">forward_fill</i> Enviar datos</button>
+            <button  class="font-sm-3 button button-raised button-fill" style="width: 95%; margin: auto; height: 40px; font-size: 15px;"> <i style="" class="f7-icons">forward_fill</i> Enviar datos</button>
     </div>
 
 
