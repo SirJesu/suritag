@@ -1620,8 +1620,8 @@ console.log(archivo);
 
   function OnOutLine() { 
 
-//  var datos =  ObtenerPublicaciones(localDatabase);
-
+  ObtenerPublicaciones(localDatabase);
+  ObtenerPublicacionesPrueba(localDatabase);
 console.log("db datos");
 console.log(datos);
 

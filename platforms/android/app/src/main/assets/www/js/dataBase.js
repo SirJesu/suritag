@@ -1,7 +1,7 @@
 
  var localDatabase ;
  //console.log(localDatabase);
- //ObtenerPublicaciones(localDatabase);
+ObtenerPublicaciones(localDatabase);
  //CreateTables(localDatabase);
  //InsertardatoPrueba(localDatabase);
 
@@ -271,6 +271,42 @@ $$("#social-Content").prepend(` <div id="publicacion`+element.key+`" class="card
 
 
 }
+function ObtenerPublicacionesPrueba(database){
+ 
+    database.transaction(function(sqlTransactionSync) 
+{
+    var sqlResultSet = sqlTransactionSync.executeSql(`
+   SELECT * FROM publicaciones 
+    `,[], function(sqlTransaction, sqlResultSet) {
+     console.log(sqlResultSet);
+
+     for(var i = 0; i< sqlResultSet.rows.length;i++){
+var element =  sqlResultSet.rows.item(i);
+
+alert( json.stringify(element) );
+
+
+
+     }
+ 
+     
+     
+
+
+
+
+
+    });
+
+
+//return res;
+});
+
+
+}
+
+
+
 function NoNetwork() {  
 alert("No conectado");
 
