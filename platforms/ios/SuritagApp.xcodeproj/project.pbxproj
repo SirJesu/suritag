@@ -48,9 +48,6 @@
 		60181ACB7F714C80A3FBC636 /* UNUserNotificationCenter+APPLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FBCB144F9049068A852D35 /* UNUserNotificationCenter+APPLocalNotification.m */; };
 		22C2818B3D1B482D91C5520C /* UNNotificationRequest+APPLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EAB8912E9E4BDEA84D2E6C /* UNNotificationRequest+APPLocalNotification.m */; };
 		A0D1B03E46BF4A7682CF2BC6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6507DF99BA6946B88AC99D39 /* UserNotifications.framework */; };
-		852734A6FFCD48F0B7EDA2EE /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1054912D42AC459D91628B33 /* SQLitePlugin.m */; };
-		E0FB9176FD164731A8D1C5D3 /* PSPDFThreadSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DCF1108ADA4099AC31121F /* PSPDFThreadSafeMutableDictionary.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		9B134FC2D7584F5882804BF6 /* sqlite3.c in Resources */ = {isa = PBXBuildFile; fileRef = AF9FB5CD49304BB39B7FDC9D /* sqlite3.c */; settings = {COMPILER_FLAGS = "-w -DSQLITE_THREADSAFE=1 -DSQLITE_DEFAULT_SYNCHRONOUS=3 -DSQLITE_DEFAULT_MEMSTATUS=0 -DSQLITE_OMIT_DECLTYPE -DSQLITE_OMIT_DEPRECATED -DSQLITE_OMIT_PROGRESS_CALLBACK -DSQLITE_OMIT_SHARED_CACHE -DSQLITE_TEMP_STORE=2 -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_RTREE -DSQLITE_DEFAULT_PAGE_SIZE=1024 -DSQLITE_DEFAULT_CACHE_SIZE=2000"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,12 +158,6 @@
 		8070A14405ED41B1849304E3 /* UNUserNotificationCenter+APPLocalNotification.h */ = {isa = PBXFileReference; name = "UNUserNotificationCenter+APPLocalNotification.h"; path = "cordova-plugin-local-notification/UNUserNotificationCenter+APPLocalNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		70E4E237AD1B4701B882A59F /* UNNotificationRequest+APPLocalNotification.h */ = {isa = PBXFileReference; name = "UNNotificationRequest+APPLocalNotification.h"; path = "cordova-plugin-local-notification/UNNotificationRequest+APPLocalNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		6507DF99BA6946B88AC99D39 /* UserNotifications.framework */ = {isa = PBXFileReference; name = "UserNotifications.framework"; path = "System/Library/Frameworks/UserNotifications.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		1054912D42AC459D91628B33 /* SQLitePlugin.m */ = {isa = PBXFileReference; name = "SQLitePlugin.m"; path = "cordova-sqlite-storage/SQLitePlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		86DCF1108ADA4099AC31121F /* PSPDFThreadSafeMutableDictionary.m */ = {isa = PBXFileReference; name = "PSPDFThreadSafeMutableDictionary.m"; path = "cordova-sqlite-storage/PSPDFThreadSafeMutableDictionary.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		AF9FB5CD49304BB39B7FDC9D /* sqlite3.c */ = {isa = PBXFileReference; name = "sqlite3.c"; path = "cordova-sqlite-storage/sqlite3.c"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5540873045AA4868A62496B1 /* SQLitePlugin.h */ = {isa = PBXFileReference; name = "SQLitePlugin.h"; path = "cordova-sqlite-storage/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		11EC663FAE4B4964B4A63590 /* PSPDFThreadSafeMutableDictionary.h */ = {isa = PBXFileReference; name = "PSPDFThreadSafeMutableDictionary.h"; path = "cordova-sqlite-storage/PSPDFThreadSafeMutableDictionary.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		1737FBB3945E4308AF80C7F7 /* sqlite3.h */ = {isa = PBXFileReference; name = "sqlite3.h"; path = "cordova-sqlite-storage/sqlite3.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,12 +332,6 @@
 				A613AF4976EC448BA20C8B9F /* APPNotificationOptions.h */,
 				8070A14405ED41B1849304E3 /* UNUserNotificationCenter+APPLocalNotification.h */,
 				70E4E237AD1B4701B882A59F /* UNNotificationRequest+APPLocalNotification.h */,
-				1054912D42AC459D91628B33 /* SQLitePlugin.m */,
-				86DCF1108ADA4099AC31121F /* PSPDFThreadSafeMutableDictionary.m */,
-				AF9FB5CD49304BB39B7FDC9D /* sqlite3.c */,
-				5540873045AA4868A62496B1 /* SQLitePlugin.h */,
-				11EC663FAE4B4964B4A63590 /* PSPDFThreadSafeMutableDictionary.h */,
-				1737FBB3945E4308AF80C7F7 /* sqlite3.h */,
 			);
 			name = Plugins;
 			path = SuritagApp/Plugins;
@@ -502,9 +487,6 @@
 				2CBA045176F34AB0A4CE51D2 /* APPNotificationOptions.m in Sources */,
 				60181ACB7F714C80A3FBC636 /* UNUserNotificationCenter+APPLocalNotification.m in Sources */,
 				22C2818B3D1B482D91C5520C /* UNNotificationRequest+APPLocalNotification.m in Sources */,
-				852734A6FFCD48F0B7EDA2EE /* SQLitePlugin.m in Sources */,
-				E0FB9176FD164731A8D1C5D3 /* PSPDFThreadSafeMutableDictionary.m in Sources */,
-				9B134FC2D7584F5882804BF6 /* sqlite3.c in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

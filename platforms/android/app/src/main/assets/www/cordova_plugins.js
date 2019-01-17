@@ -159,14 +159,6 @@ module.exports = [
       "cordova.plugins.notification.local.core",
       "plugin.notification.local.core"
     ]
-  },
-  {
-    "id": "cordova-sqlite-storage.SQLitePlugin",
-    "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
-    "pluginId": "cordova-sqlite-storage",
-    "clobbers": [
-      "SQLitePlugin"
-    ]
   }
 ];
 module.exports.metadata = 
@@ -185,8 +177,7 @@ module.exports.metadata =
   "cordova-plugin-screen-orientation": "3.0.1",
   "cordova-plugin-device": "2.0.2",
   "cordova-plugin-badge": "0.8.8",
-  "cordova-plugin-local-notification": "0.9.0-beta.2",
-  "cordova-sqlite-storage": "2.6.0"
+  "cordova-plugin-local-notification": "0.9.0-beta.2"
 };
 // BOTTOM OF METADATA
 });
