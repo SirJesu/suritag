@@ -1,9 +1,26 @@
 
- var localDatabase =   CreateDb();
+ var localDatabase ;
  //console.log(localDatabase);
  //ObtenerPublicaciones(localDatabase);
  //CreateTables(localDatabase);
  //InsertardatoPrueba(localDatabase);
+
+
+ document.addEventListener('deviceready', function() {
+    localDatabase = window.sqlitePlugin.openDatabase({
+      name: 'suritagApp.db',
+      location: 'default',
+    });
+
+    CreateTableLike(localDatabase);
+    CreateTablePublicacion(localDatabase);
+    
+       CreateTableComents(localDatabase);
+
+
+
+  });
+
 function CreateDb() { 
 
    var db = null;
@@ -17,10 +34,7 @@ function CreateDb() {
     if (window.openDatabase) {
 
         db =openDatabase(dbName, version, dbDisplayName, dbSize);
-        CreateTableLike(db);
-        CreateTablePublicacion(db);
-        
-           CreateTableComents(db);
+       
     }else{
         console.log("error");
     }

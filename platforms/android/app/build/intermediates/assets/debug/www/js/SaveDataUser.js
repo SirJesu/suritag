@@ -32,8 +32,8 @@ confg.Usuario = data.obj;
 
 
   db.ref("Social/Usuarios/"+data.obj.idUsuario).set(data.obj,function (errr) { 
-
-    window.location = "View_Principal.html";
+    HidePage("location","IntroOpciones.html");
+    //window.location = "View_Principal.html";
   
     });
 

@@ -21,6 +21,7 @@
     <script  rel="stylesheet" src="libs/jquery-3.3.1.min.js" ></script>
 
     <style>
+    /*
     .navbar{
    background:  #CB4309 !important;
    color: white;
@@ -31,7 +32,51 @@
    color: white;
 
     }
+   */ 
 
+    .boton_finalizar{
+      height: 40px;
+      width: 85%;
+      box-sizing: content-box;
+    }
+    *{
+      color: #656c7a;
+    }
+
+    .title{
+      color: #fff;
+    }
+    .titulo_{
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    
+    input[type="text"]{
+    background-color: #eaeaea;
+    border: 0px solid;
+    border-radius: 3px;
+    margin-top: 5px;
+    }
+
+    input[type="email"]{
+    background-color: #eaeaea;
+    border: 0px solid;
+    border-radius: 3px;
+    margin-top: 6px;
+    }
+    input[type="number"]{
+    background-color: #eaeaea;
+    border: 0px solid;
+    border-radius: 3px;
+    margin-top: 5px;
+    }
+
+
+    input::placeholder{
+      padding: 6px;
+      filter: opacity(95%);
+    }
     </style>
       
 
@@ -53,7 +98,7 @@
 <div class="navbar-inner" >
 
     <div class="left " >
-<img  width="24" height="24"  src="img/iconos/ic_logoApp.png"  >
+<img  width="24" height="24"  src="img/iconos/suritag.png"  >
 
 
     </div>
@@ -71,12 +116,12 @@
 
 <div  class="page-content">
 
-        <div class="block-title">Datos basicos del usuario</div>
+        <div class="block-title titulo_">Datos basicos del usuario</div>
         <div class="list no-hairlines-md">
           <ul>
             <li class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">Nombre</div>
+                <div class="item-title item-label">Nombre:</div>
                 <div class="item-input-wrap">
                   <input type="text" id="nombre" placeholder="Tu nombre" required validate>
                   <span class="input-clear-button"></span>
@@ -85,7 +130,7 @@
             </li>
             <li class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">Correo</div>
+                <div class="item-title item-label">Correo:</div>
                 <div class="item-input-wrap">
                   <input type="email" id="Correo"  placeholder="Tu  correo" required validate>
                   <span class="input-clear-button"></span>
@@ -94,7 +139,7 @@
             </li>
             <li class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">Telefono</div>
+                <div class="item-title item-label">Telefono:</div>
                 <div class="item-input-wrap">
                   <input type="number" id="Telefono" placeholder="Tu telefono" required validate>
                   <span class="input-clear-button"></span>
@@ -105,7 +150,13 @@
           </ul>
         </div>
 
-        <button  id="saveData"  class="col button button-fill color-orange">Finalizar y Continuar</button>
+        <div>
+          <center>
+
+          <button  id="saveData"  class="col button button-fill color-orange boton_finalizar">Finalizar y Continuar</button>
+          </center>
+        </div>
+        
 
 
 

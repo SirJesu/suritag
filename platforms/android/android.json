@@ -55,6 +55,10 @@
             {
               "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"SQLitePlugin\"><param name=\"android-package\" value=\"io.sqlc.SQLitePlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -182,6 +186,9 @@
       "PACKAGE_NAME": "com.dismel.suritagapp"
     },
     "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.dismel.suritagapp"
+    },
+    "cordova-sqlite-storage": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     }
   },
@@ -346,6 +353,14 @@
         "cordova.plugins.notification.local.core",
         "plugin.notification.local.core"
       ]
+    },
+    {
+      "id": "cordova-sqlite-storage.SQLitePlugin",
+      "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+      "pluginId": "cordova-sqlite-storage",
+      "clobbers": [
+        "SQLitePlugin"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -362,6 +377,7 @@
     "cordova-plugin-screen-orientation": "3.0.1",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-badge": "0.8.8",
-    "cordova-plugin-local-notification": "0.9.0-beta.2"
+    "cordova-plugin-local-notification": "0.9.0-beta.2",
+    "cordova-sqlite-storage": "2.6.0"
   }
 }

@@ -81,7 +81,8 @@ $$(".timeline").empty();
        <div class="timeline-item-content">
          <div class="timeline-item-inner">
            <div class="timeline-item-time">`+element.HoraReserva+`</div>
-           <div class="timeline-item-title font-sm-3" style="color:red" >`+element.NombreSitio+`</div>
+           <div class="timeline-item-title font-sm-3" style="" >`+element.NombreSitio+`</div>
+           
 <div class="timeline-item-subtitle font-sm-2"><i class='f7-icons' >persons</i>   `+element.CantidadPersonas+`</div>
 <div class="timeline-item-text font-sm-2">`+element.NombreMesa+`</div>.
            

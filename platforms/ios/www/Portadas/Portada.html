@@ -75,7 +75,10 @@ on:{
     var config = JSON.parse( textC );
 
   if(config.logged == true){
-    window.location = "../View_Principal.html";
+
+   // window.location = "../View_Principal.html";
+   HidePage("location","../IntroOpciones.html");
+
   }else{
     window.location = "../login_v1.html";
 

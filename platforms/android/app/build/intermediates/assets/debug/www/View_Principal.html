@@ -9,7 +9,8 @@
         <!-- Color theme for statusbar -->
         <meta name="theme-color" content="#2196f3">
 
-        <link rel="stylesheet"  href="css/app.css" >
+        
+       <link rel="stylesheet"  href="css/app.css" >
         <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
         <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
         <link rel="stylesheet" href="libs/slider/css/slider-pro.min.css" >
@@ -57,9 +58,9 @@
 
  .navbar{
 
-height: 7vh !important;
-background: #CB4308 !important;
-padding-top: 5px;
+height: 9vh !important; /*7vh*/
+
+/*padding-top: 5px;*/
 
 }
 
@@ -83,29 +84,27 @@ margin-top: 25%;
     }
 .button-buscar-favoritos{
 
-background: #CB4308;
+
 padding: 3px;
 color:white;
 border: none;
 border-color: transparent;
 font-size: 17px;
-font-family: Arial, Helvetica, sans-serif;
+/*font-family: Arial, Helvetica, sans-serif;*/
 
 }
 #map {
-        height: 320px;
+        height: 350px; /*320*/
       }
 .btn-Centered{
 z-index: 10;
 position: absolute;
-background: #CB4308;
-color: white;
+
 width: 60%;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 4vw;
-border-width: 2px;
-border-color: orange;
-border-radius: 7px;
+/*font-family: Arial, Helvetica, sans-serif;*/
+/*font-size: 4vw;*/
+
+/*border-radius: 7px;*/
 
 margin-left: 20%;
 margin-bottom: 50px;
@@ -121,8 +120,44 @@ margin-bottom: 50px;
   height: 8vw;
 }
 
+/*agregado jesu*/
+
+.panel{
+  -webkit-box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
+box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
+}
+
+.item-title, .menu-icon{
+  transition: 0.3s;
+  filter: opacity(80%);
+}
+/*
+.item-title:hover, .menu-icon:hover{
+  transition: 0.3s;
+  filter: opacity(100%);
+}
+*/
+.item-content{
+  border: none;
+  margin-left: 0px;
+  margin-right: 0px; 
+}
 
 
+ .color-black{
+ filter: opacity(30%) !important;
+ 
+}
+
+.item-content{
+  width: 100%;
+}
+
+.card{
+  margin-left: 0px;
+  margin-right: 0px;
+}
 </style>
 
 </head>
@@ -133,134 +168,163 @@ margin-bottom: 50px;
 
 
         <div class="panel panel-left panel-reveal">
-            <div class=" header-infor-menu">
+            <div class=" header-infor-menu" style="background-image: none;
+              background: rgba(255,175,75,1);
+              background: -moz-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
+              background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(227,11,79,1)));
+              background: -webkit-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
+              background: -o-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
+              background: -ms-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
+              background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#e30b4f', GradientType=1 );
+            ">
 
-              <div class="content-header-info" >
+              <div class="content-header-info">
               
-                  <img src="img/iconos/user_defaultProfile.png" class="rounded img-content-header" >
+                  <img src="img/iconos/user_defaultProfile.png" class="rounded img-content-header img_panel">
                   <div class="info-header-text" >
-                   <label class="nombre-content-header"  >yarlet figeroa</label>
-                    <p class="correo-info" >yarlet@gmail.com</p>
-                    <button class="button-headeer-content" >Cartagena</button>
+                   <label class="nombre-content-header nombre">yarlet figeroa</label>
+                    <p class="correo-info">yarlet@gmail.com</p>
+                    <button class="button-headeer-content boton_cartagena">Cartagena</button>
                   </div>
+                  <style type="text/css">
+                    .nombre{
+                      font-size: 15px;
+                      font-weight: 600;
+
+                    }
+                    .img_panel{
+                      width: 60px;
+                      height: 60px;
+                    }
+                    .boton_cartagena{
+                      background-color: #fff;
+                      border: 0px solid;
+                      padding: 5px;
+                      color: #e30b50;
+                      font-size: 12px;
+                    }
+                  </style>
 
               </div>
 
               </div>
-              <hr class="line-menu" >
+              
 
                 <div class="block">
             
               
-              <div class="list  ">
+              <div class="list">
 
                 <ul>
                   <li>
 
-                                <div  id="principalAccion" class="item-content panel-close" style="border: none" >
-                                  <a style="color: #6d6d72 !important" class="tab-link" href="#view-principal" >    
-                                  <div class="item-media"><img src="img/menu-icons/Principal.svg" class="menu-icon" ></div>
-                                                <div class="item-inner">
-                                                  <div class="item-title menu-item-text">Principal</div>
-                                                  
-                                                </div>
-                                              </a>
-                                         </div> 
+                    <div  id="principalAccion" class="item-content panel-close">
+                         <a style="color: #6d6d72 !important" class="tab-link" href="#view-principal" >    
+                                  
+                             <div class="item-media">
+                                <img src="img/menu-icons/Principal.svg" class="menu-icon" >
+                             </div>
 
-                                         <div id="ReservasAccion"  class="item-content" style="border: none" >
-                                            <div class="item-media"><img src="img/menu-icons/reserva.svg" class="menu-icon" ></div>
-                                            <div class="item-inner">
-                                              <div class="item-title menu-item-text">Reservas</div>
-                                              
-                                            </div>
-                                     </div>
+                              <div class="item-inner">
+                                <div class="item-title menu-item-text">Principal</div>                     
+                              </div>
+                          </a>
+                    </div> 
 
 
-                            <!---
+                    <div id="ReservasAccion"  class="item-content">
+                        <div class="item-media">
+                          <img src="img/menu-icons/reserva.svg" class="menu-icon">
+                        </div>
+
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Reservas</div>
+                        </div>
+                    </div>
+
+
+                    <!---
                         <div class="item-content" id="actividadAccion"  style="border: none" >
                                 <div class="item-media"><i class="f7-icons">graph_round_fill</i></div>
                                 <div class="item-inner">
                                   <div class="item-title">Actividad</div>
                                   
                                 </div>
-                         </div>  -->
+                         </div>  
                          
-                        
-
-                          
-                         <div id="configuracionAccion" class="item-content" style="border: none" >
-                                <div class="item-media"><img src="img/menu-icons/configuracion.svg" class="menu-icon" ></div>
-                                <div class="item-inner">
-                                  <div class="item-title menu-item-text">Configuracion</div>
-                                  
-                                </div>
-                         </div>
-                         <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
-                                <div class="item-media"><img src="img/menu-icons/SoporteTecnico.svg" class="menu-icon" ></div>
-                                <div class="item-inner">
-                                  <div class="item-title menu-item-text">Soporte tecnico</div>
-                                  
-                                </div>
-                         </div>
-
-               <!--          <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
+                       <div  id="soporteTecnicoAccion" class="item-content" style="border: none" >
                             <div class="item-media"><img src="img/menu-icons/CheckIn.png" class="menu-icon" ></div>
                             <div class="item-inner">
                               <div class="item-title">Check-in</div>
                               
                             </div>
-                     </div>  -->
+                     </div>  
+                   -->
 
-                     <div class="item-content" >
+                    <div class="item-content">
+                        <div class="item-media">
+                          <img src="img/menu-icons/planPremium.svg" class="menu-icon">
+                        </div>
 
-                        <div class="item-media"><img src="img/menu-icons/planPremium.svg" class="menu-icon" ></div>
-                                <div class="item-inner">
-                                  <div class="item-title menu-item-text" >Plan Premium</div>
-                                  
-                                </div>
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Plan Premium</div>
+                        </div>
 
+                    </div>
+
+
+                    <div class="item-content" id="AddSitio">
+
+                        <div class="item-media">
+                          <img src="img/menu-icons/addsitio.svg" class="menu-icon">
+                        </div>
+
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Añadir Sitio</div>
+                        </div>
+                    </div>
+
+
+                   <div  id="soporteTecnicoAccion" class="item-content">
+                        <div class="item-media">
+                          <img src="img/menu-icons/SoporteTecnico.svg" class="menu-icon">
+                        </div>
+
+                        <div class="item-inner">
+                          <div class="item-title menu-item-text">Soporte tecnico</div>
+                        </div>
+                   </div>
+
+
+                 <div id="configuracionAccion" class="item-content">
+                    <div class="item-media">
+                      <img src="img/menu-icons/configuracion.svg" class="menu-icon">
+                    </div>
+
+                    <div class="item-inner">
+                      <div class="item-title menu-item-text">Configuracion</div>
+                    </div>
+                </div>
+
+
+                 <div class="item-content" id="salirApp">
+                     <div class="item-media">
+                       <img src="img/menu-icons/addsitio.svg" class="menu-icon">
+                     </div>
+
+                     <div class="item-inner">
+                        <div class="item-title menu-item-text">Salir</div>
+                     </div>
                  </div>
-                 <div class="item-content" id='AddSitio' >
-
-                        <div class="item-media"><img src="img/menu-icons/addsitio.svg" class="menu-icon" ></div>
-                                <div class="item-inner">
-                                  <div class="item-title menu-item-text">Añadir Sitio</div>
-                                  
-                                </div>
-
-                 </div>
-                 <div class="item-content" id='salirApp' >
-
-                  <div class="item-media"><img src="img/menu-icons/addsitio.svg" class="menu-icon" ></div>
-                          <div class="item-inner">
-                            <div class="item-title menu-item-text">Salir</div>
-                            
-                          </div>
-
-           </div>
-            
-                        
-                      
-                         
-                      
 
 
                   </li>
-                 
-                  
 
 
                 </ul>
 
-
-
         </div>
-
-       
-          
-
-
-
 
                 </div>
               </div>
@@ -273,7 +337,7 @@ margin-bottom: 50px;
 
         <div class="navbar" >
 
-            <div class="navbar-inner" >
+            <div class="navbar-inner">
 
                     <div  class="left panel-open ios-only">
                             <a href="/left-panel/" >
@@ -287,22 +351,44 @@ margin-bottom: 50px;
             <div  class="inputHeaderContent" >
 
                   <div class="row ">
-<div class="col-15" >
+                    <!--
+<div  id="buscarDefault"  class="col-15" >
   <div class="icon-search-header" >
-    <img src="img/iconos/header.svg" height="10" width="10" >
+    <img src="img/iconos/header.svg"  height="10" width="10" >
   </div>
+</div>-->
+
+<div class="" style="width: 100%; height: 20px;">
+    
+ 
+    <!--<img src="img/iconos/search_header.svg" height="10" width="10" style="float: left;">-->
+    <input  id="inputHeader1" class="inputHeader contenedor-buscar buscar_" type="search"  placeholder="¿Qué quieres hacer hoy?"  area-labe="search">
+    <style type="text/css">
+      
+      .contenedor-buscar{
+        width: 100%;
+        outline: none;
+
+      }
+      .contenedor-buscar::placeholder{
+        padding: 10px;
+        margin: auto;
+        color: #b8b8b8;
+      }
+      
+    </style>
+
+    
+          
+               
+                
+             
+             
 </div>
-<div class="col-65" >
-
-  
-
-    <input  id="inputHeader1" class="inputHeader" type="search"  placeholder="¿Qué quieres hacer hoy?" >
-   
-</div>
-
+<!--
 <div class="col-20">
    <img src="img/iconos/search_header.svg" height="10" width="10"  >
-</div>
+</div>-->
 
 
                   </div>
@@ -317,16 +403,16 @@ margin-bottom: 50px;
           <div class="toolbar-inner">
             <a href="#view-favorito"  class="tab-link tab-link-active toolbar_favoritos">
               <!-- Different icons for iOS and MD themes -->
-                <img  src="img/iconos/icon_top/favoritos.svg"  height="18" width="18" >
+                <img  src="img/iconos/icon_top/favoritos.svg"  height="20" width="20" >
               <!-- Label text -->
               <span class="tabbar-label label-tab-principal">Favoritos</span>
             </a>
             <a   class="tab-link toolbar_social">
-                <img src="img/iconos/icon_top/social.svg" height="18" width="18"  >
+                <img src="img/iconos/icon_top/social.svg" height="20" width="20"  >
               <span class="tabbar-label label-tab-principal">Social</span>
             </a>
             <a href="#view-actividad"  class="tab-link toolbar_actividad">
-               <img src="img/iconos/icon_top/actividad.svg"  height="18" width="18"  >
+               <img src="img/iconos/icon_top/actividad.svg"  height="20" width="20"  >
               <span class="tabbar-label label-tab-principal">Actividad</span>
             </a>
           </div>
@@ -336,35 +422,35 @@ margin-bottom: 50px;
 
 
 
-
+<br>
 <div class="page" >
 
 <div class="page-content content-pack" >
 
 
-<div id="vistaPrincipal"    >
+<div id="vistaPrincipal">
 
 
 
-<div class="row padding-left padding-right"   >
+<div class="row padding-left padding-right">
 
 
-<div    class="col-20 " >
+<div    class="col-20 vector">
   
 
       <center> 
-        <img id="baresItem"  class="img-item-round-prueba"  src="img/iconos/icon_top/bar.svg" >
+        <img id="baresItem" class="img-item-round-prueba"  src="img/iconos/icon_top/cerveza.svg">
       
-        <p class="text-item-round"  >Bares</p>
+        <p class="text-item-round">Bares</p>
         </center>     
      
 </div>
 
-<div    class="col-20 " >
+<div    class="col-20">
   
     
           <center> 
-            <img id="restaurantesItem" class="img-item-round-prueba" src="img/iconos/icon_top/restaurante.svg"  >
+            <img id="restaurantesItem" class="img-item-round-prueba  " src="img/iconos/icon_top/bandeja.svg"  >
           
          </center> 
         
@@ -372,10 +458,10 @@ margin-bottom: 50px;
           <p class="text-item-round" >Restaurantes</p> 
 </div>
 
-<div    class="col-20 " >
+<div    class="col-20">
 
   <center> 
-    <img id="discotecasItem"  class="img-item-round-prueba" src="img/iconos/icon_top/discoteca.svg" >
+    <img id="discotecasItem"  class="img-item-round-prueba " src="img/iconos/icon_top/bola-de-discoteca.svg" >
   
  </center> 
 
@@ -383,12 +469,12 @@ margin-bottom: 50px;
 
  </div>
 
- <div    class="col-20 " >
+ <div    class="col-20">
   
   <center> 
-        <img id="eventosItem"  class="img-item-round-prueba "  src="img/iconos/icon_top/evento.svg" >
+        <img id="eventosItem"  class="img-item-round-prueba "  src="img/iconos/icon_top/calendario.svg" >
       
-        <p class="text-item-round" >Eventos</p>    
+        <p class="text-item-round">Eventos</p>    
         </center>   
 
    
@@ -396,28 +482,38 @@ margin-bottom: 50px;
 </div>
 
 
+
+<!--
 <div  class="col-100" >  
  
 
 
 </div>
-
+-->
 
  
 
 
 </div>
-<button id="btnBuscarPorAhora"  class="btn-Centered">Buscar en esta área</button>
+
+<button id="btnBuscarPorAhora"  class="btn-Centered boton_buscar_en_area"> 
+
+Buscar en esta área
+</button>
+
 <div id="map" ></div>
-<center><img  id="swipeup-img" src="img/iconos/swipe_up.png" width="20" height="10" ></center>
+
+<center>
+  <img  id="swipeup-img" src="img/iconos/swipe_up.svg" width="20" height="10" >
+</center>
 
 
 
 
-<div class="block" style="margin-top: -25px !important" id="RawList" >
+<div class="block " style="margin-top: -25px !important; " id="RawList" >
 
 <div class="list media-list">
-<ul id="listasItem" >
+<ul id="listasItem" style="color: #616161;">
  <!-- <li class="card">
     <div  class=" item-content ">
       <div class="item-media"><img src="" class="img-list" /></div>
@@ -438,9 +534,12 @@ margin-bottom: 50px;
     </div>
   </li>  -->
  
+
+
 </ul>
 
 </div>
+
 
 
 
@@ -506,42 +605,68 @@ margin-bottom: 50px;
     
     
     <!--Fail Slider-->
-    <div  class="block" style="margin-top: 10px !important">
+    <div  class="block" style="margin-top: 10px !important; background-color: #fff">
     
         <div class="row">
-            <div class="col-80" >
-            <label  id="nombreSitio"  class="text-detalle_x2 color-font" >Nombre del sitio</label>
+            <div class="" >
+              <div class="ols" style="margin-top: 10px; margin-left: 0px;">
+                            <label  id="nombreSitio" class="text-detalle_x2 color-font nombre_sitio" >Nombre del sitio</label>
+                           <span  id="ratingSitio"  class="badge text-detalle_x2" style="color: white" > 8.0</span>
+
+              </div>
             </div>
             <div class="col-20" >
-            <span  id="ratingSitio"  class="badge color-red text-detalle_x2" style="color: white" > 8.0</span>
               </div>
-<div class="col-100" >
-<button  id="checkInChat"  class="col button button-small button-fill color-orange right font-sm-3">Check-in-chat</button>
+
+
+<div class="col-100">
+<!--col button button-small button-fill color-orange right boton_check-->
+
+<button  id="checkInChat"  class="boton-check boton-j">Check-in-chat</button>
+
+<div id="divTomarControlSitio" hidden>
+    <button id="tomarControlSitio" class="boton-tomar boton-j">Toma el control de este sitio</button>
+</div>
+
              
 
 </div>
+      
+    <div style=" font-size: 14px; color: #898989;">
+      <label id="SitioAbierto"></label> <br>
+      <hr>
+      <label class="font-sm-2 " ><img src="img/iconos/comida.png" style="margin-right: 5px"  height="16" width="16" >Especialidad</label> <br>
+      <hr>
+      <label id="direccionSitio" class="font-sm-2 " ></label>
+      <hr>
+    </div>
 
+      
+
+ <!--
     <div class="col-100" style="margin-top: 15px" >
-    <label id="SitioAbierto" class="font-sm-2 color-font" >  </label>
-    <hr  class="line-menu" style="margin-top: 0px !important" >
     </div>
+    
     <div class="col-70 " style="margin-top: 15px" >
-        <label class="font-sm-2 color-font" ><img src="img/iconos/comida.png" style="margin-right: 5px"  height="16" width="16" >Especialidad   </label>
+      
+        
         <hr  class="line-menu" style="margin-top: 0px !important" >
     </div>
-    <div id="menuItem" class="col-20" style="margin-top: 15px" >
-    <label  class="font-sm-3 " style="color:red;font-family: Arial, Helvetica, sans-serif" >Menu</label>
+  -->
+
+    <div id="menuItem" class="boton-j modelo-menu">
+
+      <label  class="font-sm-3" style="">ver Menu</label>
     
     </div>
     
+    <!--
     <div class="col-100 margin-top">
-    <label id="direccionSitio" class="font-sm-2 color-font" ></label>
-    <hr  class="line-menu" style="margin-top: 0px !important" >
-      </div>
-      <di id="divTomarControlSitio" hidden class="col-100 margin-top">
-       <button style="color: black;background: white"  id="tomarControlSitio" class="button " > Toma el control de este sitio</button>
-        <hr  class="line-menu" style="margin-top: 0px !important" >
-          </div>
+      <!--
+      <hr  class="line-menu" style="margin-top: 0px !important" > 
+    </div>-->
+
+      
 
     
       <div class="col-100">
@@ -551,11 +676,11 @@ margin-bottom: 50px;
   
       </div>
       <div class="col-100">
-    <textarea class="font-sm-3 color-font" readonly id="textComentario" rows="3" placeholder="Escribe tu reseña" ></textarea>
+    <textarea class="font-sm-3  texto_" readonly id="textComentario" rows="3" placeholder="Escribe tu reseña..." ></textarea>
       </div>
       <div class="col-100">
-        <div class="list media-list" style="position: relative;margin-top: -3%" >
-                <ul id="listComents" >
+        <div class="list media-list" style="position: relative;margin-top: -3%; width: 100%; color: #434b54;" >
+                <ul id="listComents" style="width: 100%; color: #434b54;">
                <!--   <li>
                     <a href="#" class="item-link item-content">
                       <div class="item-media"><img  width="46" height="46"/></div>
@@ -575,6 +700,21 @@ margin-bottom: 50px;
     
     
      </div>
+     <style type="text/css">
+      .nombre_sitio{
+        font-size: 20px;
+        font-weight: 600;
+        margin: 10px;
+      }
+      .texto_{
+        border:0px solid;
+        background-color: #eaeaea;
+        margin: 5px;
+      }
+      .item-inner{
+        color: #434b54;
+      }
+    </style>
     
     </div>
     
@@ -728,7 +868,7 @@ Suritag-Clientes
       <div class="navbar">
         <div class="navbar-inner inner-principal-popup "  >
           <div class="left">
-   <img   class="popup-close   close-coment-pop" style="margin-right: 15%"  src="img/iconos/ic_logoApp.png" width="26" height="26" >
+   <img   class="popup-close   close-coment-pop" style="margin-right: 15%; width: 20px; height: auto;"   src="img/iconos/back_row.png" width="26" height="26" >
           </div>
           <div class="title-pop" >Añadir Comentarios</div>
           <div class="right">
@@ -746,13 +886,19 @@ Suritag-Clientes
 <div class="block" >
 <div class="block-title font-sm-3"  >Comentario</div>
 
-<textarea   id="comentResena" style="width: 100%;background: white;"  rows="8" class="font-sm-2"  placeholder="escriba aqui su experiencia en este lugar" ></textarea>
-
+<textarea   id="comentResena" style="" rows="8" class="font-sm-2 set"  placeholder="escriba aqui su experiencia en este lugar"></textarea>
+<style type="text/css">
+  .set{
+    width: 100%;background: white;
+    padding: 10px;
+   
+  }
+</style>
 
 </div>
 
 <div class="block" >
-    <button  id="btnEnviarReseña" class="button button-fill color-orange" >Enviar Comentario</button>
+    <button  id="btnEnviarReseña" class="button button-fill color-orange" style="height: 40px;">Enviar Comentario</button>
 
 
 </div>
@@ -781,7 +927,7 @@ Suritag-Clientes
             <img  style="margin-right: 15%" width="25" height="25" src="img/iconos/back_row.png"  >
 
           </div>
-          <div  class="title-pop"   id="title-menu"  >Menu</div>
+          <div  class="title-pop" id="title-menu">Menu</div>
           <div class="right">
 
 

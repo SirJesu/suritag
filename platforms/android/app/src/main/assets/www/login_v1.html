@@ -3,11 +3,11 @@
 <head>
   
 
-    <meta charset="utf-8">
+    <meta charset="utf-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <!-- Color theme for statusbar -->
-        <meta name="theme-color" content="#2196f3">
+        <meta name="theme-color" content="#e30b50">
 
         <link rel="stylesheet"  href="css/app.css" >
         <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
@@ -29,7 +29,7 @@
 
 <div  class="page-content page-content-portada ">
 
-<img src="img/iconos/logo-portada-f-transparente.png"  class="imgLogin"  >
+<img src="img/iconos/isotipo_suritag_.svg"  class="imgLogin"  >
 
 
 <div class="block list-login">
@@ -42,7 +42,7 @@
             </div>
             <div class="item-inner">
               <div class="item-input-wrap  ">
-                <input type="email" id="correo"  placeholder="" validate required  >
+                <input type="email" id="correo"  placeholder="Correo electrónico" validate required  style="background-color: transparent; color: white;">
                 <span class="input-clear-button"></span>
               </div>
             </div>
@@ -52,39 +52,88 @@
               <i class="f7-icons"  id="telefono"  style="color: white" >phone</i>
             </div>
             <div class="item-inner">
-              <div class="item-input-wrap  ">
-                <input type="number" class="foqued"  validate required   placeholder="">
+              <div class="item-input-wrap">
+                <input type="number" class="foqued" validate required placeholder="Teléfono" style="background-color: transparent; color: white;">
                 <span class="input-clear-button"></span>
               </div>
             </div>
           </li>
+
+          <style>
+            input{
+              position: relative;
+            }
+            input::placeholder{
+              color: aliceblue;
+            }
+           
+          </style>
        
         </ul>
       </div>
     <div class="row">
 
 <div class="col-50">
-
- <button  id="ingresarManual"  class="btnLogin button-fill" >Ingresar</button>   
-
-
-
+        <button  id="ingresarManual"  class="btnLogin button-fill btn_login" >Ingresar</button>   
 </div>
 <div class="col-50">
-        <button  id="btnRegistrarse" class="btnLogin button-fill" >Registrarse</button>   
+        <button  id="btnRegistrarse" class="btnLogin button-fill btn_login">Registrarse</button>   
 </div>
+<style>
+    .btn_login{
+      width: 100%;
+      border-radius: 5px;
+      height: 30px;
+      color: #e30b50;
+      /*color: lightslategray;*/
+      padding: 3px;
+    }
+</style>
 
-<div class="col-100 padding-top" style="margin-top: 10%" >
+<div class="col-100 padding-top" style="margin-top: 5%">
 
-        <button class="btnLogin"  id="btnIngresarFacebook" style="background: blue !important; border: none !important;color: white !important;text-align: center;align-content: center;align-items: center" >  <img style="padding-top: 1px" src="img/facebook.svg" width="20" height="20" > Ingresar con facebook</button>
+        <button class="btnLogin"  id="btnIngresarFacebook">  <img style="padding-top: 1px" src="img/facebook.svg" width="20" height="20" > Ingresar con facebook</button>
     
     
     </div>
     <div class="col-100 ">
     
-            <button class="btnLogin margin-top" id="btnIngresarGoogle"  style="background: red !important;border: none !important;color: white !important;text-align: center" > <img  style="padding-top: 1px;"  src="img/google.svg" width="20" height="20" > <label style="padding-top: 2px;padding-bottom: 2px" >Ingresar con Google</label>  </button>
+            <button class="btnLogin margin-top" id="btnIngresarGoogle"> <img  style="padding-top: 1px;"  src="img/google.svg" width="20" height="20" > <label style="padding-top: 2px;padding-bottom: 2px" >Ingresar con Google</label>  </button>
     
     </div>
+
+    <style>
+      .btnLogin{
+      width: 100%;
+      border-radius: 5px;
+      height: 40px;
+      color: #e30b50;
+      padding: 3px;
+      }
+      #btnIngresarFacebook{
+        /*background: blue !important;*/
+        background-color: transparent !important;
+
+        /*border: none !important;*/
+        border: 2px solid white !important;
+
+        color: white !important;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+      }
+
+      #btnIngresarGoogle{
+        /*background: red !important;*/
+        background-color: transparent !important;
+
+        /*border: none !important;*/
+        border: 2px solid white !important;
+
+        color: white !important;
+        text-align: center;
+      }
+    </style>
     
         </div>
 
@@ -189,8 +238,8 @@ if( estado  == null ){
 
 
   } else if(estado == "LOGEADO") {
-    window.location = "View_Principal.html";
-
+  //  window.location = "View_Principal.html";
+    HidePage("location","IntroOpciones.html");
 
   }
 });
@@ -222,8 +271,8 @@ if( estado  == null ){
   window.location = "saveDataUser.html?name="+user.displayName+"&email="+user.email+"&telefono="+user.phoneNumber;
 
 } else if(estado == "LOGEADO") {
-    window.location = "View_Principal.html";
-
+  //  window.location = "View_Principal.html";
+  HidePage("location","IntroOpciones.html");
 
   }
 
@@ -277,8 +326,8 @@ config.Usuario = data.obj;
 
  db.ref("Social/Usuarios/"+data.obj.idUsuario).set(data.obj,function (errr) { 
 
-  window.location = "View_Principal.html";
-
+ // window.location = "View_Principal.html";
+  HidePage("location","IntroOpciones.html");
 
   });
 

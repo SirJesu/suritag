@@ -53,6 +53,9 @@
     <feature name="LocalNotification">
         <param name="ios-package" value="APPLocalNotification" />
     </feature>
+    <feature name="SQLitePlugin">
+        <param name="ios-package" value="SQLitePlugin" />
+    </feature>
     <name>SuritagApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

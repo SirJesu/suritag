@@ -1,4 +1,4 @@
-#Sun Dec 23 16:12:15 COT 2018
-base.0=C\:\\Users\\furiad\\Documents\\web apps\\SuritagApp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Wed Jan 16 00:28:12 COT 2019
+base.0=C\:\\Users\\furiad\\Documents\\web apps\\gitUp\\suritag\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

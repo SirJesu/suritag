@@ -43,6 +43,9 @@
     },
     "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.dismel.suritagapp"
     }
   },
   "dependent_plugins": {

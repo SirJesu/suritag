@@ -1,9 +1,26 @@
 
- var localDatabase =   CreateDb();
+ var localDatabase ;
  //console.log(localDatabase);
  //ObtenerPublicaciones(localDatabase);
  //CreateTables(localDatabase);
  //InsertardatoPrueba(localDatabase);
+
+
+ document.addEventListener('deviceready', function() {
+    localDatabase = window.sqlitePlugin.openDatabase({
+      name: 'suritagApp.db',
+      location: 'default',
+    });
+
+    CreateTableLike(localDatabase);
+    CreateTablePublicacion(localDatabase);
+    
+       CreateTableComents(localDatabase);
+
+
+
+  });
+
 function CreateDb() { 
 
    var db = null;
@@ -17,10 +34,7 @@ function CreateDb() {
     if (window.openDatabase) {
 
         db =openDatabase(dbName, version, dbDisplayName, dbSize);
-        CreateTableLike(db);
-        CreateTablePublicacion(db);
-        
-           CreateTableComents(db);
+       
     }else{
         console.log("error");
     }
@@ -42,28 +56,28 @@ function CreateTablePublicacion(database) {
    `CREATE TABLE IF NOT EXISTS 
    publicaciones(
        key TEXT PRIMARY KEY,
-     created TEXT, 
-     date TEXT,
-     text TEXT,
-     name TEXT,
-     img TEXT,
-     imagenUsuario TEXT,
-     peopleId TEXT,
-     placeId TEXT,
-     placeName TEXT
+     created VARCHAR(20), 
+     dateVARCHAR(20),
+     text VARCHAR(200),
+     name VARCHAR(100),
+     img VARCHAR(200),
+     imagenUsuario VARCHAR(200),
+     peopleId VARCHAR(15),
+     placeId VARCHAR(15),
+     placeName VARCHAR(200)
 )
 
 
 `, [],function(transaction,resul){
-    console.log("success:: "+JSON.stringify(resul));
+    alert("success:: "+JSON.stringify(resul));
 },function (transaction,error) { 
-    console.log("errror:: "+JSON.stringify(error));
+    error("errror:: "+JSON.stringify(error.message));
  });  
 
 
     }, function() 
     {
-     //  alert("SQL statements were executed successfully.");
+      alert("SQL statements were executed successfully.");
     });
 
 
@@ -80,12 +94,12 @@ function CreateTablePublicacion(database) {
    CREATE TABLE IF NOT EXISTS 
    likes(
        keyLike TEXT PRIMARY KEY,
-       idPublicacion TEXT
+       idPublicacion VARCHAR(200)
       
    )
    
    `,[],function (transaction,resul) {
-       console.log("success like table");
+       alert("success like table");
      });
 
    
@@ -110,7 +124,7 @@ function CreateTablePublicacion(database) {
        CREATE TABLE IF NOT EXISTS 
        Coments (
            keyComent TEXT PRIMARY KEY,
-           idPublicacion TEXT
+           idPublicacion VARCHAR(200)
           )
        
        `,[]); 

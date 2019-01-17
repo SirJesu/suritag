@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Page Title</title>
-    <meta name="theme-color" content="#2196f3">
+    <meta name="theme-color" content="#e30b50">
+
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css" >
         <link rel="stylesheet"  href="css/app.css" >
@@ -12,7 +14,41 @@
       <script src="libs/jquery-3.3.1.min.js" ></script>
       <script src="libs/firebase.js"></script> 
 
+      <style type="text/css">
+      .messages{
+        background-color:#EAECEE !important;
+      }
+        .message-bubble{
+          background-color: #fff !important;
+          color:#34495E !important;
+         
+          box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.34) !important;
+          
+          border: 1px solid rgba(0,0,0,.0975) !important;
+          
+        }
+        .message-content{
+          margin-bottom: 10px; 
 
+        }
+        .btn-open-chatprivado{
+          background-color: #5D6D7E !important;
+          color: #fff;
+        }
+
+        .link{
+          font-size: 20px;
+          height: 40px !important; 
+        }
+
+        .toolbar{
+          -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+          
+          border-top: 2px solid rgba(0,0,0,.0975) !important;
+        }
+      </style>
     
 </head>
 <body>
@@ -35,7 +71,7 @@
                     <!--  <span class="font-sm-3">Check-Out</span>-->
                      
                       </div>
-                    <div class="title font-sm-4" id="NombreSitio" >Nombre del sitio</div>
+                    <div class="title font-sm-4" id="NombreSitio">Nombre del sitio</div>
                       <div class="rigth">
 
                       </div>
@@ -45,7 +81,7 @@
              <div class="subnavbar">
                     <div class="subnavbar-inner">
                     
-                      <button id="btnVerUsuariosSitio" class=" button button-fill color-green" >Ver Usuarios en el sitio</button>
+                      <button id="btnVerUsuariosSitio" class=" button button-fill ">Ver Usuarios en el sitio</button>
 
                     </div>
                   </div>  
@@ -53,13 +89,13 @@
                 <div class="toolbar messagebar">
                   
     
-<div class="row" style="margin-bottom: 10px;padding-bottom: 10px" >
+<div class="row" style="margin-bottom: 10px;padding: 10px" >
 
 <div class="col-20">
-<a id="openImg" class="link color-black" ><i class="f7-icons" >images_fill</i></a>
+<a id="openImg" class="link" ><i class="f7-icons" >images_fill</i></a>
 </div>
 <div class="col-60">
-    <textarea class="resizable msgInclude" placeholder="Escribe aqui"></textarea>
+    <textarea class="resizable msgInclude" placeholder="Escribe aquí..."></textarea>
 </div>
 <div class="col-20">
     <a class="link send-link" href="#"> <i class="f7-icons" >paper_plane_fill</i> </a>
@@ -73,6 +109,7 @@
                     
 
                 </div>
+
                 <div class="page-content messages-content">
                   <div class="messages">
                     <!-- Messages title -->
@@ -110,10 +147,10 @@
 
 </div>
 
-<div class="block " style="margin-top: 20%">
+<div class="block " style="margin-top: 20%; padding: 0px;">
 
 
-    <div class="list media-list">
+    <div class="list media-list" style="color: #34495E !important;">
         <ul id="lista-usuarios-chat" >
        <!--   <li  >
             <div class="item-content">
@@ -132,7 +169,7 @@
       
 
 </div>
-
+ 
 
 </div>
 
@@ -144,7 +181,7 @@
             <div class="title">Messages</div>
           </div>
         </div>
-        <div class="toolbar messagebar">
+        <div class="toolbar messagebar" style=" ">
           <div class="toolbar-inner">
             <div class="messagebar-area">
               <textarea class="resizable" placeholder="Message"></textarea>

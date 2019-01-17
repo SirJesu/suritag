@@ -433,7 +433,8 @@ function LimpiarMarcadores() {
   
     var marker = new google.maps.Marker({
       map: map,
-      position: place.geometry.location
+      position: place.geometry.location,
+      icon:"../img/marcador.svg"
     });
      arrayMarker.push(marker);
 
@@ -553,7 +554,7 @@ function LimpiarMarcadores() {
                 </div>
                 <div class="item-subtitle">
                <div class="row">
-                <div class="col-100"><label class="font-sm-2"><img src="img/iconos/map-placeholder.png" >`+element.formatted_address+`</label></div>
+                <div class="col-100"><label class="font-sm-2">`+element.formatted_address+`</label></div>
                
     
                </div>
@@ -1532,16 +1533,33 @@ var res = [];
       render(res);
 
      }
+
+     $$("#buscarDefault").off("click");
+      $$("#buscarDefault").click(function () { 
+        
+        GetDetails( predictions[0].place_id );
+
+
+
+       });
+
+
       
        };
  console.log(query);
       autocomplete.getQueryPredictions({ input: query+"" }, displaySuggestions);
-     
+ 
+
+
+
 
     
     },
   on:{
- change:function (value) { 
+ change:function (value) 
+ 
+ 
+ { 
 
  $$("#inputHeader1").val(value[0].description);
  $$(".toolbar_principal").click();

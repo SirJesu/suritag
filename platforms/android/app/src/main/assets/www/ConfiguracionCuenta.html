@@ -41,27 +41,17 @@
                    
                     <div  class="left back ">
                      
-                      <img src="img/iconos/back_row.png" width="26" height="26" >
-
-
+                      <img class="icono_flecha_atras" src="img/iconos/back_row.png" style="width: 15px; heigth: auto;"> <!-- w: 26 h: 26-->
 
                     </div>
 
                     
-
-
-
-                  <div class="title font-sm-3">Configuracion</div>
+                  <div class="title font-sm-3">Configuración</div>
                  
                   <div class="right">
 
                   </div>
                 
-                             
-
-                     
-         
-
 
 
                 </div>
@@ -87,41 +77,74 @@
 
 
  
-      <div class="block card">
+      <div class="block  contect_" style="padding: 0px;">
 
-          <div class="block-title"><i class="f7-icons" >person_fill</i>  Datos personales</div>
+          <div class="block-title" style="font-size: 18px; font-weight: 400;">Datos personales:</div>
           <div class="list no-hairlines-md">
             <ul>
               <li class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-label">Nombre</div>
+                  <div class="item-title item-label">Nombre:</div>
                   <div class="item-input-wrap">
-                    <input class="font-sm-2x2"  type="text" id="nombre" readonly placeholder="Nombre">
+                    <input class="" type="text" id="nombre" readonly placeholder="Nombre">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </li>
               <li class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-label">Correo</div>
+                  <div class="item-title item-label">Correo:</div>
                   <div class="item-input-wrap">
-                    <input class="font-sm-2x2" type="email" readonly  id="correo"  placeholder="email">
+                    <input class="" type="email" readonly  id="correo"  placeholder="email">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </li>
               <li class="item-content item-input">
                 <div class="item-inner">
-                  <div class="item-title item-label">Telefono</div>
+                  <div class="item-title item-label">Teléfono:</div>
                   <div class="item-input-wrap">
-                    <input type="text" class="font-sm-2x2"  id="telefono"  readonly placeholder="telefono">
+                    <input type="text" class="" id="telefono" readonly placeholder="Teléfono">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
               </li>
+
+             
               
             </ul>
           </div>
+ <button class="button button-fill" id="btnCambiarPass" style="height: 40px; width: 50%;margin-left: 10px;font-size: 15px;">Cambiar contraseña</button>
+
+ <div id="divChangePass" class="changePass block">
+
+ 
+  <div class="list inset" style=" background-color: #fff;">
+    <ul>
+      <li class="item-content item-input">
+        <div class="item-inner">
+          <div class="item-input-wrap">
+            <input type="password" id="nuevaPass" required validate  placeholder="Nueva contraseña">
+            <span class="input-clear-button"></span>
+          </div>
+        </div>
+      </li>
+      <li class="item-content item-input">
+        <div class="item-inner">
+          <div class="item-input-wrap">
+            <input type="password" id="repitePass" required validate placeholder="repita la contraseña">
+            <span class="input-clear-button"></span>
+          </div>
+        </div>
+      </li>
+     
+    </ul>
+  </div>
+  <button id="guardarCambios" class="button button-fil" style="height: 40px; font-size: 15px;">Guardar datos</button>
+
+
+ </div>
+
           
 
 
