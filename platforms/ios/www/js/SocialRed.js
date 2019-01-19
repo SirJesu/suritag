@@ -769,22 +769,22 @@ socialObj.text = publicacion.text + "";
 socialObj.placeName = publicacion.placeName;
 socialObj.key =  key;
 
-SavePublicacionDBQuery(localDatabase,socialObj);
+GuardarPublicaciones(socialObj);
 
 console.log($("#publicacion"+socialObj.key));
 $("#publicacion"+socialObj.key).empty();
 $("#publicacion"+socialObj.key).remove(); 
 
- $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card" style"margin: 0px;">
+ $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card" style="margin: 0px;">
  <div class="card-header">
    <div class="demo-facebook-avatar"><img src="`+img+`" width="34" height="34"/></div>
    <div  onclick="OpenProfileUser('`+user.idUsuario+`')" class="demo-facebook-name">`+user.NombreUsuario+`</div>
    <div class="demo-facebook-date">`+publicacion.placeName+`</div>
  </div>
 
- <div class="card-content card-content-padding">
+ <div class="card-content ">
    <img id='imgPublicacion`+key+`' src="`+publicacion.img+`" width="100%"/>
-      <div>
+      <div style="padding: 10px;">
         <p>`+publicacion.text+`</p>
         <p class="likes" id='likes`+key+`'  >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0 &nbsp;&nbsp; compartido: 0  </p>
       </div>
@@ -1069,7 +1069,7 @@ var like = snapshot.val();
 console.log(snapshot.val());
 vectorLikes.push(like);
 console.log(likes);
-SaveLikesPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
+//SaveLikesPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
 
 
 /*
@@ -1104,7 +1104,7 @@ var coment = snapshot.val();
 coments += 1;
 vectorComents.push(coment);
 
-SaveComentsPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
+//SaveComentsPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
 
 
 
@@ -1447,13 +1447,20 @@ var img = "img/iconos/user_defaultProfile.png";
 img = history.ImagenUsuario;
  }
 
+ var objHistoryModel = HistoriasModel();
+ objHistoryModel.key = snapshot.key;
+ objHistoryModel.imgUsuarios = img;
+ objHistoryModel.NombreUsuario = history.NombreUsuario.substring(0,6);
+GuardarHistoria(objHistoryModel);
+
+$$("#historyItem"+snapshot.key).remove();
 
 $$(".wr-historia-wrap").append(`  <div id="historyItem`+snapshot.key+`"  onclick="chargeHistory('`+snapshot.key+`','`+nombreUsuario+`')"  class="swiper-slide">
 <div style="display: block">
 <div id='miHistoria'  >
 <img src="`+img+`" width="35" height="35"  class="historia-img" >
 </div>
-<label style="color: #C13008;font-size: 3vw"    >`+history.NombreUsuario.substring(0,history.NombreUsuario.indexOf(" "))+`</label>
+<label style="color: #C13008;font-size: 3vw"    >`+history.NombreUsuario.substring(0,6)+`</label>
 </div>
 </div>`);
 
@@ -1617,16 +1624,19 @@ console.log(archivo);
 
 
 
-
+/*
   function OnOutLine() { 
 
-  var datos =  ObtenerPublicaciones(localDatabase);
-
+  ObtenerPublicaciones(localDatabase);
+  ObtenerPublicacionesPrueba(localDatabase);
 console.log("db datos");
 console.log(datos);
 
 
 
-   }
+   }   */
 
-   OnOutLine();
+   //OnOutLine();
+
+   GetPublicaciones();
+   GetHistorias();
