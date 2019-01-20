@@ -1,3 +1,6 @@
+
+//console.log( new Zuck({}) );
+var stories ;
 function setOptions(srcType) {
   var options = {
       // Some common settings are 20, 50, and 100
@@ -15,7 +18,7 @@ function setOptions(srcType) {
 ProfileItemActions();
 
  var mainView = app.views.create(".view-main");
- console.log(mainView);
+ //console.log(mainView);
 
 function getBase64(file) {
    var reader = new FileReader();
@@ -34,17 +37,32 @@ var datosUsuario = JSON.parse( localStorage.getItem("config")  );
 $$('.panelComent').hide();
 
 
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+  SubirHistoriaImagen();
+}
 
 
+$$("#profileUser-Social-own").click(function (evt) { 
+$$(".popover-backdrop").click();
+
+ });
+//Subir Historia Imagen 
+
+$$("#addHistoriaImg").click(function (evt) {
+  $$(".popover-backdrop").click();
+  SubirHistoriaImagen();
+  
+  
+});
+
+//$$("#addHistoriaImg").click();
 
 
-
-
-var swiperP = new Swiper('.swiper-container-pop');
 //InitSearch();
 Publicar();
 LoadContentSocial();
-//Historias();
+Historias();
 
 Profile();
 //Amigos();
@@ -456,12 +474,12 @@ Sugerencias
 
 console.log("Social/Amigos/"+usuario.idUsuario);
 
-
+LoadHistorias(usuario.idUsuario);
     db.ref("Social/Amigos/"+usuario.idUsuario).on("child_added",function (snapshot) {
 
 var friend = snapshot.val();
 console.log(friend);
-LoadHistorias(friend.idUsuario,usuario.NombreUsuario);
+LoadHistorias(friend.idUsuario);
 
 
 db.ref("Social/publicaciones/General/"+friend.idUsuario).limitToLast(1).on("child_added",function (snapshot) { 
@@ -769,7 +787,7 @@ socialObj.text = publicacion.text + "";
 socialObj.placeName = publicacion.placeName;
 socialObj.key =  key;
 
-SavePublicacionDBQuery(localDatabase,socialObj);
+GuardarPublicaciones(socialObj);
 
 console.log($("#publicacion"+socialObj.key));
 $("#publicacion"+socialObj.key).empty();
@@ -1069,7 +1087,7 @@ var like = snapshot.val();
 console.log(snapshot.val());
 vectorLikes.push(like);
 console.log(likes);
-SaveLikesPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
+//SaveLikesPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
 
 
 /*
@@ -1104,7 +1122,7 @@ var coment = snapshot.val();
 coments += 1;
 vectorComents.push(coment);
 
-SaveComentsPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
+//SaveComentsPublicacion(localDatabase,{key:snapshot.key,idPublicacion:key});
 
 
 
@@ -1306,6 +1324,56 @@ function onFail(message) {
 
 
 
+  
+
+function SubirHistoriaImagen() { 
+alert("Add Historia");
+  function setOptions(srcType) {
+    var options = {
+        // Some common settings are 20, 50, and 100
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        // In this app, dynamically set the picture source, Camera or photo gallery
+        sourceType: srcType,
+        encodingType: Camera.EncodingType.JPEG,
+        mediaType: Camera.MediaType.PICTURE,
+        allowEdit: false,
+        correctOrientation: true  //Corrects Android orientation quirks
+    }
+    return options;
+  }
+
+  var srcType = Camera.PictureSourceType.CAMERA;
+  var options = setOptions(srcType);
+
+
+  
+  navigator.camera.getPicture(function (imagen) { 
+   app.progressbar.show('multi');
+ //  image.src = "data:image/jpeg;base64," + imagen;
+//  alert("Imagend Obtenida");
+   db.ref("Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario).push().set({
+     img:"data:image/jpeg;base64," + imagen,
+     date:new Date().getTime()
+   },function (error) { 
+     myhistory = true;
+     app.progressbar.hide();
+   
+    });
+ 
+
+
+   },function (error) { 
+     app.progressbar.hide();
+   }, options);
+
+
+
+
+ }
+
+
+
       function  Historias(){
 //console.log( "Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario );
 
@@ -1316,20 +1384,7 @@ function onFail(message) {
  var myhistory = null;
 $$("#miHistoria-Content").hide();
 
-        function setOptions(srcType) {
-          var options = {
-              // Some common settings are 20, 50, and 100
-              quality: 50,
-              destinationType: Camera.DestinationType.DATA_URL,
-              // In this app, dynamically set the picture source, Camera or photo gallery
-              sourceType: srcType,
-              encodingType: Camera.EncodingType.JPEG,
-              mediaType: Camera.MediaType.PICTURE,
-              allowEdit: false,
-              correctOrientation: true  //Corrects Android orientation quirks
-          }
-          return options;
-        }
+     
 
       
         db.ref("Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario).once("value",function (snapshot) {
@@ -1347,10 +1402,6 @@ $$("#miHistoria-Content").hide();
       
       
       
-          $( '#sliderHiSTORY' ).sliderPro({
-            // height: screen.availHeight* 1.5 ,
-             forceSize:"fullWindow"
-           });
       
       
           var count = 0;
@@ -1378,62 +1429,13 @@ $$("#miHistoria-Content").hide();
 
 
 
-
-          $$("#miHistoria").click(function (evt) {
-          console.log(myhistory);
-            switch (myhistory) {
-             case null:
-
-console.log("null");
-             
-               
-               break;
-
-               case true:
-               chargeHistory(datosUsuario.Usuario.idUsuario,datosUsuario.Usuario.NombreUsuario);
-               break;
-               case false:
-     
-               var srcType = Camera.PictureSourceType.CAMERA;
-               var options = setOptions(srcType);
-             
-               
-               navigator.camera.getPicture(function (imagen) { 
-                app.progressbar.show('multi');
-              //  image.src = "data:image/jpeg;base64," + imagen;
-             //  alert("Imagend Obtenida");
-                db.ref("Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario).push().set({
-                  img:"data:image/jpeg;base64," + imagen,
-                  date:dateFormatExtended()
-                },function (error) { 
-                  myhistory = true;
-                  app.progressbar.hide();
-                
-                 });
-              
-
-
-                },function (error) { 
-                  app.progressbar.hide();
-                }, options);
-             
-
-
-               break;
-
-             default:
-               break;
-           }
-
-
-          });
          
         
       }
 
 
 
-      function LoadHistorias(idUsuario,nombreUsuario) {
+      function LoadHistorias(idUsuario) {
 console.log(idUsuario);
 db.ref("Social/Usuarios/"+idUsuario).once("value",function (snapshot) { 
 
@@ -1446,23 +1448,56 @@ var img = "img/iconos/user_defaultProfile.png";
  if(history.ImagenUsuario != undefined){
 img = history.ImagenUsuario;
  }
+ if(datosUsuario.Usuario.idUsuario == idUsuario){
+   history.NombreUsuario  ="Historia";
+   img = "img/icons-social/perfil.png";
+ }
 
 
-$$(".wr-historia-wrap").append(`  <div id="historyItem`+snapshot.key+`"  onclick="chargeHistory('`+snapshot.key+`','`+nombreUsuario+`')"  class="swiper-slide">
-<div style="display: block">
-<div id='miHistoria'  >
-<img src="`+img+`" width="35" height="35"  class="historia-img" >
-</div>
-<label style="color: #C13008;font-size: 3vw"    >`+history.NombreUsuario.substring(0,history.NombreUsuario.indexOf(" "))+`</label>
-</div>
-</div>`);
+var ObjectHistory = {
+  id:  history.idUsuario,               // story id
+    photo: img,            // story photo (or user photo)
+    name: history.NombreUsuario.substring(0,6),             // story name (or user name)
+    link: "",             // story link (useless on story generated by script)
+    lastUpdated: "",      // last updated date in unix time format
+    seen: false,
+    items:[] 
+  
+
+};
+stories.update(ObjectHistory);
+
+db.ref("Social/Historias/"+dateFormat()+"/"+idUsuario).on("child_added",function (snapshot) { 
+var value = snapshot.val();
+var item = {
+  id: snapshot.key,       // item id
+  type: "photo",     // photo or video
+  length: 3,    // photo timeout or video length in seconds - uses 3 seconds timeout for images if not set
+  src: value.img,      // photo or video src
+  preview: "",  // optional - item thumbnail to show in the story carousel instead of the story defined image
+  link: "",     // a link to click on story
+  linkText: "", // link text
+  time: value.date,     // optional a date to display with the story item. unix timestamp are converted to "time ago" format
+  seen: false   // set true if current user was read - if local storage is used, you don't need to care about this
+
+};
+
+  stories.addItem(history.idUsuario, item);
 
 
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 4,
-  spaceBetween: 15,
 
-});  
+
+ });
+
+
+ var objHistoryModel = HistoriasModel();
+ objHistoryModel.key = snapshot.key;
+ objHistoryModel.imgUsuarios = img;
+ objHistoryModel.NombreUsuario = history.NombreUsuario.substring(0,6);
+GuardarHistoria(objHistoryModel);
+
+
+ 
 
 
 
@@ -1617,7 +1652,7 @@ console.log(archivo);
 
 
 
-
+/*
   function OnOutLine() { 
 
   ObtenerPublicaciones(localDatabase);
@@ -1627,6 +1662,58 @@ console.log(datos);
 
 
 
+   }   */
+
+   //OnOutLine();
+
+   GetPublicaciones();
+   GetHistorias();
+
+
+
+function AddToHistory(object){
+  stories.update(object);
+
+}
+
+
+   function CarrouselHistorias() {
+
+	
+    var timestamp = function() {
+      var now = new Date();
+     
+      return date.getTime();
+  };
+
+
+ stories = new Zuck('stories', {
+    backNative: false,
+              previousTap: true,
+    autoFullScreen: false,
+    skin: "Snapgram",
+    avatars: true,
+    list: false,
+              cubeEffect: true,
+    localStorage: true,
+    stories: [
+    
+    ]
+  });
+
+ 
+     
    }
 
-   OnOutLine();
+   CarrouselHistorias();
+
+
+   function comprobeItem(id) { 
+  
+ if( parseInt(id) == datosUsuario.Usuario.idUsuario){
+console.log("IdUsuario");
+
+ }
+
+
+    }

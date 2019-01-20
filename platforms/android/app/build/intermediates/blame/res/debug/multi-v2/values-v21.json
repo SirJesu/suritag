@@ -44,7 +44,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\furiad\\Documents\\web apps\\SuritagApp\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\furiad\\Documents\\web apps\\gitUp\\suritag - copia\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\furiad\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\36aa1268a55f0bbadd781faf244e907e\\res\\values-v21\\values-v21.xml",

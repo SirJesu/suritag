@@ -8,29 +8,23 @@
   },
   "installed_plugins": {
     "cordova-plugin-browsertab": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-buildinfo": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
-    },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-customurlscheme": {
       "URL_SCHEME": "com.dismel.suritagapp",
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
-    },
-    "cordova-universal-links-plugin": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
@@ -38,18 +32,27 @@
     "cordova-plugin-screen-orientation": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-plugin-local-notification": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.dismel.suritagapp"
     }
   },
   "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-plugin-badge": {
+    "es6-promise-plugin": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   }

@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="libs/framework7/css/framework7-icons.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
          <link rel="stylesheet" href="libs/slider/css/slider-pro.min.css" >
+         <link rel="stylesheet" href="libs/zuck.js/zuck.css">
+         <link rel="stylesheet" href="libs/zuck.js/skins/snapgram.css">
        
         <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script src="libs/jquery-3.3.1.min.js" ></script>
@@ -224,7 +226,9 @@ border-radius: 50%;
                        
                        <div class="title"> <img src="img/suritag.svg" width="auto" height="16"></div>
                        <div class="right">
-                      <a class="tab-link"  id="profileUser-Social-own" class="viewOwnProfile" href="#view-perfil" > <img src="img/icons-social/perfil.png" height="27" width="27" > </a>  
+                          <a class="link popover-open" href="#" data-popover=".popover-navigate-socail"  style="color: white" ><i class="f7-icons" >data</i></a>
+
+                   <!--  <a class="tab-link"  id="profileUser-Social-own" class="viewOwnProfile" href="#view-perfil" > <img src="img/icons-social/perfil.png" height="27" width="27" > </a>  --> 
                     </div>
                   
                        
@@ -232,6 +236,20 @@ border-radius: 50%;
       
                        </div>
                     </div>
+
+                    <div class="popover popover-navigate-socail">
+                        <div class="popover-inner">
+                          <div class="list">
+                            <ul>
+                               
+                              <li><a id="addHistoriaImg" class="list-button item-link " href="#">Añadir historia</a></li>
+                              <li><a  id="profileUser-Social-own"  class="list-button item-link tab-link" href="#view-perfil">Mi perfil</a></li> 
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+
                     <div class="toolbar tabbar">
                         <div class="toolbar-inner">
                           <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
@@ -255,18 +273,21 @@ border-radius: 50%;
       
          <div class="header-social" style="margin-bottom: 10px;margin-top: 10px;">
       
-                  <div class="swiper-container">
-                          <div  class="swiper-wrapper wr-historia-wrap">
-                            <div id="miHistoria-Content" class="swiper-slide">
-                                               <div style="display: block">
-                                <div id='miHistoria'  >
-                                    <img src="img/icons-social/perfil.png"  id="SelfHistory_img"  width="50" height="50"  class="historia-img" >
-                                </div>
-                                <label style="color: #C13008;font-size: 3vw">Mi historia</label>
-                              </div>
-                            </div>
-                          </div>
-                 </div>
+                <div class="containerhistory" >
+                    <div id="miHistoria-Content" >
+                       
+         
+        
+         <div  id="stories">
+
+           
+
+         </div>
+     </div>
+    
+
+
+                </div>
     
            </div>  
       <hr style="background: gray;color: gray;margin-top: 0px !important" >
@@ -1114,6 +1135,7 @@ border-radius: 50%;
     <script  src="libs/framework7/js/framework7.min.js" ></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/dataBase.js" ></script>
+    <script src="libs/zuck.js/zuck.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script src="js/SocialRed.js" ></script>
 </body>

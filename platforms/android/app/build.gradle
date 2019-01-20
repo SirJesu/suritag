@@ -91,9 +91,9 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "../cordova-plugin-badge/suritagapp-badge.gradle"
 apply from: "../cordova-plugin-browsertab/suritagapp-BrowserTab.gradle"
 apply from: "../cordova-plugin-buildinfo/suritagapp-BuildInfo.gradle"
-apply from: "../cordova-plugin-badge/suritagapp-badge.gradle"
 apply from: "../cordova-plugin-local-notification/suritagapp-localnotification.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
@@ -264,8 +264,8 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     compile "com.android.support:customtabs:23.3.0"
-    compile "com.android.support:support-v4:24.1.1+"
     compile "com.android.support:support-v4:26.+"
+    compile "com.android.support:support-v4:24.1.1+"
     // SUB-PROJECT DEPENDENCIES END
 }
 
