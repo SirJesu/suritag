@@ -42,7 +42,7 @@ color: white;
 }
 
 .secondary-color{
- background:  #fea110 !important;
+ background:  #e30b50 !important;
  color: white;
 
 }
@@ -73,10 +73,6 @@ margin-bottom: 10px;
  border-width: 2px 2px 2px 2px !important;
 }
 
-
-
-
-
 .size-22 { font-size: 22px }
 .size-25 { font-size: 25px }
 .size-29 { font-size: 29px }
@@ -87,10 +83,6 @@ margin-bottom: 10px;
 .message-avatar{
   opacity: unset !important;
 }
-
-
-
-
 
 
 .tabbar-label-android{
@@ -771,7 +763,7 @@ padding-right: 0%;
 
 margin: 0px !important;
 }
-img-item-round{
+.img-item-round{
  margin: 8%;
  margin-bottom: 10%;
  margin-top: 10%; 

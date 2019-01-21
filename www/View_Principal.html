@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+   
 
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
@@ -362,8 +362,8 @@ box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
     
  
     <!--<img src="img/iconos/search_header.svg" height="10" width="10" style="float: left;">-->
-    
-       <input  id="inputHeader1" class="inputHeader contenedor-buscar buscar_" type="search"  placeholder="¿Qué quieres hacer hoy?"  area-labe="search">
+      <!--inputHeader buscar_-->
+       <input  id="inputHeader1" class="contenedor-buscar " type="search"  placeholder="¿Qué quieres hacer hoy?"  area-labe="search">
     
    
     <style type="text/css">
@@ -371,10 +371,14 @@ box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.55);
       .contenedor-buscar{
         width: 100%;
         outline: none;
+        font-size: 1rem !important;
+
+        /*modulacion*/
+        margin: 0px !important;
+        position: relative;
 
       }
       .contenedor-buscar::placeholder{
-        
         margin: auto;
         color: #b8b8b8;
       }
