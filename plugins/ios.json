@@ -26,10 +26,7 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.dismel.suritagapp"
-    },
-    "cordova-universal-links-plugin": {
+    "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     },
     "cordova-plugin-network-information": {
@@ -38,18 +35,24 @@
     "cordova-plugin-screen-orientation": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     },
-    "cordova-plugin-local-notification": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.dismel.suritagapp"
+    },
+    "cordova-universal-links-plugin": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     }
   },
   "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.dismel.suritagapp"
+    },
     "cordova-plugin-compat": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     },
-    "cordova-plugin-badge": {
+    "es6-promise-plugin": {
       "PACKAGE_NAME": "com.dismel.suritagapp"
     }
   }
