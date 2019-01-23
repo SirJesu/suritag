@@ -434,7 +434,7 @@ function LimpiarMarcadores() {
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
-      icon:"../img/marcador.svg"
+      icon:"img/marcador.svg"
     });
      arrayMarker.push(marker);
 
