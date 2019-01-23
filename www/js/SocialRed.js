@@ -39,7 +39,7 @@ $$('.panelComent').hide();
 
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-  SubirHistoriaImagen();
+ // SubirHistoriaImagen();
 }
 
 

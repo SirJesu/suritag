@@ -1,0 +1,60 @@
+{
+  "_from": "zuck.js@^1.2.0",
+  "_id": "zuck.js@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-kRZ1OT8trht73LjnWr0M9jT6c67Z1VDhDkhTYFm/s1A//U7685f8Pm2pBkcx5iF1vw5p3fq+J4PA48sck0PXlA==",
+  "_location": "/zuck.js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "zuck.js@^1.2.0",
+    "name": "zuck.js",
+    "escapedName": "zuck.js",
+    "rawSpec": "^1.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.2.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/zuck.js/-/zuck.js-1.2.0.tgz",
+  "_shasum": "71c7f2e7335d728752c456a87dfffc8629eca92d",
+  "_spec": "zuck.js@^1.2.0",
+  "_where": "C:\\Users\\furiad\\Documents\\web apps\\gitUp\\suritag - copia",
+  "author": {
+    "name": "Ramon Souza",
+    "email": "me@ramon.codes",
+    "url": "https://ramon.codes"
+  },
+  "bugs": {
+    "url": "https://github.com/ramon82/zuck.js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A javascript library that lets you add stories EVERYWHERE.",
+  "homepage": "https://ramon.codes/projects/zuck.js",
+  "keywords": [
+    "stories",
+    "story",
+    "zuck",
+    "zuckerberg",
+    "facebook",
+    "instagram",
+    "snapchat",
+    "whatsapp",
+    "slider",
+    "modal",
+    "viewer",
+    "media"
+  ],
+  "license": "MIT",
+  "main": "./zuck.js",
+  "name": "zuck.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramon82/zuck.js.git"
+  },
+  "version": "1.2.0"
+}
