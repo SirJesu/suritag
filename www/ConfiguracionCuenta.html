@@ -16,7 +16,16 @@
         <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
         <script src="libs/jquery-3.3.1.min.js" ></script>
         <title>Principal</title>
-
+        <style type="text/css">
+          .campos{
+                              padding: 5px !important;
+                              background-color: #F8F9F9 !important;
+                              color: #566573 !important;
+                              border-radius: 4px !important;
+                              margin-bottom: 4px !important;
+                              margin-top: 4px !important;
+                            }
+        </style>
 </head>
 <body  hidden>
     
@@ -86,7 +95,7 @@
                 <div class="item-inner">
                   <div class="item-title item-label">Nombre:</div>
                   <div class="item-input-wrap">
-                    <input class="" type="text" id="nombre" readonly placeholder="Nombre">
+                    <input class="campos" type="text" id="nombre" readonly placeholder="Nombre">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -95,7 +104,7 @@
                 <div class="item-inner">
                   <div class="item-title item-label">Correo:</div>
                   <div class="item-input-wrap">
-                    <input class="" type="email" readonly  id="correo"  placeholder="email">
+                    <input class="campos" type="email" readonly  id="correo"  placeholder="email">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -104,7 +113,7 @@
                 <div class="item-inner">
                   <div class="item-title item-label">Teléfono:</div>
                   <div class="item-input-wrap">
-                    <input type="text" class="" id="telefono" readonly placeholder="Teléfono">
+                    <input type="text" class="campos" id="telefono" readonly placeholder="Teléfono">
                     <span class="input-clear-button"></span>
                   </div>
                 </div>
@@ -114,7 +123,7 @@
               
             </ul>
           </div>
- <button class="button button-fill" id="btnCambiarPass" style="height: 40px; width: 50%;margin-left: 10px;font-size: 15px;">Cambiar contraseña</button>
+ <button class="button" id="btnCambiarPass" style="height: 40px; width: 94%;margin-left: 10px;font-size: 15px; background-color: #e30b50; border: 0px solid; color: #fff;">Cambiar contraseña</button>
 
  <div id="divChangePass" class="changePass block">
 
