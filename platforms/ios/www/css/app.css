@@ -556,7 +556,7 @@ body{
  /*Agregado Jesu*/
  font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
   font-size: 20px !important;
-  /*line-height: 18px !important;*/
+line-height: 18px !important;
  /*end*/
 }
 
@@ -727,10 +727,10 @@ height: 36px !important;
 
 
 .inputHeaderContent{
-margin-top: 2px;
+margin-top: 0px;
 margin-bottom: 0px !important;
 margin-left: 1px;
-padding-top: 2px;
+padding-top: 0px;
 padding-bottom: 0px !important;
 margin-right: 6px;
 background:  white;
