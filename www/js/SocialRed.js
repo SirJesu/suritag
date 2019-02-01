@@ -793,16 +793,16 @@ console.log($("#publicacion"+socialObj.key));
 $("#publicacion"+socialObj.key).empty();
 $("#publicacion"+socialObj.key).remove(); 
 
- $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card" style"margin: 0px;">
+ $$("#social-Content").prepend(` <div id="publicacion`+key+`" class="card demo-facebook-card" style="margin: 0px;">
  <div class="card-header">
    <div class="demo-facebook-avatar"><img src="`+img+`" width="34" height="34"/></div>
    <div  onclick="OpenProfileUser('`+user.idUsuario+`')" class="demo-facebook-name">`+user.NombreUsuario+`</div>
    <div class="demo-facebook-date">`+publicacion.placeName+`</div>
  </div>
 
- <div class="card-content card-content-padding">
+ <div class="card-content ">
    <img id='imgPublicacion`+key+`' src="`+publicacion.img+`" width="100%"/>
-      <div>
+      <div style="padding: 10px;">
         <p>`+publicacion.text+`</p>
         <p class="likes" id='likes`+key+`'  >Me gusta: 0 &nbsp;&nbsp; Comentarios: 0 &nbsp;&nbsp; compartido: 0  </p>
       </div>
