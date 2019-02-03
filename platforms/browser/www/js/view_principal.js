@@ -432,6 +432,8 @@ function LimpiarMarcadores() {
       map: map,
       position: place.geometry.location,
       icon:"img/marcador.svg"
+
+      
     });
      arrayMarker.push(marker);
 
