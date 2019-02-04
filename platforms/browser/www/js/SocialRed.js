@@ -1347,29 +1347,76 @@ alert("Add Historia");
     return options;
   }
 
-  var srcType = Camera.PictureSourceType.CAMERA;
-  var options = setOptions(srcType);
+
+app.dialog.create({
+    title:"Subir Historia",
+    text:"seleccionar desde",
+    buttons:[
+      {
+        text:"Galeria",
+        onClick:function () {
+
+          var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
+          var options = setOptions(srcType);
+
+          navigator.camera.getPicture(function (imagen) { 
+            app.progressbar.show('multi');
+          //  image.src = "data:image/jpeg;base64," + imagen;
+         //  alert("Imagend Obtenida");
+            db.ref("Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario).push().set({
+              img:"data:image/jpeg;base64," + imagen,
+              date:new Date().getTime()
+            },function (error) { 
+              myhistory = true;
+              app.progressbar.hide();
+            
+             });
+          
+         
+         
+            },function (error) { 
+              app.progressbar.hide();
+            }, options);
+
+
+          
+        }
+      },
+      {
+        text:"Camara",
+        onClick:function () { 
+          var srcType = Camera.PictureSourceType.CAMERA;
+          var options = setOptions(srcType);
+        
+          navigator.camera.getPicture(function (imagen) { 
+            app.progressbar.show('multi');
+          //  image.src = "data:image/jpeg;base64," + imagen;
+         //  alert("Imagend Obtenida");
+            db.ref("Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario).push().set({
+              img:"data:image/jpeg;base64," + imagen,
+              date:new Date().getTime()
+            },function (error) { 
+              myhistory = true;
+              app.progressbar.hide();
+            
+             });
+          
+         
+         
+            },function (error) { 
+              app.progressbar.hide();
+            }, options);
+         
+
+
+
+         }
+      }
+    ]
+  }).open();
 
 
   
-  navigator.camera.getPicture(function (imagen) { 
-   app.progressbar.show('multi');
- //  image.src = "data:image/jpeg;base64," + imagen;
-//  alert("Imagend Obtenida");
-   db.ref("Social/Historias/"+dateFormat()+"/"+datosUsuario.Usuario.idUsuario).push().set({
-     img:"data:image/jpeg;base64," + imagen,
-     date:new Date().getTime()
-   },function (error) { 
-     myhistory = true;
-     app.progressbar.hide();
-   
-    });
- 
-
-
-   },function (error) { 
-     app.progressbar.hide();
-   }, options);
 
 
 
