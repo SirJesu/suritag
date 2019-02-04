@@ -34,7 +34,7 @@ var datosUsuario = JSON.parse( localStorage.getItem("config")  );
 //OpenProfileUser(datosUsuario.Usuario.idUsuario);
 
 
-$$('.panelComent').hide();
+
 
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -810,6 +810,32 @@ $("#publicacion"+socialObj.key).remove();
  <div class="card-footer"><a href="#" id='btnMegusta`+key+`'  class="link">Me gusta</a><a  id="btnComentar`+key+`"  href="#" class="link">Comentar</a><a href="#" id="btncompartir`+key+`"  class="link">compartir</a></div>
  </div>`);
 
+
+$("#publicacion"+key).append(`<div id='panel-coment`+key+`'  class="panelComent" >
+<div class="row">
+  <div class="col-15">
+ <img  id="close-coments-floated`+key+`" src="img/iconos/cancel.png" width="24" height="24" >
+  </div>
+<div class="col-65">
+<textarea id="comenttext`+key+`" rows="2" type="text" placeholder="escriba aqui su comentario" ></textarea>
+
+</div>
+<div class="col-20">
+<img  id="btnSendComent`+key+`"   width="32" height="32"  src="img/icons-social/comentarios.png" >
+</div>
+  
+</div> 
+</div>`);
+
+$$("#panel-coment"+key).hide();
+$$("#close-coments-floated"+key).click(function (evt) { 
+  $$("#panel-coment"+key).hide();
+
+
+ });
+
+
+
 /*  
 **Cargar Contenidos del Me gusta y comentarios
 **
@@ -942,25 +968,25 @@ $$("#btnMegusta"+key).click(function () {
 $$("#btnComentar"+key).click(function () { 
 console.log("comentar");
 
-$$('.panelComent').show();
+$$("#panel-coment"+key).show();
 
-$$("#close-coments-floated").click(function (evt) { 
-  $$("#comenttext").val("");
-  $$('.panelComent').hide();  
+$$("#close-coments-floated"+key).click(function (evt) { 
+  $$("#comenttext"+key).val("");
+  $$("#panel-coment"+key).hide();  
 
 
  });
 
 
- $$("#btnSendComent").off("click");
-$$("#btnSendComent").click(function (evt) { 
+ $$("#btnSendComent"+key).off("click");
+$$("#btnSendComent"+key).click(function (evt) { 
 
-var text = $$("#comenttext").val();
-$$("#comenttext").val("");
-$$('.panelComent').hide();  
+var text = $$("#comenttext"+key).val();
+$$("#comenttext"+key).val("");
+$$("#panel-coment"+key).hide();  
  if(text == "" || text == null){
  
- $$('.panelComent').hide();  
+ $$("#panel-coment"+key).hide();  
  }else{
 
   refActios.child("coment").push().set({
@@ -975,7 +1001,7 @@ $$('.panelComent').hide();
     }
   },function (error) { 
    
-    $$('.panelComent').hide(); 
+    $$("#panel-coment"+key).hide(); 
     
     db.ref("Social/Eventos/"+publicacion.peopleId).push().set({
       type:"coment",
@@ -1000,28 +1026,6 @@ $$('.panelComent').hide();
  });
 
 
-
-/*
- $$("#comenttext").focus(function () { 
-  //$$('.panelComent').css("bottom","50%");
-
- // $$('.panelComent').css("bottom","7%");
-   // $$('.panelComent').hide();
-
-
-
-
-   });   */
-/*
-  refActios.child("/coment/"+datosUsuario.Usuario.idUsuario).set({
-    type:"coment",
-    user:{
-      nombre:datosUsuario.Usuario.NombreUsuario,
-      idUser:datosUsuario.Usuario.idUsuario,
-      foto:datosUsuario.Usuario.ImagenUsuario
-
-    }
-  });  */
 
  });
 $$("#btncompartir"+key).click(function (evt) { 

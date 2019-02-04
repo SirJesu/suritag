@@ -113,11 +113,11 @@ background: #ffffff;
 width: 100%;
 background: white;
 color: black;
-position: fixed;
+position: relative;
 z-index: 10000;
 display: inline-block;
 padding:4px;
-bottom: 6.5%;
+
 
  }
 
