@@ -517,6 +517,13 @@ db.ref("Social/publicaciones/General/"+friend.idUsuario).limitToLast(1).on("chil
     }
 
 
+    function DysplaySeguidores() { 
+
+
+
+
+     }
+
 
 function Addfriend(element) {  
  // app.dialog.progress();
@@ -1560,6 +1567,22 @@ GuardarHistoria(objHistoryModel);
 
         }
 
+
+     function ZoonFile(foto) { 
+      
+
+      var myPhotoBrowserDark = app.photoBrowser.create({
+       photos : [
+           foto,
+          
+       ] ,theme: 'dark'
+     });
+     myPhotoBrowserDark.open();
+     
+
+
+      }   
+
 function chargeHistory(idUsuario,nombre) {
   app.preloader.show(); 
 var countTotalHistory = 0;
@@ -1638,21 +1661,25 @@ if(snapshot.val() == null){
 
 
  function ProfileItemActions() { 
-$$(".content-default-profile").hide();
+//$$(".content-default-profile").hide();
 
 
 $$("#GaleriaPerfilItem").click(function (evt) {
+  app.progressbar.show("multi");
 $$("#archivos-perfill").show();
 $$("#listas-Perfil").hide();
 console.log("galeria");
 
 $$("#rawArchivos").empty();
-$$("#Social/archivos/"+datosUsuario.Usuario.idUsuario).on("child_added",function (snapshot) { 
+db.ref("Social/archivos/"+datosUsuario.Usuario.idUsuario).off();
+db.ref("Social/archivos/"+datosUsuario.Usuario.idUsuario).on("child_added",function (snapshot) {
+  app.progressbar.hide(); 
 var archivo = snapshot.val();
+console.log("dato");
 console.log("archivo");
 console.log(archivo);
-  $$("#rawArchivos").prepend(` <div class="col-20">
-  <img src="`+archivo+`" width="40" height="40" >
+  $$("#rawArchivos").prepend(` <div  onclick="ZoonFile('`+archivo.data+`')" class='container-archivo' >
+  <img src="`+archivo.data+`" class="imgArchivoperfil" >
   
   </div>`);
 
@@ -1666,33 +1693,77 @@ console.log(archivo);
 
   });
   $$("#AmigosItemPerfil").click(function (evt) {
+    app.progressbar.show("multi");
+    console.log("amigos");
     $$("#archivos-perfill").hide();
     $$("#listas-Perfil").show();
 
-    $$("#lista-Usuarios").empty();
+    $$("#lista-Usuarios-profile").empty();
+    db.ref("Social/Amigos/"+datosUsuario.Usuario.idUsuario).off();
     db.ref("Social/Amigos/"+datosUsuario.Usuario.idUsuario).on("child_added",function (snapshot) { 
 
       var friend = snapshot.val();
+    
+      db.ref("Social/Usuarios/"+friend.idUsuario).once("value",function (snapshot) { 
+        app.progressbar.hide();
+var usuario = snapshot.val();
+var img = "img/iconos/user_defaultProfile.png";
+
+ if(usuario.ImagenUsuario != null && usuario.ImagenUsuario != undefined ){
+img = usuario.ImagenUsuario;
+ }
+
+
+$$("#lista-Usuarios-profile").append(` <li >
+<a href="#" class="item-link item-content">
+      <div class="item-media"><img  class="img-rounded" src="`+img+`" width="28" height="28"/></div>
+      <div class="item-inner">
+        <div class="item-title-row">
+          <div class="item-title">`+usuario.NombreUsuario+`</div>
+        </div>
+       
+      </div>
+    </a>
+  </li> `);
+
+
+       });
+
+
+
+     
 
 
      });
 
-    $$("#lista-Usuarios").append(` <li >
-    <a href="#" class="item-link item-content">
-          <div class="item-media"><img  class="img-rounded" src="img/iconos/user_defaultProfile.png" width="28" height="28"/></div>
-          <div class="item-inner">
-            <div class="item-title-row">
-              <div class="item-title">Nombre del Usuario</div>
-            </div>
-            <div class="item-subtitle text-social">Accio que hizo el usuario</div>
-          </div>
-        </a>
-      </li> `);
+  
   
   });
   $$("#LugaresItemPerfil").click(function (evt) {
-    $$("#archivos-perfill").hide();
-    $$("#listas-Perfil").show();
+    app.progressbar.show("multi");
+   $$("#archivos-perfill").hide();
+   $$("#listas-Perfil").show();
+   $$("#lista-Usuarios-profile").empty();
+   db.ref("Usuarios/"+datosUsuario.Usuario.idUsuario+"/history").off();
+   db.ref("Usuarios/"+datosUsuario.Usuario.idUsuario+"/history").on("child_added",function (snapshot) { 
+    app.progressbar.hide();
+    var historial = snapshot.val();
+
+    $$("#lista-Usuarios-profile").append(` <li >
+    <a href="#" class="item-link item-content">
+          <div class="item-media"><img  class="img-rounded" src="`+historial.icon+`" width="28" height="28"/></div>
+          <div class="item-inner">
+            <div class="item-title-row">
+              <div class="item-title">`+historial.namePlace+`</div>
+            </div>
+           
+          </div>
+        </a>
+      </li> `);
+
+
+
+    });
 
   
   });
