@@ -28,7 +28,7 @@ confg.logged =true;
 confg.Usuario = data.obj;
   
 
-  localStorage.setItem("config",JSON.stringify(confg)  );
+  localStorage.setItem("config",JSON.stringify(confg.Usuario)  );
 
 
   db.ref("Social/Usuarios/"+data.obj.idUsuario).set(data.obj,function (errr) { 
