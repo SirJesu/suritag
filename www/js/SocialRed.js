@@ -403,6 +403,7 @@ Sugeridos();
 
 
  function Sugeridos() { 
+   console.log("sugeridos");
   $$("#listaSugeridos").empty();
   db.ref("Social/Usuarios").on("child_added",function (snapshot) { 
  
@@ -1317,12 +1318,18 @@ if(   datosUsuario.Usuario.ImagenUsuario == "" ||  datosUsuario.Usuario.ImagenUs
 function cameraCallback(imageData) {
   var image = document.getElementById('img-foto-perfil-profile');
   image.src = "data:image/jpeg;base64," + imageData;
+  app.preloader.show();
 
 datosUsuario.Usuario.ImagenUsuario = "data:image/jpeg;base64," + imageData;
  
 localStorage.setItem("config",JSON.stringify( datosUsuario  ));
 
-db.ref("Social/Usuarios/"+datosUsuario.Usuario.idUsuario).set(datosUsuario);
+db.ref("Social/Usuarios/"+datosUsuario.Usuario.idUsuario).update({
+  ImagenUsuario:"data:image/jpeg;base64," + imageData
+},function () { 
+  localStorage.setItem("config",JSON.stringify( datosUsuario  ));
+  app.preloader.hide();
+ });
 
 
 }

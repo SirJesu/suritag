@@ -403,6 +403,7 @@ Sugeridos();
 
 
  function Sugeridos() { 
+   console.log("sugeridos");
   $$("#listaSugeridos").empty();
   db.ref("Social/Usuarios").on("child_added",function (snapshot) { 
  
