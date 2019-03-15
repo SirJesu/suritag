@@ -223,6 +223,10 @@ HidePage("location","./Actividad.html");
          HidePage("location","./AddSitio.html");     
          //  window.location = "./AddSitio.html";
           });
+          $$("#Agente-Publicitario").click(function (evt) { 
+window.location = "https://www.suritag.com/GrapheneBlockChain/public/RegistrarCompany";
+
+           });
 
     $$("#salirApp").click(function (evt) { 
 

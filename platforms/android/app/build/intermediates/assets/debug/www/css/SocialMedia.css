@@ -4,6 +4,7 @@
 
   
 .navbar{
+    /*
     background: rgba(255,175,75,1);
 background: -moz-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(227,11,79,1)));
@@ -12,13 +13,16 @@ background: -o-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 
 background: -ms-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#e30b4f', GradientType=1 );
-   
-    color: white;
+   */
+   background-color: #fff;
+color: #5D6D7E;
+border-bottom: 1px solid #D6DBDF;
     height: 9% !important;
 
     
 }
 .navbar-inner{
+  /*
     background: rgba(255,175,75,1);
 background: -moz-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(227,11,79,1)));
@@ -27,6 +31,11 @@ background: -o-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 
 background: -ms-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#e30b4f', GradientType=1 ); 
+*/
+
+background-color: #fff;
+color: #5D6D7E;
+border-bottom: 1px solid #D6DBDF;
 }
 
 .subnavbar{
@@ -104,11 +113,11 @@ background: #ffffff;
 width: 100%;
 background: white;
 color: black;
-position: fixed;
+position: relative;
 z-index: 10000;
 display: inline-block;
 padding:4px;
-bottom: 6.5%;
+
 
  }
 
@@ -142,6 +151,20 @@ font-family: Arial, Helvetica, sans-serif;
 
 }
 
+.imgArchivoperfil{
+width: 80px;
+height: 80px;
+border-radius: 3px;
+border-style: solid;
+border-width: 2.5px;
+border-color: white;
+margin: 2px;
+
+
+}
+.container-archivo{
+  display: inline-block;
+}
 
 
 .nombreUsuarioPerfil{
@@ -193,4 +216,56 @@ font-family: Arial, Helvetica, sans-serif;
 #miHistoria-Content{
   -webkit-justify-content: unset !important;
   justify-content: unset !important;
+}
+
+.title-list-activity{
+  font-size: 4vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+.pricebit-coin{
+  font-size: 3vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white !important;
+}
+.item-subtitle-coins{
+  font-size: 2.5vw;
+  color:blue !important;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.hash-coment{
+  display: block;
+}
+
+.input-modal{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6vw !important;
+  border-radius: 1px !important;
+  background: white !important;
+  border-style:solid;
+  border-color:blue !important;
+  box-shadow: 1px 1px gray;
+
+}
+.moda-content-coin{
+margin-top: 3px !important;
+padding-top: 3px !important;
+}
+
+
+/*select */
+
+.Hashtag-text{
+  width: 100%;
+  border-radius: 3px;
+  background: white;
+  color: blue;
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  font-size: 6vw;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 2px;
 }

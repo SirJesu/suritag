@@ -217,3 +217,55 @@ margin: 2px;
   -webkit-justify-content: unset !important;
   justify-content: unset !important;
 }
+
+.title-list-activity{
+  font-size: 4vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+.pricebit-coin{
+  font-size: 3vw;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white !important;
+}
+.item-subtitle-coins{
+  font-size: 2.5vw;
+  color:blue !important;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.hash-coment{
+  display: block;
+}
+
+.input-modal{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6vw !important;
+  border-radius: 1px !important;
+  background: white !important;
+  border-style:solid;
+  border-color:blue !important;
+  box-shadow: 1px 1px gray;
+
+}
+.moda-content-coin{
+margin-top: 3px !important;
+padding-top: 3px !important;
+}
+
+
+/*select */
+
+.Hashtag-text{
+  width: 100%;
+  border-radius: 3px;
+  background: white;
+  color: blue;
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  font-size: 6vw;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 2px;
+}

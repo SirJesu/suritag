@@ -47,6 +47,12 @@
 box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
           
           border-top: 2px solid rgba(0,0,0,.0975) !important;
+
+          
+        }
+
+        .messagebar{
+          position: relative;
         }
       </style>
     
@@ -60,7 +66,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         <div class="statusbar"></div>
 
     
-<div class="view view-chat-checkIn" >
+<div class="view view-chat-checkIn"> 
 
 
         <div class="page">
@@ -71,7 +77,8 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
                     <!--  <span class="font-sm-3">Check-Out</span>-->
                      
                       </div>
-                    <div class="title font-sm-4" id="NombreSitio">Nombre del sitio</div>
+                      <!--title font-sm-4-->
+                    <div class="" id="NombreSitio">Nombre del sitio</div>
                       <div class="rigth">
 
                       </div>
@@ -86,16 +93,16 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
                     </div>
                   </div>  
 
-                <div class="toolbar messagebar">
+                <div class="toolbar messagebar" style="position: absolute;">
                   
     
-<div class="row" style="margin-bottom: 10px;padding: 10px" >
+<div class="row" style="padding: 10px">
 
 <div class="col-20">
-<a id="openImg" class="link" ><i class="f7-icons" >images_fill</i></a>
+<a id="openImg" class="link"><i class="f7-icons" >images_fill</i></a>
 </div>
 <div class="col-60">
-    <textarea class="resizable msgInclude" placeholder="Escribe aquí..."></textarea>
+    <textarea class="resizable msgInclude" placeholder="Escribe aquí..." style="position: relative;width: 100%;"></textarea>
 </div>
 <div class="col-20">
     <a class="link send-link" href="#"> <i class="f7-icons" >paper_plane_fill</i> </a>
@@ -181,7 +188,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
             <div class="title">Messages</div>
           </div>
         </div>
-        <div class="toolbar messagebar" style=" ">
+        <div class="toolbar messagebar">
           <div class="toolbar-inner">
             <div class="messagebar-area">
               <textarea class="resizable" placeholder="Message"></textarea>

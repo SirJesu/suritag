@@ -20,6 +20,8 @@ var datosUsuario = JSON.parse( localStorage.getItem("config")  );
 
 
 
+
+
 $('.view:not(:first)').hide();
     $('#tabs-nav a').bind('click', function (e) {
         e.preventDefault();
@@ -113,12 +115,7 @@ if(navigator.geolocation){
 
  navigator.geolocation.getCurrentPosition(function (position) {  
 
-  //Comprobar las notificaciones
-  cordova.plugins.notification.local.requestPermission(function (granted) { },function (error) { 
 
-alert("tenga en cuenta que para activar las notificaciones debes hacerlo desde los ajustes del sisitema");
-
-   });
   
 
 map.setCenter({
@@ -434,7 +431,9 @@ function LimpiarMarcadores() {
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
-      icon:"../img/marcador.svg"
+      icon:"img/marcador.svg"
+
+      
     });
      arrayMarker.push(marker);
 
@@ -1703,3 +1702,23 @@ return "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyD0Bg2YOsO6fxAn5
 
 
  }
+
+
+
+
+ document.addEventListener("deviceready", function(){
+
+   //Comprobar las notificaciones
+   cordova.plugins.notification.local.requestPermission(function (granted) { },function (error) { 
+
+    alert("tenga en cuenta que para activar las notificaciones debes hacerlo desde los ajustes del sisitema");
+    
+       });
+
+
+
+ }, false);
+
+
+
+

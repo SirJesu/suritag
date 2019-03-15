@@ -82,7 +82,9 @@
     
         var prepend = function prepend(parent, child) {
           if (parent.firstChild) {
-            parent.insertBefore(child, parent.firstChild);
+           // $$(parent.firstChild).insertAfter(child);
+         //   parent.insertBefore(child, parent.firstChild);
+         parent.appendChild(child);
           } else {
             parent.appendChild(child);
           }
@@ -421,7 +423,14 @@
     
                 if (items) {
                   items = items.querySelectorAll("[data-index].active");
+if( typeof(items[0]) == "undefined" ){
+  modal.close();
+}
+
                   var duration = items[0].firstElementChild;
+
+
+
     
                   zuck.data[storyId]["currentItem"] = parseInt(
                     items[0].getAttribute("data-index"),
@@ -911,7 +920,7 @@
                   zuck.internalData["seenItems"][lastStory] = true;
     
                   saveLocalData("seenItems", zuck.internalData["seenItems"]);
-                  updateStoryseenPosition();
+                //  updateStoryseenPosition();
                 }
     
                 var stories = query("#zuck-modal .story-viewer.next");
@@ -1207,7 +1216,7 @@
           });
     
           if (!append) {
-            updateStoryseenPosition();
+          //  updateStoryseenPosition();
           }
         };
         zuck.next = function() {
@@ -1354,7 +1363,7 @@
             zuck.add(item, true);
           });
     
-          updateStoryseenPosition();
+         // updateStoryseenPosition();
     
           var avatars = option("avatars") ? "user-icon" : "story-preview";
           var list = option("list") ? "list" : "carousel";

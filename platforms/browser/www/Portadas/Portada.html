@@ -64,20 +64,44 @@ on:{
     pageInit:function(){
 
 
-   setTimeout(function () {
+  
        
  var  textC =  localStorage.getItem("config");
 
   if(textC == null)
 {
+  setTimeout(() => {
     window.location = "Portada2.html";
+  }, 2500);
 }else{
     var config = JSON.parse( textC );
 
+ 
+     
   if(config.logged == true){
 
+    app.request.post(configApp.uri+"Social/InitSocialRed",{
+    usuarioId:config.Usuario.idUsuario
+  },function (data) {
+
+    app.preloader.hide();
+    console.log(data); 
+    localStorage.setItem("ContenidoSocial",JSON.stringify(data));
+   
+    HidePage("location","../IntroOpciones.html");
+
+   },function (error) {
+ alert("error");
+    app.preloader.hide();
+   // console.log(data); 
+    HidePage("location","../IntroOpciones.html");
+
+
+  },"json");
+
+
    // window.location = "../View_Principal.html";
-   HidePage("location","../IntroOpciones.html");
+  // HidePage("location","../IntroOpciones.html");
 
   }else{
     window.location = "../login_v1.html";
@@ -92,8 +116,7 @@ on:{
 
         
      
-        
-         },2500);
+      
 
 
     }

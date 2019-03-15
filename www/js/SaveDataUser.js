@@ -22,7 +22,7 @@ app.request.post(
   configApp.uri+"RegistrarUsuario",
   param,
 function (data, status, xhr) {
-  app.preloader.hide();
+
   localStorage.setItem("estado","LOGEADO");
 confg.logged =true;
 confg.Usuario = data.obj;
@@ -32,11 +32,20 @@ confg.Usuario = data.obj;
   localStorage.setItem("config",JSON.stringify(confg)  );
 
 
-  db.ref("Social/Usuarios/"+data.obj.idUsuario).set(data.obj,function (errr) { 
+  app.request.post(configApp.uri+"Social/InitSocialRed",{
+    usuarioId:data.obj.idUsuario
+  },function (data) {
+    app.preloader.hide();
+    console.log(data); 
+    localStorage.setItem("ContenidoSocial",JSON.stringify(data));
     HidePage("location","IntroOpciones.html");
-    //window.location = "View_Principal.html";
-  
-    });
+   },function (error) {
+    app.preloader.hide();
+    console.log(data); 
+  HidePage("location","IntroOpciones.html");
+  },"json");
+
+
 
 
 

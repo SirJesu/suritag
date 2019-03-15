@@ -197,6 +197,12 @@ border-radius: 50%;
   border-radius: 50%;
  
 }
+.btn-coins-list{
+  font-size: 2.5vw;
+ 
+
+}
+
 
 </style>
 
@@ -257,6 +263,7 @@ border-radius: 50%;
                           <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
                           <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
                           <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+                          <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
                         </div>
                       </div>
       
@@ -269,7 +276,11 @@ border-radius: 50%;
       
       
       
-      <div class="page-content " >
+      <div class="page-content ptr-content prt-principal" >
+          <div class="ptr-preloader">
+              <div class="preloader"></div>
+              <div class="ptr-arrow"></div>
+            </div>
       
          <div class="header-social" style="margin-bottom: 10px;margin-top: 10px;">
       
@@ -536,14 +547,15 @@ border-radius: 50%;
                </div>
             </div>
             <div class="toolbar tabbar">
-                <div class="toolbar-inner">
-                          <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
-                          <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
-                          <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
-                          <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
-                          <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
-                        </div>
+              <div class="toolbar-inner">
+                <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+                <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
+                <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
+                <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
+                <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+                <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
               </div>
+            </div>
 
               <div  class="page" >
 
@@ -612,8 +624,14 @@ border-radius: 50%;
   <textarea  id="descripcion-publicacion"  class="text-area-publicar" rows="3" placeholder="Escribe un pie de foto"  ></textarea>
 
 </div>
+<div class="col-100 hast-content"  >
+ <h3>Hastag</h3>
+
+<h6 class="Hashtag-text" ></h6>
+
+</div>
 <div class="col-100">
-    <div class="list">
+    <div style="margin-top: 10px !important" class="list">
         <ul>
           <li class="accordion-item"><a href="#" class="item-content item-link">
               <div class="item-inner">
@@ -771,19 +789,20 @@ border-radius: 50%;
                </div>
             </div>
             <div class="toolbar tabbar">
-                <div class="toolbar-inner">
-                          <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
-                          <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
-                          <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
-                          <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
-                          <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
-                        </div>
+              <div class="toolbar-inner">
+                <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+                <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
+                <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
+                <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
+                <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+                <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
               </div>
+            </div>
 
               <div class="page">
 
             <div class="page-content">
-           
+           <!--
                 <div class="list">
                     <ul>
                       
@@ -799,7 +818,26 @@ border-radius: 50%;
                         </div>
                       </li>
                     </ul>
+                  </div> -->
+
+                  <div class="list media-list margin-top">
+                    <ul>
+                      <li>
+                        <a href="#" class="item-link item-content">
+                          <div class="item-media"><img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="40"/></div>
+                          <div class="item-inner">
+                            <div class="item-title-row">
+                              <div class="item-title">Yellow Submarine</div>
+                              <div class="item-after">$15</div>
+                            </div>
+                            <div class="item-subtitle">Beatles</div>
+                            <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+                          </div></a>
+                        </li>
+                    
+                    </ul>
                   </div>
+
 
 
             </div>
@@ -835,14 +873,15 @@ border-radius: 50%;
                  </div>
               </div>
               <div class="toolbar tabbar">
-                  <div class="toolbar-inner">
-                          <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
-                          <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
-                          <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
-                          <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
-                          <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
-                        </div>
+                <div class="toolbar-inner">
+                  <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+                  <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
+                  <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
+                  <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
+                  <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+                  <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
                 </div>
+              </div>
                 <div class="page" >
 
         <div class="page-content">
@@ -893,14 +932,15 @@ border-radius: 50%;
              </div>
           </div>
           <div class="toolbar tabbar">
-              <div class="toolbar-inner">
-                          <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
-                          <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
-                          <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
-                          <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
-                          <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
-                        </div>
+            <div class="toolbar-inner">
+              <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+              <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
+              <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
+              <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
+              <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+              <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
             </div>
+          </div>
 
             <div>
               
@@ -908,10 +948,10 @@ border-radius: 50%;
 
             <div class="page-content">
 
-             <div class="block">
-                <div class="list " style="padding: 0px; margin: 0px;">
-                    <ul  id="lista-Usuarios" >
-                   <!--       <li >
+            
+              <!--   <div class="list " style="padding: 0px; margin: 0px;">
+                     <ul  id="lista-Usuarios" >
+                        <li >
                     <a href="#" class="item-link item-content">
                           <div class="item-media"><img  class="img-rounded" src="img/iconos/user_defaultProfile.png" width="28" height="28"/></div>
                           <div class="item-inner">
@@ -921,16 +961,30 @@ border-radius: 50%;
                             <div class="item-subtitle text-social">Accio que hizo el usuario</div>
                           </div>
                         </a>
-                      </li> -->
-                     
-                     
+                      </li> 
                     </ul>
                   </div>
+                     </div>  -->
 
-             </div>
+                     <div style="margin-top:  0px !important" class="list media-list">
+                      <ul id="lista-actividades" >
+                     <!--  <li>
+                          <a href="#" class="item-link item-content">
+                            <div class="item-media"><img src="" width="42" height="42"/></div>
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                <div class="title-list-activity item-title" >Yellow Submarine</div>
+                                <div class="item-after pricebit-coin badge color-blue">15 STC</div>
+                              </div>
+                              <div class="item-subtitle item-subtitle-coins">Beatles</div>
+                              <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+                            </div></a></li> -->
+                      
+                      </ul>
+                    </div>
 
 
-            </div>
+            
 
 
 
@@ -939,157 +993,162 @@ border-radius: 50%;
      </div>
 
 
-     <!--View Perfil-->
+ 
+
+    </div> 
+    
+        <!--View Perfil-->
 
  <div  class="view tab"  id="view-perfil" >
-    <div class="navbar">
-        <div class="navbar-inner">
-           <div  id="closeSocial" class="left">
-          <!--  <img src="img/icons-social/atras.png" height="26" width="26" > -->
-           </div>
-         
-         <div class="title social-title" style="color:#e30b50;">Mi Perfil</div>
-         <div class="right">
-     
-      </div>
-    
-         
-            
-
+  <div class="navbar">
+      <div class="navbar-inner">
+         <div  id="closeSocial" class="left">
+        <!--  <img src="img/icons-social/atras.png" height="26" width="26" > -->
          </div>
+       
+       <div class="title social-title" style="color:#e30b50;">Mi Perfil</div>
+       <div class="right">
+   
+    </div>
+  
+       
+          
+
+       </div>
+    </div>
+    <div class="toolbar tabbar">
+      <div class="toolbar-inner">
+        <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+        <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
+        <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
+        <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
+        <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+        <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
       </div>
-      <div class="toolbar tabbar">
-          <div class="toolbar-inner">
-                          <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
-                          <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
-                          <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
-                          <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
-                          <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
-                        </div>
-        </div>
+    </div>
 
 
-        <div class="page">
+      <div class="page">
 
 <div class="page-content">
 
-  <div class="">
+<div class="">
 
-        <div class="row">
+      <div class="row">
 
-            <div class="contenedor">
-                <img id="img-foto-perfil-profile"  src="img/iconos/user_defaultProfile.png" class="img-Perfil-social">
-                <div class="ss">
-                    <label id="nombreUsuario-profile"  class="nombreUsuarioPerfil"> Nombre del Usuario</label>
-                </div>
-                
-            </div>
+          <div class="contenedor">
+              <img id="img-foto-perfil-profile"  src="img/iconos/user_defaultProfile.png" class="img-Perfil-social">
+              <div class="ss">
+                  <label id="nombreUsuario-profile"  class="nombreUsuarioPerfil"> Nombre del Usuario</label>
+              </div>
+              
+          </div>
 
-            <button  id="btn-uppdate-foto-perfil-profile"  class="subir_">Subir foto</button><!--btn-change-foto-perfil-->
+          <button  id="btn-uppdate-foto-perfil-profile"  class="subir_">Subir foto</button><!--btn-change-foto-perfil-->
 
-        </div>
+      </div>
 
-  </div>
-  <style>
-    .contenedor{
-      margin: 0px;
-      display: inline-block;
-      padding: 20px;
-    }
-    .nombreUsuarioPerfil{
-      font-weight: 500;
-      display: block;
-      color: #5f5f5f;
-    }
-    .ss{
-      width: 70%;
-      float: right;
-      margin-top:10px;
-      
-    }
-    .subir_{
-      width: 100px;
-      height: 20px;
-      background-color: #fff;
-      color: #5f5f5f;
-      border: 1px solid #5f5f5f;
-      border-radius: 5px;
-      margin: auto;
-    }
-  </style>
+</div>
+<style>
+  .contenedor{
+    margin: 0px;
+    display: inline-block;
+    padding: 20px;
+  }
+  .nombreUsuarioPerfil{
+    font-weight: 500;
+    display: block;
+    color: #5f5f5f;
+  }
+  .ss{
+    width: 70%;
+    float: right;
+    margin-top:10px;
+    
+  }
+  .subir_{
+    width: 100px;
+    height: 20px;
+    background-color: #fff;
+    color: #5f5f5f;
+    border: 1px solid #5f5f5f;
+    border-radius: 5px;
+    margin: auto;
+  }
+</style>
 
 
 <br>
-  <div class="row margin-bottom" style="background-color: #fff;">
+<div class="row margin-bottom" style="background-color: #fff;">
 
-      <div id="GaleriaPerfilItem" class="col-30 ">
+    <div id="GaleriaPerfilItem" class="col-30 ">
+    <center>
+      <img src="img/icons-social/galeria.png" width="32" height="32" >
+     
+    </center>
+    <center>
+        <label class="text-options" >Galeria</label>
+    </center>
+    </div>
+    <div id="AmigosItemPerfil" class="col-30 ">
+       <center>
+          <img src="img/logo.png" width="32" height="32" >
+      
+       </center>
       <center>
-        <img src="img/icons-social/galeria.png" width="32" height="32" >
+          <label class="text-options" >Seguidores</label>
        
       </center>
-      <center>
-          <label class="text-options" >Galeria</label>
-      </center>
-      </div>
-      <div id="AmigosItemPerfil" class="col-30 ">
+    </div>
+      <div id="LugaresItemPerfil" class="col-30 ">
          <center>
-            <img src="img/logo.png" width="32" height="32" >
-        
+            <img src="img/iconos/lugares.png" width="32" height="32" >
+         
          </center>
         <center>
-            <label class="text-options" >Seguidores</label>
-         
+            <label class="text-options" >Sitios visitados</label>
         </center>
-      </div>
-        <div id="LugaresItemPerfil" class="col-30 ">
-           <center>
-              <img src="img/iconos/lugares.png" width="32" height="32" >
-           
-           </center>
-          <center>
-              <label class="text-options" >Sitios visitados</label>
-          </center>
-         </div>
-      
-      
-      </div>
+       </div>
+    
+    
+    </div>
 
-      <div class="block">
-        <div class="content-default-profile"  id="listas-Perfil">
-            <div class="list media-list inset">
-                <ul  id="lista-Usuarios-profile" >
-            <!--     <li >
-                <a href="#" class="item-link item-content">
-                      <div class="item-media"><img  class="img-rounded" src="img/iconos/user_defaultProfile.png" width="28" height="28"/></div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">Nombre del Usuario</div>
-                        </div>
-                        <div class="item-subtitle text-social">Accio que hizo el usuario</div>
+    <div class="block">
+      <div class="content-default-profile"  id="listas-Perfil">
+          <div class="list media-list inset">
+              <ul  id="lista-Usuarios-profile" >
+          <!--     <li >
+              <a href="#" class="item-link item-content">
+                    <div class="item-media"><img  class="img-rounded" src="img/iconos/user_defaultProfile.png" width="28" height="28"/></div>
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">Nombre del Usuario</div>
                       </div>
-                    </a>
-                  </li> -->
-                 
-                 
-                </ul>
-              </div>
-
-
-        </div>
-
-        <div  class="content-default-profile" id="archivos-perfill" >
-          <div id="rawArchivos"  >
-     
- 
-
-          </div>
-
-
-        </div>
-
+                      <div class="item-subtitle text-social">Accio que hizo el usuario</div>
+                    </div>
+                  </a>
+                </li> -->
+               
+               
+              </ul>
+            </div>
 
 
       </div>
+
+      <div  class="content-default-profile" id="archivos-perfill" >
+        <div id="rawArchivos"  >
+   
+
+
+        </div>
+
+
+      </div>
+
+
+
+    </div>
 
 
 
@@ -1097,16 +1156,185 @@ border-radius: 50%;
 
 </div>
 
+      </div>
+
+
+
+</div>
+
+      <!--View Coins--> 
+      <div  class="view tab"  id="view-coins" >
+      
+        <div  class="page">
+            <div class="navbar">
+                <div class="navbar-inner">
+                   <div  id="closeSocial" class="left">
+                 <!--   <img src="img/icons-social/atras.png" height="26" width="26" > -->
+                   </div>
+                 
+                 <div class="title social-title">Suritag Coins</div>
+                 <div class="right">
+                    <a class="tab-link"  href="#view-perfil" > <img src="img/icons-social/perfil.png" height="26" width="26" > </a>  
+                  </div>
+            
+                 
+                    
+    
+                 </div>
+              </div>
+              <div class="toolbar tabbar">
+                <div class="toolbar-inner">
+                  <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+                  <a href="#view-1" class="tab-link tab-link-active color-white"> <img  width="26" height="26" src="img/icons-social/casa.svg" ></a>
+                  <a href="#view-camara" class="tab-link"> <img width="26" height="26" src="img/icons-social/camara-de-fotos.svg"  > </a>
+                  <a href="#view-Actividad" class="tab-link tab-actividad"> <img width="26" height="26" src="img/icons-social/actividad.svg" > </a>
+                  <a href="#view-sugerencia" id="view-sugerenciaItem"  class="tab-link tab-sugerencia-item"> <img  width="26" height="26" src="img/icons-social/boton-anadir-usuario.svg" > </a>
+                  <a href="#view-coins" id="view-coinsItem"  class="tab-link tab-coins-item"> <img  width="26" height="26" src="img/dollar-coin-money.svg" > </a>
+                </div>
+              </div>
+    
+                <div>
+                  
+                </div>
+    
+                <div class="page-content content-coins ptr-content">
+                  <div class="ptr-preloader">
+                    <div class="preloader"></div>
+                    <div class="ptr-arrow"></div>
+                  </div>
+
+                 <div class="block">
+                    <div class="card padding" style="margin-top: 50%; width: 90;margin-left: auto;margin-right: auto" >
+                      <i class="f7-icons" style="display: inline" >time</i>  <h4 style="display: inline-block" > Total</h4>
+
+                        <h2 id="coinsTotal" ></h2>
+                        <h3 id="valueCoins" ></h3>
+    
+    
+                      </div>
+
+                      <div class="Crendetial card margin-top padding" >
+                        <h5 id="UU-ID" ></h5>
+                        <h5 id="PublicKey" ></h5>
+                      </div>
+
+
+                 </div>
+
+                 <button class="button button-small color-blue" id="btnTransferirUsuarios" >Transferir</button>
+                 <div class="margin-top" >
+                  <p class="segmented segmented-raised">
+                    <button value="ALL" class="button btn-coins-list button-small button-active">Todas</button>
+                    <button value="SEND" class="button btn-coins-list button-small">Enviadas</button>
+                    <button value="RECEIVED" class="button btn-coins-list button-small">Recibidas</button>
+                  </p>
+
+                 </div>
+
+                 <div class="margin-top" >
+
+                  <div  class="content-table-transaccion"  id="content-todas-transaccion" >
+                   <table style="width: 100%" class="table card" >
+                     <thead>
+                       <tr>
+                         <th>Cuenta</th>
+                         <th>TIPO</th>
+                         <th>Coins</th>
+                       </tr>
+                     </thead>
+                     <tbody  id="table-todas-transfer" class=" table-t" >
+                       <tr>
+                        <th class="label-cell acount-cel" >sdskdfhskdfhskd</th>
+                        <th class="" >U-t-C</th>
+                        <th class="numeric-cell" >10</th>
+                      </tr>
+
+                     </tbody>
+
+                   </table>
+                  </div>
+                  <div   class="content-table-transaccion"  id="content-enviadas-transaccion" >
+                    <table style="width: 100%" class="table card" >
+                      <thead>
+                        <tr>
+                          <th>Cuenta</th>
+                          <th>TIPO</th>
+                          <th>Coins</th>
+                        </tr>
+                      </thead>
+                      <tbody  id="table-todas-enviadas" class="table-t" ><tr>
+                         <th class="label-cell acount-cel" >sdskdfhskdfhskd</th>
+                         <th class="" >U-t-C</th>
+                         <th class="numeric-cell" >10</th>
+                       </tr>
+ 
+                      </tbody>
+ 
+                    </table>
+                    </div>
+                    <div   class="content-table-transaccion"  id="content-recibidad-transaccion" >
+                   
+                      <table style="width: 100%" class="table card" >
+                        <thead>
+                          <tr>
+                            <th>Cuenta</th>
+                            <th>TIPO</th>
+                            <th>Coins</th>
+                          </tr>
+                        </thead>
+                        <tbody  id="table-todas-recibidas" class="table-t" ><tr>
+                           <th class="label-cell acount-cel" >sdskdfhskdfhskd</th>
+                           <th class="" >U-t-C</th>
+                           <th class="numeric-cell" >10</th>
+                         </tr>
+   
+                        </tbody>
+   
+                      </table>
+
+                      </div>
+
+
+                 </div>
+    
+                </div>
+                <div class="initalContent-coins page-content" >
+                 
+                  <div class="block margin-top" style="margin-top: 40% !important" >
+                    <h2>Gana Coins con tus publiciaciones</h2>
+                    <button class="button button-small margin-top" id="btnEmpezarCoinsActiviate" >Empezar</button>
+                  </div>
+
+                </div>
+                <!--Modal Transaferir-->
+                <div class="sheet-modal my-sheet">
+                  <div class="toolbar">
+                    <div class="toolbar-inner">
+                      <div class="left"></div>
+                      <div class="right"><a class="link sheet-close" href="#">cerrar</a></div>
+                    </div>
+                  </div>
+                  <div class="sheet-modal-inner">
+                    <div class="block" style="text-align: center" >
+                     <h4 id="NombreRestaurante"  >Cuenta de cobro</h4>
+                     <h5>Valor a pagar</strong> </h5>
+                     <label id="ValorPagar" >$ 10.000</label>
+                     <h5><strong>Total Coins</strong></h5>
+                     <label id="TotalCoins" >20 STC</label>
+
+<button id="RealizarPagoCoinsToRes" class="button button-big color-red" >Realizar Pago</button>
+<button id="RechazarPagoCuenta" class="button button-big color-orange" >Reachazar </button>
+                   
+</div>
+                  </div>
+                </div>
+    
+    
         </div>
-
-
-
- </div>
-
-       
-
-
-    </div> <!--Fin views-->
+    
+         </div>
+    
+    <!--Fin views-->
 
 
 

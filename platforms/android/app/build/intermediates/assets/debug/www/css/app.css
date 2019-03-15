@@ -7,9 +7,12 @@
 @import url('../libs/framework7/less/colors-md.less');
   */
 
-  @import url('../libs/framework7/css/framework7.css');
+@import url('../libs/framework7/css/framework7.css');
 @import url('../libs/framework7/less/mixins.less');
 
+.button-intro {
+  color: #e30b50;
+}
  
 
 /* IOS 
@@ -39,7 +42,7 @@ color: white;
 }
 
 .secondary-color{
- background:  #fea110 !important;
+ background:  #e30b50 !important;
  color: white;
 
 }
@@ -70,10 +73,6 @@ margin-bottom: 10px;
  border-width: 2px 2px 2px 2px !important;
 }
 
-
-
-
-
 .size-22 { font-size: 22px }
 .size-25 { font-size: 25px }
 .size-29 { font-size: 29px }
@@ -84,10 +83,6 @@ margin-bottom: 10px;
 .message-avatar{
   opacity: unset !important;
 }
-
-
-
-
 
 
 .tabbar-label-android{
@@ -337,6 +332,8 @@ padding-bottom: 30%;
   width: 60%;
   height: 20%;
   margin-top: 25%;
+  text-align: center;
+
 }
 
 .intro-content{
@@ -355,7 +352,7 @@ padding-bottom: 30%;
 .button-intro{
 border-radius: 8px !important ;
 background: white !important;
-color: #CB4309 !important ;
+color:  #e30b50 !important ;
 padding-top: 4px;
 padding-bottom: 4px;
 margin-right: 10%;
@@ -374,7 +371,7 @@ float: right;
 width: 60%;
 margin-top: 2%;
 margin-bottom: 7%;
-margin-right: 10%;
+margin-right: 25%;
 
 }
 ul{
@@ -420,15 +417,20 @@ padding-right: 10%;
 #textSubtitle{
 
   font-family: Arial, Helvetica, sans-serif;
+  
 
-
-
-
+  font-size: 1.0rem;
+  
 }
 
+@media (max-width: 350px) {
+  #textSubtitle{
+    font-size: 0.8rem;
+  }
+}
 
 .buttonActionPermision{
-background-color: #C13008;
+background-color: #e30b50;
 font-family: Arial, Helvetica, sans-serif;
 text-transform: uppercase;
 border-radius: 10px;
@@ -444,13 +446,13 @@ margin-top: 12%;
 
 .buttonNegative{
 background: transparent;
-color: var(--color_negroazul);
+color: #e30b50;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 15px;
 border-color: transparent;
 border-style: none;
 margin-top: 5px;
-font-weight: 600;
+font-weight: 400;
 
 
 }
@@ -496,7 +498,7 @@ border-bottom: 2px   solid  white !important;
 
 .navbar{
   /*background:#e30b50; /*#C13008*/
-
+/*
  background: rgba(255,175,75,1);
 background: -moz-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(227,11,79,1)));
@@ -505,8 +507,10 @@ background: -o-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 
 background: -ms-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(227,11,79,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#e30b4f', GradientType=1 );
-
-color: white;
+*/
+background-color: #fff;
+color: #5D6D7E;
+border-bottom: 1px solid #D6DBDF; 
 }
 
 .navbar-inner{
@@ -528,6 +532,7 @@ background-color: #fff;
 
 /*color:white;*/
 color: #5D6D7E;
+border-bottom: 1px solid #D6DBDF;
 }
 
 .list-login{
@@ -551,7 +556,7 @@ body{
  /*Agregado Jesu*/
  font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
   font-size: 20px !important;
-  line-height: 18px !important;
+line-height: 18px !important;
  /*end*/
 }
 
@@ -599,10 +604,11 @@ div, img{
   height: 20px !important;
 }
 
+/*
 ::placeholder{
   filter: opacity(95%);
 }
-
+*/
 .contenedor-buscar{
   color: #687a86;
 }
@@ -612,26 +618,26 @@ input[type="text"]{
     background-color: #eaeaea;
     border: 0px solid;
     border-radius: 3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     }
 
     input[type="email"]{
     background-color: #eaeaea;
     border: 0px solid;
     border-radius: 3px;
-    margin-top: 6px;
+    /*margin-top: 6px;*/
     }
     input[type="number"]{
     background-color: #eaeaea;
     border: 0px solid;
     border-radius: 3px;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     }
 
 
     input::placeholder{
       padding: 6px;
-      filter: opacity(95%);
+      /*filter: opacity(95%);*/
     }
 
 
@@ -721,10 +727,10 @@ height: 36px !important;
 
 
 .inputHeaderContent{
-margin-top: 2px;
+margin-top: 0px;
 margin-bottom: 0px !important;
 margin-left: 1px;
-padding-top: 2px;
+padding-top: 0px;
 padding-bottom: 0px !important;
 margin-right: 6px;
 background:  white;
@@ -757,7 +763,7 @@ padding-right: 0%;
 
 margin: 0px !important;
 }
-img-item-round{
+.img-item-round{
  margin: 8%;
  margin-bottom: 10%;
  margin-top: 10%; 
