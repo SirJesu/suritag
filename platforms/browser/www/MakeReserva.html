@@ -16,6 +16,27 @@
         <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script> 
          
 
+        <style type="text/css">
+          input[type=text]{
+            padding: 0px !important;
+            box-sizing: border-box !important;
+
+
+            background-color: #fff !important;
+            color: #2C3E50  !important;
+          }
+
+          .btn_buscar_mesas{
+            width: 90% !important;
+            height: 35px !important;
+            margin: auto !important;
+            background-color: #e30b50 !important;
+          }
+
+          .block-title{
+            font-weight: 800 !important;
+          }
+        </style>
 </head>
 <body>
 
@@ -33,7 +54,7 @@
                     <div class="left  back">
                        <i class="f7-icons " >arrow_left</i>
                     </div>
-                    <div class="title">Reservas Control</div>
+                    <div class="title">Control de Reservas</div>
                     <div class="right">
                        
                     </div>
@@ -42,18 +63,18 @@
 
 
     <div class="page-content">
-  <a  hidden id="scrrollSection"   >section de abajo</a>
+  <a  hidden id="scrrollSection">section de abajo</a>
    <!--   <div  class="block">
 <p> <i style="color: red" class="f7-icons" >info_fill</i> Para poder hacer la reserva  usted debe cancelar el  50% del valor total de la misma  </p>
 
       </div>  -->
 
-        <div style="margin-top: 2%"  id="recursoPrincipal" >
+        <div style="margin-top: 1%"  id="recursoPrincipal" >
 
           <div class="row" >
   <div class="col-100">
 
-      <div class="block-title">Fecha para la cual desea reservar</div>
+      <div class="block-title">Fecha para la cual desea reservar:</div>
       <div class="list no-hairlines-md">
         <ul>
           <li>
@@ -69,7 +90,7 @@
       </div>
 
 
-      <div class="block-title">Hora</div>
+      <div class="block-title">Hora:</div>
       <div class="list no-hairlines-md">
         <ul>
           <li>
@@ -84,7 +105,7 @@
         </ul>
       </div>
 
-        <div class="block-title">Cantidad de Personas</div>
+        <div class="block-title">Cantidad de Personas:</div>
                 <div class="list no-hairlines-md">
                   <ul>
                     <li>
@@ -99,8 +120,8 @@
                   </ul>
                 </div>
                
-      
-          <button id="btnBuscarMesas" class="button button-fill color-orange">Buscar mesas disponibles</button>
+        <!--button-fill color-orange-->
+          <button id="btnBuscarMesas" class="button button-fill btn_buscar_mesas">Buscar mesas disponibles</button>
       </div>
       <div class="col-100">
 
