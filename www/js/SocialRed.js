@@ -1533,7 +1533,7 @@ app.dialog.create({
         seen: false   // set true if current user was read - if local storage is used, you don't need to care about this
       
       };
-      
+       console.log(historia.usuario.idUsuario);
         stories.addItem(historia.usuario.idUsuario, item);
       
 
@@ -1568,7 +1568,9 @@ historia:myHistoria
 
 seguidores.forEach(element=>{
  var historia =  GotHistorias( element.Receptor );
+
  if(historia != undefined){
+   element.idUsuario = element.Receptor;
   historias.push( {
     usuario: element,
     historia:historia
@@ -1576,6 +1578,7 @@ seguidores.forEach(element=>{
  }
 
 });
+console.log(historias);
 
 historias.forEach(element=>{
 SubirHistoria(element);

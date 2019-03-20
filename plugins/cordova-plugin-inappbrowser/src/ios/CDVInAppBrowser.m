@@ -67,6 +67,17 @@
     // Things are cleaned up in browserExit.
     [self.inAppBrowserViewController close];
 }
+//eliminar la cache antes de iniciar
+- (CDVInAppBrowser*)initWithWebView:(UIWebView*)theWebView
+{
+    self = [super initWithWebView:theWebView];
+    if (self != nil) {
+        // your initialization here
+        [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    }
+
+    return self;
+}
 
 - (BOOL) isSystemUrl:(NSURL*)url
 {
@@ -88,6 +99,9 @@
     self.callbackId = command.callbackId;
 
     if (url != nil) {
+//edited by manuel angulo
+  [[NSURLCache sharedURLCache] removeAllCachedResponses];
+
 #ifdef __CORDOVA_4_0_0
         NSURL* baseUrl = [self.webViewEngine URL];
 #else

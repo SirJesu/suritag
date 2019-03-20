@@ -9,8 +9,9 @@ function getRandomArbitrary(min, max) {
    }
 
    function GotHistorias(idUsuario) { 
+     console.log(idUsuario);
    var historias = contenidoSocial.historias;
-
+  console.log(historias["Usuario"+idUsuario]);
     return historias["Usuario"+idUsuario];
 
  
